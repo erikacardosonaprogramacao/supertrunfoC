@@ -25,10 +25,9 @@ double calcular_PIB_per_capita(double PIB, long int populacao) {
 }
 
 void cadastrarCarta() {
-    char codigo_string;
-
+    
     printf("Digite o estado: ");
-    scanf("%s", estado);
+    scanf("%c", estado);
 
     printf("Digite o código da carta: ");
     scanf("%s", &codigo);
