@@ -6,8 +6,16 @@
 // Siga os comentários para implementar cada parte do desafio.
 
 int main() {
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    char Estado_A[30], Estado_B[30], Estado_C[30],Estado_D[30], Estado_E[30], Estado_F[30], Estado_G[30], Estado_H[30];
+    // Declarando variáveis para armazenar países.
+    char País_A[30], País_B[30], País_C[30],País_D[30], País_E[30], País_F[30], País_G[30], País_H[30];
+
+    // Declarando variáveis para armazenar as cidades.
+    char cidade_A01[30], cidade_A02[30], cidade_A03[30], cidade_A04[30], cidade_B01[30], cidade_B02[30], cidade_B03[30], cidade_B04[30];
+    char cidade_C01[30], cidade_C02[30], cidade_C03[30], cidade_C04[30], cidade_D01[30], cidade_D02[30], cidade_D03[30], cidade_D04[30];
+    char cidade_E01[30], cidade_E02[30], cidade_E03[30], cidade_E04[30], cidade_F01[30], cidade_F02[30], cidade_F03[30], cidade_F04[30];
+    char cidade_G01[30], cidade_G02[30], cidade_G03[30], cidade_G04[30], cidade_H01[30], cidade_H02[30], cidade_H03[30], cidade_H04[30];
+
+    //Defina as variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
     
     int cidade;
