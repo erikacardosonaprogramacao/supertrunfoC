@@ -22,6 +22,9 @@ int main() {
     scanf("%f", &pib);
     printf("Número de Pontos Turísticos: ");
     scanf("%d", &numeroPontosTuristicos);
+
+    float densidadePopulacional = populacao / area;
+    float pibPerCapite = pib / populacao;
     
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
@@ -31,6 +34,9 @@ int main() {
     printf("Área: %.2f\n", area);
     printf("PIB: %.2f\n", pib);
     printf("Número de Pontos Turísticos: %d\n", numeroPontosTuristicos);
+    printf("Densidade Populacional: %.2f\n", densidadePopulacional);
+    printf("PIB Per Capita: %.2f\n", pibPerCapite);
     printf("\n\n");
+    printf("\n\n\t\t\t--------FIM--------\n\n");
     return 0;
 }
