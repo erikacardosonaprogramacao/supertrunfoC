@@ -11,25 +11,25 @@ int main() {
     int pontostur;
 
     printf("Digite o codigo:\n");        //aparecer na tela para o usuario digitar o codigo da carta
-    scanf("%s", &codigo);                //saida para identificar que o usuario digitou o codigo 
+    scanf("%s", &codigo);                //entrada para identificar que o usuario digitou o codigo 
 
     printf("Digite o nome do estado:\n");     //aparecer na tela para o usuario digitar o nome do estado
-    scanf("%s", &estado);                     //saida para identificar que o usuario digitou o nome do estado
+    scanf("%s", &estado);                     //entrada para identificar que o usuario digitou o nome do estado
 
     printf("Digite o nome da cidade:\n");    //aparecer na tela para o usuario digitar o nome da cidade
-    scanf("%s", &cidade);                    //saida para identificar que o usuario digitou o nome da cidade
+    scanf("%s", &cidade);                    //entrada para identificar que o usuario digitou o nome da cidade
 
     printf("Digite a área da cidade:\n");    //aparecer na tela para o usuario digitar a area da cidade
-    scanf("%f", &area);                      //saida para identificar que o usuario digitou a area da cidade
+    scanf("%f", &area);                      //entrada para identificar que o usuario digitou a area da cidade
 
     printf("Digite a população da cidade:\n");    //aparecer na tela para o usuario digitar a população da cidade
-    scanf("%d", &populacao);                     //saida para identificar que o usuario digitou a população da cidade
+    scanf("%d", &populacao);                     //entrada para identificar que o usuario digitou a população da cidade
 
     printf("Digite o PIB da cidade:\n");        //aparecer na tela para o usuario digite o pib da cidade
-    scanf("%f", &pib);                         //saida para identificar que o usuario digitou o pib da cidade
+    scanf("%f", &pib);                         //entrada para identificar que o usuario digitou o pib da cidade
 
     printf("Digite o número de pontos turísticos:\n"); //aparecer na tela para o usuario digitar o numero de pontos turisticos
-    scanf("%d", &pontostur);                           //saida para identificar que o usuario digitu o  numero de pontos turisticos
+    scanf("%d", &pontostur);                           //entrada para identificar que o usuario digitu o  numero de pontos turisticos
 
     printf("codigo: %s\n", codigo);
     printf("nome do estado: %s\n", estado);
