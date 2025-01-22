@@ -31,13 +31,13 @@ int main() {
     printf("Digite o número de pontos turísticos:\n"); //aparecer na tela para o usuario digitar o numero de pontos turisticos
     scanf("%d", &pontostur);                           //saida para identificar que o usuario digitu o  numero de pontos turisticos
 
-    printf("codigo:, %s\n", codigo);
-    printf("nome do estado:, %s\n", estado);
-    printf("nome da cidade:, %s\n", cidade);                //resumidamente, todas essas linhas ate o return0, foram para apresentar para o usuario que seus dados 
-    printf("a area é:, %f\n", area);                        // digitados foram coletados
-    printf("numero da população:, %d\n", populacao);
-    printf("o pib é:, %f\n", pib);
-    printf("numero de pontos turisticos:, %d\n", pontostur);
+    printf("codigo: %s\n", codigo);
+    printf("nome do estado: %s\n", estado);
+    printf("nome da cidade: %s\n", cidade);                //resumidamente, todas essas linhas ate o return0, foram para apresentar para o usuario que seus dados 
+    printf("a area é: %f\n", area);                        // digitados foram coletados
+    printf("numero da população: %d\n", populacao);
+    printf("o pib é: %f\n", pib);
+    printf("numero de pontos turisticos: %d\n", pontostur);
 
     return 0;
 }
