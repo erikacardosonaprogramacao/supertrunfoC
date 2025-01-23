@@ -19,7 +19,7 @@ void cadastrarCartas(Cidade cidades[NUM_ESTADOS][CIDADE_POR_ESTADO])
     {
         for ( int j = 0; j < CIDADE_POR_ESTADO; j++) 
         {
-            // Gera o c[odigo da cidade
+            // Gerar o codigo da cidade
             snprintf(cidades[i][j].codigo, sizeof(cidades[i][j].codigo), "%c%02d", 'A' + i, j + 1);
             
             //Solicita os dados da cidade
@@ -37,23 +37,40 @@ void cadastrarCartas(Cidade cidades[NUM_ESTADOS][CIDADE_POR_ESTADO])
     }
 }
 
+// função que exibi as cartas para o usuário
+void exibirCartas(Cidade cidades[NUM_ESTADOS][CIDADE_POR_ESTADO])
+{
+    printf("\n\n --- Cartas Cadastradas --- \n");
+    for (int i = 0 ; i < NUM_ESTADOS; i++)
+    {
+        for (int j = 0 ; j < CIDADE_POR_ESTADO ; j++) 
+        {
+            Cidade cidade = cidades[i][j];
+            printf("\nCarta: %s\n", cidade.codigo);
+            printf("População: %d\n", cidade.populacao);
+            printf("Área: %2.f Km²\n", cidade.area);
+            printf("PIB: %2.f milhões\n", cidade.pib);
+            printf("Pontos turísticos: %d\n", cidade.pontosTuristicos);      
+        }
+    }
+}
+
 
 
 
 
 int main() {
 
-    
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-    
-
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
-    
+    // Matriz para armazenar as cidades de cada estado
+    Cidade cidades[NUM_ESTADOS][CIDADE_POR_ESTADO];
+  
     printf("Bem-vindo ao sistema Super Trunfo de Países!\n");
     
+    //Cadastro das cartas
+    cadastrarCartas(cidades);
+
+    // exibir as cartas para o usuário
+    exibirCartas(cidades);
     
 
     return 0;
