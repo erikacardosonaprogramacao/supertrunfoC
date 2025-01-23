@@ -1,10 +1,45 @@
 #include <stdio.h>
+#define NUM_ESTADOS 8
+#define CIDADE_POR_ESTADO 4
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
+
+typedef struct 
+{
+
+    char codigo[4];         // Código da cidade (ex: A01, B02)
+    int populacao;          // População   
+    float area;             // Área
+    float pib;              // PIB
+    int pontosTuristicos;   // Número de pontos turístico
+} Cidade;
+
+void cadastrarCartas(Cidade cidades[NUM_ESTADOS][CIDADE_POR_ESTADO])
+{
+    for (int i = 0; i < NUM_ESTADOS; i++) 
+    {
+        for ( int j = 0; j < CIDADE_POR_ESTADO; j++) 
+        {
+            // Gera o c[odigo da cidade
+            snprintf(cidades[i][j].codigo, sizeof(cidades[i][j].codigo), "%c%02d", 'A' + i, j + 1);
+            
+            //Solicita os dados da cidade
+            printf("\n --- Cadastro da Cidade %s ---\n", cidades[i][j].codigo);
+            printf("População: ");
+            scanf("%d", &cidades[i][j].populacao);
+            printf("Área (km²): ");
+            scanf("%f", &cidades[i][j].area);
+            printf("PIB (milhões): ");
+            scanf("%f", &cidades[i][j].pib);
+            printf("Número de pontos turísticos: ");
+            scanf("%d", &cidades[i][j].pontosTuristicos);
+
+        }
+    }
+}
+
+
+
+
 
 int main() {
 
@@ -12,22 +47,14 @@ int main() {
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
     
-    char codigo[4];
-    int populacao;
-    char nomeCidade[30];
-    float area;
-    float pib;
-    int pontosTuristicos;
 
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
     // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
     
     printf("Bem-vindo ao sistema Super Trunfo de Países!\n");
-
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+    
+    
 
     return 0;
 }
