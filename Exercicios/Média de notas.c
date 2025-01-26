@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main{
+int main () {
 
     float = n1, n2, n3;
     float = media;
@@ -17,5 +17,5 @@ int main{
 
     printf("A média das notas é : %f", media);
 
-    return 0
+    return 0;
 }
