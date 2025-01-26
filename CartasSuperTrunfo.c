@@ -7,16 +7,40 @@
 //Teste larissa
 
 int main() {
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
+    char letra; //variaveis listadas para cada tipo de informação da carta
+    int numero;
+    char nome[10];
+    int populacao;
+    int area;
+    int pturisticos;
+    
     
     // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
     
+    printf("Digite a letra da carta: \n");
+    scanf("%c", &letra);
+
+    printf("Digite o número da carta: \n");
+    scanf("%d", &numero);
+
+    printf("Digite o nome da cidade: \n");
+    scanf("%s", &nome);
+
+    printf("Digite a quantidade populacional: \n");
+    scanf("%d", &populacao);
+    
+    printf("Digite a Área da cidade: \n");
+    scanf("%d", &area);
+
+    printf("Digite a quantidade de pontos turisticos: \n");
+    scanf("%d", &pturisticos);
+
     // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+    printf("Código: %c%d\n", letra, numero);
+    printf("Cidade: %s\n", nome);
+    printf("População: %d\n", populacao);
+    printf("Área da cidade: %d m²\n", area);
+    printf("Quantidade de pontos turisticos: %d\n", pturisticos);
 
     return 0;
 }
