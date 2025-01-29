@@ -1,46 +1,49 @@
 #include <stdio.h>
-#include <string.h>
 
-int main() {  
-    printf("Desafio SuperTrunfo!\n");
-
-    char estado[50];
-    char codigo_da_carta[50];
-    char nome_da_cidade[50];
+typedef struct {
+    char codigo[4];
     int populacao;
-    int pais;
-    float area_em_km2;
+    float area;
     float pib;
-    int numeros_de_pontos_turisticos;
+    int pontosTuristicos;
+} Cidade;
 
-    printf("País número 1: \n");
-    scanf("%d", &pais);
-    getchar(); 
-
-    printf("Digite seu estado: \n");
-    fgets(estado, sizeof(estado), stdin);
-    estado[strcspn(estado, "\n")] = '\0'; 
-    getchar();
-
-    printf("Digite o código da carta: \n");
-    scanf("%s", codigo_da_carta);
-    getchar();  
-
-    printf("Digite o nome da cidade: \n");
-    fgets(nome_da_cidade, sizeof(nome_da_cidade), stdin);
-    nome_da_cidade[strcspn(nome_da_cidade, "\n")] = '\0'; 
+int main(){
+    Cidade cidades[32]; 
+    char estados[] = "ABCDEFGH";
+    int i, j, index = 0;
     
-    printf("Digite a população: \n");
-    scanf("%d", &populacao);
+    printf("=== cadastro de cidades ===\n");
 
-    printf("Digite a área em km2: \n");
-    scanf("%f", &area_em_km2);  
+for(i = 0; i < 8; i++){
+    for (j = 1; j <= 4; j++){
+    sprintf(cidades[index].codigo, "%c%d", estados[i], j);
+    printf("\nCadastro da cidade %s: \n", cidades[index].codigo);
 
-    printf("Digite o PIB: \n");
-    scanf("%f", &pib);
+    printf("População:");
+    scanf("%d", &cidades[index].populacao);
 
-    printf("Digite o número de pontos turísticos: \n");
-    scanf("%d", &numeros_de_pontos_turisticos);
+    printf("Área (km²):");
+    scanf("%f", &cidades[index].area);
 
-    return 0;
+    printf("PIB:");
+    scanf("%f", &cidades[index].pib);
+
+    printf("Pontos turísticos:");
+    scanf("%d", &cidades[index].pontosTuristicos);
+
+    index++;
+    
+    }
+}
+printf("\n===== CIDADES CADASTRADAS =====\n");
+for (i = 0; i < 32; i++) {
+    printf("\nCodigo: %s\n", cidades[i].codigo);
+    printf("População: %d habitantes\n", cidades[i].populacao);
+    printf("Área: %.2f km²\n", cidades[i].area);
+    printf("PIB: %.2f bilhões\n", cidades[i].pib);
+    printf("Pontos turísticcos: %d\n", cidades[i].pontosTuristicos);
+  }
+
+  return 0;
 }
