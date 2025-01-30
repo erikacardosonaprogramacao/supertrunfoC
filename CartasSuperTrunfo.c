@@ -24,19 +24,19 @@ int main() {
     scanf(" %d", &codigoCidade);
 
     printf("Informe o nome da cidade: ");
-    scanf(" %C", &nome);
+    scanf(" %s", nome);
 
     printf("Informe a população da cidade: ");
-    scanf(" %d", &populacao);
+    scanf("%d", &populacao);
 
     printf("Informe a área da cidade: ");
-    scanf(" %f", &area);
+    scanf("%f", &area);
 
     printf("Informe o PIB da cidade: ");
-    scanf(" %f", &pib);
+    scanf("%f", &pib);
 
     printf("Informe o número de pontos turísticos da cidade: ");
-    scanf(" %d", &pontos_turisticos);
+    scanf("%d", &pontos_turisticos);
 
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
