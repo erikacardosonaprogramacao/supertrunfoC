@@ -1,77 +1,92 @@
 #include <stdio.h>
-#define NUM_ESTADOS 8
-#define CIDADE_POR_ESTADO 4
 
+#define ESTADOS 8  // Número total de estados
+#define CIDADES_POR_ESTADO 4  // Número de cidades por estado
 
-typedef struct 
-{
-
-    char codigo[4];         // Código da cidade (ex: A01, B02)
-    int populacao;          // População   
-    float area;             // Área
-    float pib;              // PIB
-    int pontosTuristicos;   // Número de pontos turístico
+// Definição da estrutura que representa uma cidade
+typedef struct {
+    char codigo[4];  // Código da cidade, ex: "A01"
+    int populacao;  // Número de habitantes
+    float area;  // Área da cidade em km²
+    double pib;  // PIB da cidade em milhões
+    int pontos_turisticos;  // Quantidade de pontos turísticos
+    float densidade_populacional; // população divida pela área
+    double pib_per_capita; //  PIB dividido pela população
 } Cidade;
 
-void cadastrarCartas(Cidade cidades[NUM_ESTADOS][CIDADE_POR_ESTADO])
-{
-    for (int i = 0; i < NUM_ESTADOS; i++) 
-    {
-        for ( int j = 0; j < CIDADE_POR_ESTADO; j++) 
-        {
-            // Gerar o codigo da cidade
-            snprintf(cidades[i][j].codigo, sizeof(cidades[i][j].codigo), "%c%02d", 'A' + i, j + 1);
-            
-            //Solicita os dados da cidade
-            printf("\n --- Cadastro da Cidade %s ---\n", cidades[i][j].codigo);
-            printf("População: ");
-            scanf("%d", &cidades[i][j].populacao);
-            printf("Área (km²): ");
-            scanf("%f", &cidades[i][j].area);
-            printf("PIB (milhões): ");
-            scanf("%f", &cidades[i][j].pib);
-            printf("Número de pontos turísticos: ");
-            scanf("%d", &cidades[i][j].pontosTuristicos);
-
-        }
-    }
-}
-
-// função que exibi as cartas para o usuário
-void exibirCartas(Cidade cidades[NUM_ESTADOS][CIDADE_POR_ESTADO])
-{
-    printf("\n\n --- Cartas Cadastradas --- \n");
-    for (int i = 0 ; i < NUM_ESTADOS; i++)
-    {
-        for (int j = 0 ; j < CIDADE_POR_ESTADO ; j++) 
-        {
-            Cidade cidade = cidades[i][j];
-            printf("\nCarta: %s\n", cidade.codigo);
-            printf("População: %d\n", cidade.populacao);
-            printf("Área: %2.f Km²\n", cidade.area);
-            printf("PIB: %2.f milhões\n", cidade.pib);
-            printf("Pontos turísticos: %d\n", cidade.pontosTuristicos);      
-        }
-    }
-}
-
-
-
-
-
 int main() {
+    Cidade cidades[ESTADOS * CIDADES_POR_ESTADO];  // Array para armazenar todas as cidades
+    char estados[] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'};  // Lista de estados
+    int index = 0;  // Índice do array de cidades
 
-    // Matriz para armazenar as cidades de cada estado
-    Cidade cidades[NUM_ESTADOS][CIDADE_POR_ESTADO];
-  
-    printf("Bem-vindo ao sistema Super Trunfo de Países!\n");
+    printf("--- Cadastro de Cidades do Super Trunfo - Países ---\n");
+
+    // Loop para cadastrar todas as cidades
+    for (int i = 0; i < ESTADOS; i++) {
+        for (int j = 0; j < CIDADES_POR_ESTADO; j++) {
+            // Gerando o código da cidade baseado no estado e número da cidade
+            sprintf(cidades[index].codigo, "%c%02d", estados[i], j + 1);
+            printf("Cadastro da cidade %s:\n", cidades[index].codigo);
+            
+            // Entrada dos dados da cidade
+            printf("População: ");
+            scanf("%d", &cidades[index].populacao);
+            
+            printf("Área (km²): ");
+            scanf("%f", &cidades[index].area);
+            
+            printf("PIB (em milhões): ");
+            scanf("%lf", &cidades[index].pib);
+            
+            printf("Número de pontos turísticos: ");
+            scanf("%d", &cidades[index].pontos_turisticos);
+
+            printf("\n");
+
+            // Cálculo das novas propriedades
+            if (cidades[index].area > 0) {
+                cidades[index].densidade_populacional = cidades[index].populacao / cidades[index].area;
+            } else {
+                cidades[index].densidade_populacional = 0; // Evita divisão por zero
+            }
+            
+            if (cidades[index].populacao > 0) {
+                cidades[index].pib_per_capita = cidades[index].pib / cidades[index].populacao;
+            } else {
+                cidades[index].pib_per_capita = 0; // Evita divisão por zero
+            }
+            
+            index++;  // Avança para a próxima cidade
+        }
+    }
+
+    // Exibição dos dados cadastrados
+    printf("\n--- Exibição dos Dados das Cidades ---\n");
+    for (int i = 0; i < ESTADOS * CIDADES_POR_ESTADO; i++) {
+        printf("\nCódigo: %s\n", cidades[i].codigo);
+        printf("População: %d habitantes\n", cidades[i].populacao);
+        printf("Área: %.2f km²\n", cidades[i].area);
+        printf("PIB: %.2lf milhões\n", cidades[i].pib);
+        printf("Pontos Turísticos: %d\n", cidades[i].pontos_turisticos);
+    }
+
+    // Comparação de duas cidades
+    int cidade1, cidade2;
+    printf("Digite os índices das duas cidades a serem comparadas (0 a %d): ", ESTADOS * CIDADES_POR_ESTADO - 1);
+    scanf("%d %d", &cidade1, &cidade2);
     
-    //Cadastro das cartas
-    cadastrarCartas(cidades);
+    if (cidade1 >= 0 && cidade1 < ESTADOS * CIDADES_POR_ESTADO && cidade2 >= 0 && cidade2 < ESTADOS * CIDADES_POR_ESTADO) {
+        printf("--- Comparação das Cidades %s e %s ---", cidades[cidade1].codigo, cidades[cidade2].codigo);
+        
+        printf("Densidade Populacional: %s", cidades[cidade1].densidade_populacional < cidades[cidade2].densidade_populacional ? cidades[cidade1].codigo : cidades[cidade2].codigo);
+        printf("População: %s", cidades[cidade1].populacao > cidades[cidade2].populacao ? cidades[cidade1].codigo : cidades[cidade2].codigo);
+        printf("Área: %s", cidades[cidade1].area > cidades[cidade2].area ? cidades[cidade1].codigo : cidades[cidade2].codigo);
+        printf("PIB: %s", cidades[cidade1].pib > cidades[cidade2].pib ? cidades[cidade1].codigo : cidades[cidade2].codigo);
+        printf("Pontos Turísticos: %s", cidades[cidade1].pontos_turisticos > cidades[cidade2].pontos_turisticos ? cidades[cidade1].codigo : cidades[cidade2].codigo);
+        printf("PIB per Capita: %s", cidades[cidade1].pib_per_capita > cidades[cidade2].pib_per_capita ? cidades[cidade1].codigo : cidades[cidade2].codigo);
+    } else {
+        printf("Índices inválidos!");
+    }
 
-    // exibir as cartas para o usuário
-    exibirCartas(cidades);
-    
-
-    return 0;
+    return 0;  // Indica que o programa terminou com sucesso
 }
