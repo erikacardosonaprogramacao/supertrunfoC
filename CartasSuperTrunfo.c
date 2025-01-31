@@ -1,22 +1,48 @@
 #include <stdio.h>
+#include <locale.h>
 
 // Desafio Super Trunfo - Países
 // Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
 
 int main() {
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-    
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
-    
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+    setlocale(LC_ALL, "en_US.UTF-8");
+    // Definição das variáveis para os atributos da cidade
+    int codigo;
+    char nome[100]; // Nome com no máximo 99 caracteres + o terminador nulo
+    long long populacao;
+    double area;
+    double pib;
+    int pontos_turisticos;
+
+    // Cadastro das Cartas
+    printf("Cadastro de Cartas de Cidades\n");
+
+    printf("Código da cidade: ");
+    scanf("%d", &codigo);
+
+    printf("Nome da cidade: ");
+    scanf(" %s[^\n]", nome); // Lê o nome até a quebra de linha
+
+    printf("População: ");
+    scanf("%lld", &populacao);
+
+    printf("Área (km²): ");
+    scanf("%lf", &area);
+
+    printf("PIB: ");
+    scanf("%lf", &pib);
+
+    printf("Número de pontos turísticos: ");
+    scanf("%d", &pontos_turisticos);
+
+    // Exibição dos Dados das Cartas
+    printf("\nDados da Carta Cadastrada:\n");
+    printf("Código: %d\n", codigo);
+    printf("Nome: %s\n", nome);
+    printf("População: %lld\n", populacao);
+    printf("Área: %.2lf km²\n", area); // Formatação para 2 casas decimais
+    printf("PIB: %.2lf\n", pib); // Formatação para 2 casas decimais
+    printf("Pontos Turísticos: %d\n", pontos_turisticos);
 
     return 0;
 }
