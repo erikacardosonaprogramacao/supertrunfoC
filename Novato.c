@@ -4,14 +4,14 @@
 
 int main(){
     
-    char nome[5];
+    char nome[50];
     char codigo[3];
     float populacao; 
     float area;
     float PIB;
     int turisticos;
 
-    printf("Digite o nome da cidade: ");
+    printf("Digite o nome da cidade: \n");
     scanf("%s", &nome);
     printf("Cidade: %s\n", &nome);
 
