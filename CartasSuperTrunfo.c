@@ -1,18 +1,18 @@
 #include <stdio.h>
 
-int main(){
+int main() {
 
 char codigo[4] = "A01";
 char nome[50] = "São paulo";
 char estado[1] = "a";
-int populaçao = 12345678;
+int populacao = 12345678;
 int area = 1521;
 
 printf("carta criada com sucesso!\n");
 printf("codigo: %s\n", codigo);
 printf("nome da cidade: %s\n", nome);
 printf("estado: %s\n", estado);
-printf("populaçao: %d habitantes\n", populaçao);
+printf("populacao: %d habitantes\n", populaçao);
 printf("area: %d km²\n", area);
 
 ("\n-----------------------------\n");
@@ -27,7 +27,7 @@ printf("carta criada com sucesso!\n");
 printf("codigo: %s\n", codigo2);
 printf("nome da cidade: %s\n", nome2);
 printf("estado: %s\n", estado2);
-printf("populaçao: %d habitantes\n", populacao2);
+printf("populacao: %d habitantes\n", populacao2);
 printf("area: %d km²\n", area2);
 
 return 0;
