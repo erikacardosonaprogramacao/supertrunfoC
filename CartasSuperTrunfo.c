@@ -5,6 +5,8 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
 // Siga os comentários para implementar cada parte do desafio.
 // teste larissa
+
+// declara um tipo cidade
 typedef struct
 {
     int pop;
@@ -22,6 +24,7 @@ typedef struct
 
 cidade entrada_dados(cidade cidades[2])
 {
+    
     for(int i = 0; i < 2; i++)
     {
         printf("\n\t\t~~~Entrada de dados da Cidade %i~~~\n", i+1);
@@ -47,8 +50,14 @@ cidade entrada_dados(cidade cidades[2])
         // calculo da densidade populacional e pib per capta da cidade 
         cidades[i].densidade_populacional = (float) cidades[i].pop / cidades[i].area;
         cidades[i].pib_per_capta = cidades[i].pib / (float) cidades[i].pop;
+
+        // calculo do super poder
+        cidades[i].super_poder = cidades[i].pop + cidades[i]. pib + cidades[i].area 
+        + cidades[i].pontos_turisticos + cidades[i].densidade_populacional + cidades[i]. pib_per_capta;
     };
 }
+
+int validacao(double num1, double num2);
 
 int main() {
 
@@ -99,6 +108,11 @@ int main() {
         for(int f = 0; f < 2; f++)
         {
             printf("pib per capta de %s:\t\t%i\t\t", cidades[f].nome_cidade, cidades[f]. pib_per_capta);
+        }
+        printf("\n");
+        for(int g = 0; g < 2; g++)
+        {
+            printf("pib per capta de %s:\t\t%i\t\t", cidades[g].nome_cidade, cidades[g].super_poder);
         }
         printf("\n");
     }
