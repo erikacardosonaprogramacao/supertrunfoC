@@ -43,6 +43,20 @@ printf("estado: %s\n", estado3);
 printf("populacao: %d habitantes\n", populacao3);
 printf("area: %d km²\n", area3);
 
+char codigo4[4] = "D04";
+char nome4[50] = "BAHIA";
+char estado4[1] = "D";
+int populacao4 = 67483912;
+int area4 = 2341;
+
+printf("carta criada com sucesso!\n");
+printf("codigo: %s\n", codigo4);
+printf("nome da cidade: %s\n", nome4);
+printf("estado: %s\n", estado4);
+printf("populacao: %d habitantes\n", populacao4);
+printf("area: %d km²\n", area4);
+
+
 return 0;
 
 }
