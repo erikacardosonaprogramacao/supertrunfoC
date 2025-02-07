@@ -4,53 +4,105 @@
 // Tema 1 - Cadastro das Cartas
 // Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
 // Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
-
-int main() {
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-    int pop, pontos_turisticos;
+// teste larissa
+typedef struct
+{
+    int pop;
+    int pontos_turisticos;
     char nome_cidade[40];
     char codigo_cidade[9];
-    float area, pib;
+    float area;
+    double pib;
+    double densidade_populacional;
+    double pib_per_capta;
+    double super_poder;
+    
+}cidade;
+
+
+void entrada_dados(cidade cidades[2])
+{
+    for(int i = 0; i < 2; i++)
+    {
+        printf("\n\t\t~~~Entrada de dados da Cidade %i~~~\n", i+1);
+
+        printf("Digite o nome da cidade: ");
+        scanf(" %s", &cidades[i].nome_cidade);
+
+        printf("Digite o código de %s: ", cidades[i].nome_cidade);
+        scanf(" %s", &cidades[i].codigo_cidade);
+
+        printf("Digite a área de %s em km²: ", cidades[i].nome_cidade);
+        scanf(" %f", &cidades[i].area);
+
+        printf("Digite a população total de %s: ", cidades[i].nome_cidade);
+        scanf(" %i", &cidades[i].pop);
+
+        printf("Digite o pib de %s: ", cidades[i].nome_cidade);
+        scanf(" %lf", &cidades[i].pib);
+
+        printf("Digite quantos pontos turisticos %s possui: ", cidades[i].nome_cidade);
+        scanf(" %i", &cidades[i].pontos_turisticos);
+
+        // calculo da densidade populacional e pib per capta da cidade 
+        cidades[i].densidade_populacional = (float) cidades[i].pop / cidades[i].area;
+        cidades[i].pib_per_capta = cidades[i].pib / (float) cidades[i].pop;
+        // calculo do superpoder 
+        cidades[i].super_poder = cidades[i].densidade_populacional + cidades[i].pib_per_capta 
+        + (float) cidades[i].pontos_turisticos + cidades[i].pib + (float) cidades[i].pop + cidades[i].area;
+        
+    };
+}
+
+void vencedor(double num1, double num2)
+{
+    if(num1 > num2)
+    {
+        printf("Cidade");
+    }
+    char[40] a -> cidades[0].nome_cidade;
+}
+
+int main() {
+
+    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
+    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
+
+    cidade cidades[2];    
+
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
     // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
-    
-    printf("Digite o nome da cidade: ");
-    scanf(" %s", nome_cidade);
 
-    printf("Digite o código da cidade: ");
-    scanf(" %s", codigo_cidade);
+    entrada_dados(cidades);    
 
-    printf("Digite a área da cidade: ");
-    scanf(" %f", &area);
-
-    printf("Digite a população da cidade: ");
-    scanf(" %i", &pop);
-
-    printf("Digite o pib da cidade: ");
-    scanf(" %f", &pib);
-
-    printf("Digite quantos pontos turisticos a cidade possui: ");
-    scanf(" %i", &pontos_turisticos);
-
-
-    // Propriedades calculadas
-    float densidade_populacional = (float) pop / area;
-    float pib_per_capta = pib / (float) pop;
     // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.    
-    
-    printf("Nome da cidade: \t%s \n", nome_cidade);
-    printf("Codigo da cidade: \t%s \n", codigo_cidade);
-    printf("pontos turisticos: \t%i \n", pontos_turisticos);
-    printf("População: \t\t%i \n", pop);
-    printf("Área: \t\t\t%.2f  \n", area);
-    printf("PIB: \t\t\tR$:%.2f \n", pib);
-    printf("Pib per capta: \t\t%.2f\n", pib_per_capta);
-    printf("Densidade populacional: %.2f\n", densidade_populacional);
+    // Exibe os valores inseridos para cada atributo da cidade, um por linha.    
 
+
+    printf("\n\t\t\t~~~Saida de dados~~~\n");
+
+    printf("População: \t\t\t%s (%i vs %i) %s\n", cidades[0].nome_cidade, cidades[0].pop, cidades[1].pop, cidades[1].nome_cidade);
+    printf("\n");
+
+    printf("Area: \t\t\t\t%s (%.2f vs %.2f) %s\n", cidades[0].nome_cidade, cidades[0].area, cidades[1].area, cidades[1].nome_cidade);
+    printf("\n");
+
+    printf("Pib: \t\t\t\t%s (%.2f vs %.2f) %s\n", cidades[0].nome_cidade, cidades[0].pib, cidades[1].pib, cidades[1].nome_cidade);
+    printf("\n");
+
+    printf("Pontos turisticos: \t\t%s (%i vs %i) %s\n", cidades[0].nome_cidade, cidades[0].pontos_turisticos, cidades[1].pontos_turisticos, cidades[1].nome_cidade);
+    printf("\n");
+
+    printf("Densidade Populacional: \t%s (%.2f vs %.2f) %s\n", cidades[0].nome_cidade, cidades[0].densidade_populacional, cidades[1].densidade_populacional, cidades[1].nome_cidade);
+    printf("\n");
+
+    printf("Pib per capta: \t\t\t%s (%.2f vs %.2f) %s\n", cidades[0].nome_cidade, cidades[0].pib_per_capta, cidades[1].pib_per_capta, cidades[1].nome_cidade);
+    printf("\n");
+
+    printf("SUPER PODER: \t\t\t%s (%.2f vs %.2f) %s\n", cidades[0].nome_cidade, cidades[0].super_poder, cidades[1].super_poder, cidades[1].nome_cidade);
+    printf("\n");
+
+    printf("\t\t\t~~~Fim do programa~~~\n");
     return 0;
 }
