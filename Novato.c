@@ -1,39 +1,47 @@
 #include <stdio.h>
 
 //Cadastro de variaveis//
+//Nome da cidade
+//Codigo da cidade  
+//Populacao da cidade
+//Area da cidade
+//PIB da cidade
+//Numero de pontos turisticos//
 
 int main(){
     
-    char nome[50];
-    char codigo[3];
-    float populacao; 
-    float area;
-    float PIB;
-    int turisticos;
+    char nome[50], codigo[5];
+    float area, PIB;
+    int populacao, pontosTuristicos;
 
-    printf("Digite o nome da cidade: \n");
-    scanf("%s", &nome);
-    printf("Cidade: %s\n", &nome);
-
+    printf("Digite o nome da cidade: ");
+    scanf(" %[^\n]", nome);
+   
     printf("Digite o codigo da cidade: ");
-    scanf("%s", &codigo);
-    printf("Codigo: %s\n", &codigo);
-
+    scanf("%s", codigo);
+    
     printf("Digite a populacao da cidade: ");
-    scanf("%f", &populacao);
-    printf("Populacao: %f\n", populacao);
-
+    scanf("%d", &populacao);
+   
     printf("Digite a area da cidade: ");
     scanf("%f", &area);
-    printf("Area da cidade: %f km\n", area);
-
+   
     printf("Digite o PIB da cidade: ");
     scanf("%f", &PIB);
-    printf("PIB: %f reais\n");
+    
+    printf("Digite o numero de pontos turisticos: ");
+    scanf("%d", &pontosTuristicos);
 
-    printf("Digite o numero de pontos turisiticos: ");
-    scanf("%d", &turisticos);
-    printf("Pontos turisticos: %d",turisticos);
+// Linhas em branco para melhorar a visualizacao //
+    printf("\n"); // Adiciona uma linha em branco
+    printf("\n"); // Adiciona uma linha em branco
+// Impressao dos dados em conjunto de forma clara e organizada //
+    printf("Cidade: %s\n", nome);
+    printf("Codigo: %s\n", codigo);
+    printf("Populacao: %dmi.\n", populacao);
+    printf("Area da cidade: %fkm²\n", area);
+    printf("PIB: R$%f\n", PIB);
+    printf("Pontos turisticos: %d\n", pontosTuristicos);
 
     return 0;
 
