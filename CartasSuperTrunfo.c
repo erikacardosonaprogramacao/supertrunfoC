@@ -6,7 +6,8 @@
 // Siga os comentários para implementar cada parte do desafio.
 // teste larissa
 typedef struct
-{
+{ 
+    // cria um tipo cidade que contem todas as variaveis necessarias para comparação
     int pop;
     int pontos_turisticos;
     char nome_cidade[40];
@@ -22,6 +23,7 @@ typedef struct
 
 void entrada_dados(cidade cidades[2])
 {
+    // recebe as propriedades das duas cidades
     for(int i = 0; i < 2; i++)
     {
         printf("\n\t\t~~~Entrada de dados da Cidade %i~~~\n", i+1);
@@ -54,13 +56,24 @@ void entrada_dados(cidade cidades[2])
     };
 }
 
-void vencedor(double num1, double num2)
+int vencedor(double num1, double num2)
 {
+    // compara dois valores e retorna um valor que será subtraido ou somado
     if(num1 > num2)
     {
-        printf("Cidade");
+        printf("Cidade 1 venceu!\n");
+        return 1;
     }
-    char[40] a -> cidades[0].nome_cidade;
+    else if(num1 < num2)
+    {
+        printf("Cidade 2 Venceu!\n");
+        return -1;
+    }
+    else{
+        printf("Empate\n");
+        return 0;
+    };
+    
 }
 
 int main() {
@@ -68,7 +81,8 @@ int main() {
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
 
-    cidade cidades[2];    
+    cidade cidades[2];
+    int vitorias = 0;    
 
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
@@ -80,29 +94,51 @@ int main() {
     // Exibe os valores inseridos para cada atributo da cidade, um por linha.    
 
 
-    printf("\n\t\t\t~~~Saida de dados~~~\n");
+    printf("\n\t\t\t~~~Saida de dados~~~\n\n");
 
     printf("População: \t\t\t%s (%i vs %i) %s\n", cidades[0].nome_cidade, cidades[0].pop, cidades[1].pop, cidades[1].nome_cidade);
+    vitorias += vencedor(cidades[0].pop, cidades[1].pop);
     printf("\n");
 
     printf("Area: \t\t\t\t%s (%.2f vs %.2f) %s\n", cidades[0].nome_cidade, cidades[0].area, cidades[1].area, cidades[1].nome_cidade);
+    vitorias += vencedor(cidades[0].area, cidades[1].area);
     printf("\n");
 
     printf("Pib: \t\t\t\t%s (%.2f vs %.2f) %s\n", cidades[0].nome_cidade, cidades[0].pib, cidades[1].pib, cidades[1].nome_cidade);
+    vitorias += vencedor(cidades[0].pib, cidades[1].pib);
     printf("\n");
 
     printf("Pontos turisticos: \t\t%s (%i vs %i) %s\n", cidades[0].nome_cidade, cidades[0].pontos_turisticos, cidades[1].pontos_turisticos, cidades[1].nome_cidade);
+    vitorias += vencedor(cidades[0].pontos_turisticos, cidades[1].pontos_turisticos);
     printf("\n");
 
     printf("Densidade Populacional: \t%s (%.2f vs %.2f) %s\n", cidades[0].nome_cidade, cidades[0].densidade_populacional, cidades[1].densidade_populacional, cidades[1].nome_cidade);
+    vitorias += vencedor(cidades[0].densidade_populacional, cidades[1].densidade_populacional);
     printf("\n");
 
     printf("Pib per capta: \t\t\t%s (%.2f vs %.2f) %s\n", cidades[0].nome_cidade, cidades[0].pib_per_capta, cidades[1].pib_per_capta, cidades[1].nome_cidade);
+    vitorias += vencedor(cidades[0].pib_per_capta, cidades[1].pib_per_capta);
     printf("\n");
 
     printf("SUPER PODER: \t\t\t%s (%.2f vs %.2f) %s\n", cidades[0].nome_cidade, cidades[0].super_poder, cidades[1].super_poder, cidades[1].nome_cidade);
+    vitorias += vencedor(cidades[0].super_poder, cidades[1].super_poder);
     printf("\n");
 
+    if(vitorias > 0)
+    {
+        printf("VENCEDOR GERAL: %s\n", cidades[0].nome_cidade);
+    }
+    else if(vitorias < 0)
+    {
+        printf("VENCEDOR GERAL: %s\n", cidades[1].nome_cidade);
+    }
+    else
+    {
+        printf("EMPATE GERAL!\n");
+    }
+
     printf("\t\t\t~~~Fim do programa~~~\n");
+
+    
     return 0;
 }
