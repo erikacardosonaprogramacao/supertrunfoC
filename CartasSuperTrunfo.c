@@ -20,6 +20,32 @@ typedef struct
     
 }cidade;
 
+void entrada_dados(cidade cidades[2]);
+
+int vencedor(double num1, double num2);
+
+int saida_dados(cidade cidade[2]);
+
+int main() {
+
+    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
+    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
+
+    cidade cidades[2];  
+
+    // Cadastro das Cartas:
+    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
+    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
+
+    entrada_dados(cidades);    
+
+    // Exibição dos Dados das Cartas:
+    // Exibe os valores inseridos para cada atributo da cidade, um por linha.    
+
+    saida_dados(cidades);
+
+    return 0;
+}
 
 void entrada_dados(cidade cidades[2])
 {
@@ -76,23 +102,10 @@ int vencedor(double num1, double num2)
     
 }
 
-int main() {
-
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-
-    cidade cidades[2];
-    int vitorias = 0;    
-
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
-
-    entrada_dados(cidades);    
-
-    // Exibição dos Dados das Cartas:
-    // Exibe os valores inseridos para cada atributo da cidade, um por linha.    
-
+int saida_dados(cidade cidades[2])
+{
+    // mostra uma saida formatada na tela
+    int vitorias = 0;  
 
     printf("\n\t\t\t~~~Saida de dados~~~\n\n");
 
@@ -138,7 +151,6 @@ int main() {
     }
 
     printf("\t\t\t~~~Fim do programa~~~\n");
-
     
     return 0;
 }
