@@ -8,12 +8,11 @@
 //PIB da cidade
 //Numero de pontos turisticos//
 
-int main(){
-    
-    char nome[50], codigo[5];
-    float area, PIB;
-    int populacao, pontosTuristicos;
+char nome[50], codigo[5];
+float area, PIB;
+int populacao, pontosTuristicos;
 
+void entradaDados(){
     printf("Digite o nome da cidade: ");
     scanf(" %[^\n]", nome);
    
@@ -32,17 +31,29 @@ int main(){
     printf("Digite o numero de pontos turisticos: ");
     scanf("%d", &pontosTuristicos);
 
-// Linhas em branco para melhorar a visualizacao //
-    printf("\n"); // Adiciona uma linha em branco
-    printf("\n"); // Adiciona uma linha em branco
-// Impressao dos dados em conjunto de forma clara e organizada //
+    printf("\n"); // Adiciona uma linha em branco//
+    printf("\n"); // Adiciona uma linha em branco//
+// Cálculo da média da densidade populacional e do PIB per capita//
+}
+float calculoMedia(){
+    return (populacao) / (area);
+    return (PIB) / (populacao);
+}
+
+void exibirMedia(float media){; 
+    printf("Densidade populacional: %.2fpessoas/km²\n", media);
+    printf("PIB per capita: R$%.2f\n", media);
+}
+
+int main(){
+    entradaDados();
     printf("Cidade: %s\n", nome);
     printf("Codigo: %s\n", codigo);
     printf("Populacao: %dmi.\n", populacao);
     printf("Area da cidade: %fkm²\n", area);
     printf("PIB: R$%f\n", PIB);
     printf("Pontos turisticos: %d\n", pontosTuristicos);
-    
-    return 0;  
-
+    float media = calculoMedia();
+    exibirMedia(media);
+    return 0;
 }
