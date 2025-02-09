@@ -3,98 +3,83 @@
     Jogo de Super Trunfo com o tema Países.
 */
 
-#include <stdio.h> // Bibloteca padrão de entrada e saída
+#include <stdio.h>  // Bibloteca padrão de entrada e saída
+#include <string.h> // Biblioteca para manipulação de strings
 
 /*
     Definição das estruturas de dados para armazenar as informações dos países, estados e cidades.
     A estrutura de dados é composta por um país que possui 8 estados e cada estado possui 4 cidades.
     Cada cidade possui informações como população, área, PIB e quantidade de pontos turísticos.
 
-    Como já tenho uma noção de programação pensei no uso de objetos para criar as estruturas de dados.
-    Então, criei uma estrutura para cidade, uma para estado e uma para país.
 */
 
-struct cidade
+// Declaração de estruturas de dados
+typedef struct
 {
-    int cidade;
+    char nome[3];
     int populacao;
-    int area;
-    int pib;
+    float area;
+    float pib;
     int pontos_turisticos;
-};
+} Carta; // Estrutura de dados para armazenar as informações das cartas do jogo
 
-struct estado
-{
-    char nome[50];
-    struct cidade cidades[4];
-};
+Carta baralho[32]; // Baralho de cartas
 
-struct pais
-{
-    char nome[50];
-    struct estado estados[8];
-};
+// Array com os nomes das cartas de A01 até H04
+char nomeCartas[32][4] = {
+    "A01", "A02", "A03", "A04",
+    "B01", "B02", "B03", "B04",
+    "C01", "C02", "C03", "C04",
+    "D01", "D02", "D03", "D04",
+    "E01", "E02", "E03", "E04",
+    "F01", "F02", "F03", "F04",
+    "G01", "G02", "G03", "G04",
+    "H01", "H02", "H03", "H04"};
 
-// Declaração de array estático para armazenar a quantidade de países
-struct pais paises[1];
-
-// Declaração de variáveis
-int opcao;
-int qtd_estados = 8;
-int qtd_cidades = 4;
-char *cod_estado[8] = {"A", "B", "C", "D", "E", "F", "G", "H"};
-char *cod_cidade[4] = {"01", "02", "03", "04"};
-
-// Função para cadastrar as informações das cartas
+// Função para cadastrar o baralho de cartas
 void cadastrarCartas()
 {
-    printf("Vamos começar cadastrando as informações das cidades.\n");
-    for (int j = 0; j < qtd_estados; j++)
+    // Inicialização das cartas do baralho
+    for (int i = 0; i < 32; i++)
     {
-        for (int k = 0; k < qtd_cidades; k++)
-        {
-            printf("\nCidade %s%s\n", cod_estado[j], cod_cidade[k]);
-            printf("Digite a população da cidade %d: ", k + 1);
-            scanf("%d", &paises[0].estados[j].cidades[k].populacao);
-            printf("Digite a área da cidade %d: ", k + 1);
-            scanf("%d", &paises[0].estados[j].cidades[k].area);
-            printf("Digite o PIB da cidade %d: ", k + 1);
-            scanf("%d", &paises[0].estados[j].cidades[k].pib);
-            printf("Digite a quantidade de pontos turísticos da cidade %d: ", k + 1);
-            scanf("%d", &paises[0].estados[j].cidades[k].pontos_turisticos);
-        }
+        strcpy(baralho[i].nome, nomeCartas[i]); // Copia o nome da carta para a estrutura de dados usando a função strcpy que copia uma string para outra
+        printf("Cidade %s\n", baralho[i].nome);
+        printf("Digite a população da cidade %s: ", baralho[i].nome);
+        scanf("%d", &baralho[i].populacao);
+        printf("Digite a área da cidade %s: ", baralho[i].nome);
+        scanf("%f", &baralho[i].area);
+        printf("Digite o PIB da cidade %s: ", baralho[i].nome);
+        scanf("%f", &baralho[i].pib);
+        printf("Digite a quantidade de pontos turísticos da cidade %s: ", baralho[i].nome);
+        scanf("%d", &baralho[i].pontos_turisticos);
     }
-    printf("\nAs informações das cidades foram cadastradas com sucesso!\n");
+    return;
 }
-
-// Função para exibir as informações das cartas cadastradas
+// Função para exibir as cartas do baralho
 void exibeCartas()
 {
-
-    for (int j = 0; j < qtd_estados; j++)
+    for (int i = 0; i < 32; i++)
     {
-        printf("\nEstado %s\n", cod_estado[j]);
-        for (int k = 0; k < qtd_cidades; k++)
-        {
-            printf("\nCidade %s%s\n", cod_estado[j], cod_cidade[k]);
-            printf("População: %d\n", paises[0].estados[j].cidades[k].populacao);
-            printf("Área: %dm²\n", paises[0].estados[j].cidades[k].area);
-            printf("PIB: R$ %d\n", paises[0].estados[j].cidades[k].pib);
-            printf("Pontos turísticos: %d\n", paises[0].estados[j].cidades[k].pontos_turisticos);
-        }
+        printf("Cidade %s\n", baralho[i].nome);
+        printf("População: %d\n", baralho[i].populacao);
+        printf("Área: %.2f\n", baralho[i].area);
+        printf("PIB: %.2f\n", baralho[i].pib);
+        printf("Pontos turísticos: %d\n", baralho[i].pontos_turisticos);
     }
+    return;
 }
 
-int main()
+// Função para exibir o menu do jogo
+void menuPrincipal()
 {
+    int opcao;
 
     do
     {
-        // Mensagem de boas-vindas
-        printf("Bem-vindo ao jogo de Super Trunfo com o tema Países!\n");
-        printf("1 - Para começar o jogo\n");
-        printf("2 - para ler as regras do jogo\n");
-        printf("3 - para sair do jogo\n");
+        printf("Bem-vindo ao jogo de Super Trunfo com tema países\n");
+        printf("1 - Jogar\n");
+        printf("2 - Regras\n");
+        printf("3 - Sair\n");
         scanf("%d", &opcao);
 
         switch (opcao)
@@ -104,20 +89,24 @@ int main()
             exibeCartas();
             break;
         case 2:
-            printf("\n\nCada país será divido em 8 estados com 4 cidades cada.\n");
-            printf("Por exemplo, a cidade A01 é a cidade 1 do estado A.\n");
-            printf("Cada cidade possui informações como população, área, PIB e quantidade de pontos turísticos.\n");
-            printf("O jogador que tiver a carta com a maior população, área, PIB ou quantidade de pontos turísticos ganha o jogo.\n");
-            printf("Divirta-se!\n\n");
+            printf("O jogo consiste em um baralho de 32 cartas com informações sobre cidades 01 a 04 de 8 e de estados A a H\n");
+            printf("Cada carta possui informações como população, área, PIB e quantidade de pontos turísticos\n");
+            printf("O jogador escolhe uma carta e um atributo para comparar com a carta do adversário\n");
+            printf("O jogador que tiver o maior valor no atributo escolhido vence o jogo\n");
             break;
         case 3:
-            printf("Obrigado por jogar! Até a próxima!\n");
+            printf("Saindo do jogo\n");
             break;
         default:
-            printf("Opção inválida! Tente novamente.\n\n\n");
+            printf("Opção inválida\n");
             break;
         }
     } while (opcao != 3);
+    return;
+}
 
+int main()
+{
+    menuPrincipal();
     return 0;
 }
