@@ -24,6 +24,9 @@ typedef struct
 } Carta; // Estrutura de dados para armazenar as informações das cartas do jogo
 
 Carta baralho[32]; // Baralho de cartas
+char cartaEscolhida1[4], cartaEscolhida2[4];
+Carta *cartaJogador1;
+Carta *cartaJogador2;
 
 // Array com os nomes das cartas de A01 até H04
 char nomeCartas[32][4] = {
@@ -35,6 +38,11 @@ char nomeCartas[32][4] = {
     "F01", "F02", "F03", "F04",
     "G01", "G02", "G03", "G04",
     "H01", "H02", "H03", "H04"};
+
+void separador()
+{
+    printf("---------------------------------------------------------------\n");
+}
 
 // Função para cadastrar o baralho de cartas
 void cadastrarCartas()
@@ -52,8 +60,8 @@ void cadastrarCartas()
         scanf("%f", &baralho[i].pib);
         printf("Digite a quantidade de pontos turísticos da cidade %s: ", baralho[i].nome);
         scanf("%d", &baralho[i].pontos_turisticos);
+        separador();
     }
-    return;
 }
 // Função para exibir as cartas do baralho
 void exibeCartas()
@@ -65,10 +73,128 @@ void exibeCartas()
         printf("Área: %.2f\n", baralho[i].area);
         printf("PIB: %.2f\n", baralho[i].pib);
         printf("Pontos turísticos: %d\n", baralho[i].pontos_turisticos);
+        separador();
     }
-    return;
 }
+// Função para buscar uma carta no baralho
+Carta *buscarCarta(Carta baralho[], char *cartaBuscada)
+{
+    for (int i = 0; i < 32; i++)
+    {
+        if (strcmp(baralho[i].nome, cartaBuscada) == 0)
+        {
+            return &baralho[i];
+        }
+    }
+    return NULL;
+}
+// Função para escolher as cartas do jogo
+void escolherCartas()
+{
+    do
+    {
+        printf("Escolha uma carta para o jogador 1:");
+        scanf("%s", cartaEscolhida1);
+        cartaJogador1 = buscarCarta(baralho, cartaEscolhida1);
 
+        (cartaJogador1 != NULL) ? (printf("Carta encontrada\n"),
+                                   printf("Nome: %s\n", cartaJogador1->nome),
+                                   separador())
+                                : (printf("Carta não encontrada\n"),
+                                   separador());
+    } while (cartaJogador1 == NULL);
+
+    do
+    {
+        printf("Escolha uma carta para o jogador 2:");
+        scanf("%s", cartaEscolhida2);
+        cartaJogador2 = buscarCarta(baralho, cartaEscolhida2);
+
+        (cartaJogador2 != NULL) ? (printf("Carta encontrada\n"),
+                                   printf("Nome: %s\n", cartaJogador2->nome),
+                                   separador())
+                                : (printf("Carta não encontrada\n"),
+                                   separador());
+    } while (cartaJogador2 == NULL);
+}
+// Função para verificar se as cartas escolhidas são iguais
+void cartasIguais()
+{
+    if (strcmp(cartaEscolhida1, cartaEscolhida2) == 0)
+    {
+        printf("As cartas escolhidas são iguais\n");
+        separador();
+        escolherCartas();
+    }
+}
+// Função para comparar os atributos das cartas
+void compararAtributos()
+{
+    int atributo;
+    printf("Escolha um atributo para comparar\n");
+    printf("1 - População\n");
+    printf("2 - Área\n");
+    printf("3 - PIB\n");
+    printf("4 - Pontos turísticos\n");
+    scanf("%d", &atributo);
+
+    do
+    {
+        switch (atributo)
+        {
+        case 1:
+            printf("Comparando população\n");
+            (cartaJogador1->populacao > cartaJogador2->populacao)   ? (printf("Jogador 1 venceu\n"),
+                                                                     printf("População da carta %s do jogador 1: %d\n", cartaJogador1->nome, cartaJogador1->populacao),
+                                                                     printf("População da carta %s do jogador 2: %d\n", cartaJogador2->nome, cartaJogador2->populacao))
+            : (cartaJogador1->populacao < cartaJogador2->populacao) ? (printf("Jogador 2 venceu\n"),
+                                                                       printf("População da carta %s do jogador 1: %d\n", cartaJogador1->nome, cartaJogador1->populacao),
+                                                                       printf("População da carta %s do jogador 2: %d\n", cartaJogador2->nome, cartaJogador2->populacao))
+                                                                    : printf("Empate\n");
+            break;
+
+        case 2:
+            printf("Comparando área\n");
+            (cartaJogador1->area > cartaJogador2->area)   ? (printf("Jogador 1 venceu\n"),
+                                                           printf("Área da carta %s do jogador 1: %.2f\n", cartaJogador1->nome, cartaJogador1->area),
+                                                           printf("Área da carta %s do jogador 2: %.2f\n", cartaJogador2->nome, cartaJogador2->area))
+            : (cartaJogador1->area < cartaJogador2->area) ? (printf("Jogador 2 venceu\n"),
+                                                             printf("Área da carta %s do jogador 1: %.2f\n", cartaJogador1->nome, cartaJogador1->area),
+                                                             printf("Área da carta %s do jogador 2: %.2f\n", cartaJogador2->nome, cartaJogador2->area))
+                                                          : printf("Empate\n");
+            break;
+
+        case 3:
+            printf("Comparando PIB\n");
+            (cartaJogador1->pib > cartaJogador2->pib)   ? (printf("Jogador 1 venceu\n"),
+                                                         printf("PIB da carta %s do jogador 1: %.2f\n", cartaJogador1->nome, cartaJogador1->pib),
+                                                         printf("PIB da carta %s do jogador 2: %.2f\n", cartaJogador2->nome, cartaJogador2->pib))
+            : (cartaJogador1->pib < cartaJogador2->pib) ? (printf("Jogador 2 venceu\n"),
+                                                           printf("PIB da carta %s do jogador 1: %.2f\n", cartaJogador1->nome, cartaJogador1->pib),
+                                                           printf("PIB da carta %s do jogador 2: %.2f\n", cartaJogador2->nome, cartaJogador2->pib))
+                                                        : printf("Empate\n");
+            break;
+
+        case 4:
+            printf("Comparando pontos turísticos\n");
+            (cartaJogador1->pontos_turisticos > cartaJogador2->pontos_turisticos)   ? (printf("Jogador 1 venceu\n"),
+                                                                                     printf("Pontos turísticos da carta %s do jogador 1: %d\n", cartaJogador1->nome, cartaJogador1->pontos_turisticos),
+                                                                                     printf("Pontos turísticos da carta %s do jogador 2: %d\n", cartaJogador2->nome, cartaJogador2->pontos_turisticos))
+            : (cartaJogador1->pontos_turisticos < cartaJogador2->pontos_turisticos) ? (printf("Jogador 2 venceu\n"),
+                                                                                       printf("Pontos turísticos da carta %s do jogador 1: %d\n", cartaJogador1->nome, cartaJogador1->pontos_turisticos),
+                                                                                       printf("Pontos turísticos da carta %s do jogador 2: %d\n", cartaJogador2->nome, cartaJogador2->pontos_turisticos))
+                                                                                    : printf("Empate\n");
+            break;
+        default:
+            printf("Opção inválida\n");
+            break;
+        }
+    } while (atributo < 1 || atributo > 4);
+    separador();
+    printf("Fim do jogo\n");
+    printf("Obrigado por jogar\n");
+    separador();
+}
 // Função para exibir o menu do jogo
 void menuPrincipal()
 {
@@ -87,6 +213,9 @@ void menuPrincipal()
         case 1:
             cadastrarCartas();
             exibeCartas();
+            escolherCartas();
+            cartasIguais();
+            compararAtributos();
             break;
         case 2:
             printf("O jogo consiste em um baralho de 32 cartas com informações sobre cidades 01 a 04 de 8 e de estados A a H\n");
@@ -102,7 +231,6 @@ void menuPrincipal()
             break;
         }
     } while (opcao != 3);
-    return;
 }
 
 int main()
