@@ -5,7 +5,7 @@
 
 // Estrutura para armazenar os dados de uma cidade
 typedef struct {
-    char codigo[4];  // Código da cidade (ex: A01, B02)
+    char codigo[5];  // Código da cidade (ex: A01, B02); 
     int populacao;
     float area;
     double pib;
