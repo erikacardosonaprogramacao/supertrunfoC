@@ -15,7 +15,7 @@ typedef struct {
 int main() {
     Cidade cidades[NUM_ESTADOS * NUM_CIDADES];
     int i;
-    char estados[] = "ABCDEFGH";  // Identificação dos estados de A a H
+    char estados[] = "ABCDEFGH\0";  // Identificação dos estados de A a H
 
     // Cadastro das cartas de cidades
     for (i = 0; i < NUM_ESTADOS * NUM_CIDADES; i++) {
@@ -37,6 +37,42 @@ int main() {
 
         printf("Digite o número de pontos turísticos: ");
         scanf("%d", &cidades[i].pontos_turisticos);
+    }
+
+      do {
+            printf("Digite a população (>= 0): ");
+            scanf("%d", &cidades[i].populacao);
+            if (cidades[i].populacao < 0) {
+                printf("Erro: A população deve ser maior ou igual a 0.\n");
+            }
+        } while (cidades[i].populacao < 0);
+
+        // Validação da área
+        do {
+            printf("Digite a área (em km², > 0): ");
+            scanf("%f", &cidades[i].area);
+            if (cidades[i].area <= 0) {
+                printf("Erro: A área deve ser maior que 0.\n");
+            }
+        } while (cidades[i].area <= 0);
+
+        // Validação do PIB
+        do {
+            printf("Digite o PIB (em bilhões, >= 0): ");
+            scanf("%lf", &cidades[i].pib);
+            if (cidades[i].pib < 0) {
+                printf("Erro: O PIB deve ser maior ou igual a 0.\n");
+            }
+        } while (cidades[i].pib < 0);
+
+        // Validação do número de pontos turísticos
+        do {
+            printf("Digite o número de pontos turísticos (>= 0): ");
+            scanf("%d", &cidades[i].pontos_turisticos);
+            if (cidades[i].pontos_turisticos < 0) {
+                printf("Erro: O número de pontos turísticos deve ser maior ou igual a 0.\n");
+            }
+        } while (cidades[i].pontos_turisticos < 0);
     }
 
     // Exibir os dados de cada cidade
