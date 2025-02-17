@@ -13,37 +13,43 @@ int main() {
 
 
     char Estado = 'A';
-    char Código [50] = 'A01'; 
-    char Cidade[50] = "São Paulo";
-    int População = 11.45;  
-    float Área em km² = 1.521;
-    double PIB = 2.719751;
-    int Número de Pontos Turísticos = 36;
+    int CodigoCarta [50] = 'A01'; 
+    char NomeCidade[50] = "São Paulo";
+    long Populacao = 11.45;  
+    float Area = 1.521;
+    float PIB = 2.719751;
+    int NumeroPontosTuristicos = 36;
 
-    printf ("Estado: \n");
-    scanf ("%s", &Estado);
+    printf ("Digite o Estado: \n");
+    scanf ("%s", &carta.estado);
 
-    printf ("Código da Carta: \n");
-    scanf ("%s", &Código);
+    printf ("Digite o Código da Carta: \n");
+    scanf ("%d", &carta.codigoCarta);
 
-    printf ("Cidade: \n");
-    scanf ("%s", &Cidade);
+    printf ("Digite o nome da Cidade: \n");
+    scanf ("%s", &nomeCidade);
 
-    printf("População: \n");
-    scanf("%d", &População);
+    printf("Digite a População: \n");
+    scanf("%ld", &Populacao);
 
-    printf ("Área em km²: \n");
-    sscanf("%f", &Área em km²);
+    printf ("Digite a Área em km²: \n");
+    sscanf("%f", &carta.area);
 
     printf ("PIB: \n");
-    scanf("%f", &PIB);
+    scanf("%f", &carta.PIB);
 
     printf("Número de Ponto Turísticos: \n");
-    scanf("%d", &Número de Pontos Turísticos);
+    scanf("%d", &carta.numPontosTurísticos);
 
 
 
-
+     // Estado
+     // Código da Carta
+     // Nome da Cidade
+     // População
+     // Área em km²
+     // PIB
+     // Número de pontos turísticos
 
 
 
