@@ -4,11 +4,27 @@
 // Tema 1 - Cadastro das Cartas
 // Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
 // Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
+//Teste Diego
 
 int main() {
     printf ("Cartas Super Trunfo\n");
-    printf ("Novo Comit\n");
+    printf ("Novo Commint\n");
+
+
+    char Estado = 8
+    char Código [50] = 'A01', 'A02', 
+    char Nome [50];
+    int População;
+    double Área;
+    double PIB;
+    int Número;
+
+    printf ("Estado: \n");
+    scanf ("%s, Estado \n");
+
+    printf ("Código da Carta: \n");
+    scanf ("")
+
 
 
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
