@@ -11,6 +11,8 @@ int main(){
       int populacao;             // Armazena a população da cidade
       float area;                // Armazena a área da cidade em km²
       float pib;                 // Armazena o PIB da cidade
+      float pibpercapita;        // Armazena o PIB per capita da cidade
+      float desnsidadepopulacional; // Armazena a densidade populacional da cidade    
       int pontosturisticos;      // Armazena o número de pontos turísticos
       int contadorcidades;       // Contador para o loop
 
@@ -70,7 +72,9 @@ int main(){
         printf("Nome da Cidade: %s\n", nome);
         printf("População: %d\n", populacao);
         printf("Área: %.2f km²\n", area);
+        printf("Densidade Populacional: %.2f hab/km²\n", populacao / area);
         printf("PIB: R$ %.2f\n", pib);
+        printf("PIB per Capita: R$ %.2f\n", pib / populacao);
         printf("Número de Pontos Turísticos: %d\n", pontosturisticos);
         printf("\n");
 
