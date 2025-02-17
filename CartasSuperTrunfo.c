@@ -7,7 +7,8 @@
 //Teste larissa
 
 int main() {
-    printf ("Cartas Super Trunfo");
+    printf ("Cartas Super Trunfo\n");
+    printf ("Novo Comit\n");
 
 
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
