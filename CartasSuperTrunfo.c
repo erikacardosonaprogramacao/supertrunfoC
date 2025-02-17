@@ -9,21 +9,41 @@
 int main() {
     printf ("Cartas Super Trunfo\n");
     printf ("Novo Commint\n");
+    
 
 
-    char Estado = 8
-    char Código [50] = 'A01', 'A02', 
-    char Nome [50];
-    int População;
-    double Área;
-    double PIB;
-    int Número;
+    char Estado = 'A';
+    char Código [50] = 'A01'; 
+    char Cidade[50] = "São Paulo";
+    int População = 11.45;  
+    float Área em km² = 1.521;
+    double PIB = 2.719751;
+    int Número de Pontos Turísticos = 36;
 
     printf ("Estado: \n");
-    scanf ("%s, Estado \n");
+    scanf ("%s", &Estado);
 
     printf ("Código da Carta: \n");
-    scanf ("")
+    scanf ("%s", &Código);
+
+    printf ("Cidade: \n");
+    scanf ("%s", &Cidade);
+
+    printf("População: \n");
+    scanf("%d", &População);
+
+    printf ("Área em km²: \n");
+    sscanf("%f", &Área em km²);
+
+    printf ("PIB: \n");
+    scanf("%f", &PIB);
+
+    printf("Número de Ponto Turísticos: \n");
+    scanf("%d", &Número de Pontos Turísticos);
+
+
+
+
 
 
 
