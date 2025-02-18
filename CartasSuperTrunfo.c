@@ -7,18 +7,17 @@
 //Teste Diego
 
 int main() {
-    printf ("Cartas Super Trunfo\n");
-    printf ("Novo Commint\n");
+          
     
+    char Estado = 'A';                       // Estado
+    int CodigoCarta [50] = 'A01';            // Código da Carta
+    char NomeCidade[50] = "São Paulo";       // Nome da Cidade
+    long Populacao = 11.45;                  // População
+    float Area = 1.521;                      // Área em km²
+    float PIB = 2.719751;                    // PIB
+    int NumeroPontosTuristicos = 36;         // Número de pontos turísticos
 
-
-    char Estado = 'A';
-    int CodigoCarta [50] = 'A01'; 
-    char NomeCidade[50] = "São Paulo";
-    long Populacao = 11.45;  
-    float Area = 1.521;
-    float PIB = 2.719751;
-    int NumeroPontosTuristicos = 36;
+    // Leitura dos dados da carta
 
     printf ("Digite o Estado: \n");
     scanf ("%s", &carta.estado);
@@ -41,16 +40,19 @@ int main() {
     printf("Número de Ponto Turísticos: \n");
     scanf("%d", &carta.numPontosTurísticos);
 
+    printf ("Cartas Super Trunfo\n");   
+    printf ("Novo Commint\n");
+    printf ("Estado: %s\n, carta.estado");                  
+    printf ("Código da Carta: %d\n", carta.codigoCarta);   
+    printf ("Nome da Cidade; %s\n", carta.nomeCidade);     
+    printf ("População: %ld", carta.populacao);          
+    printf ("Área: %.2f km²\n", carta.area);             
+    printf ("PIB: %.2f\n, carta.pib");                
+    printf("Número de Pontos Turísticos: %d\n", carta.numPontosTuristicos);
 
 
-     // Estado
-     // Código da Carta
-     // Nome da Cidade
-     // População
-     // Área em km²
-     // PIB
-     // Número de pontos turísticos
 
+    
 
 
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
