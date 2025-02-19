@@ -5,7 +5,7 @@ int main(){
     printf("Novo Commit Diego\n");
 
     int idade = 2;                                   // Numero do estado representado em numeros de "1" a "8"                         
-    int populacao = 6.211000;                         // População da cidade      
+    int populacao = 62110000;                         // População da cidade      
     int quantidade = 58;                              // Quantidade de idade          
     double area = 1.200;                               // Área em km²    
     double pibbilhoesdereais = 949.30;                 // Produto interno bruto da cidade
@@ -27,7 +27,7 @@ int main(){
     
 
     printf("Estado: %c\n", estado);
-    scanf(" %c", &estado); // Note o espaço antes de %c para limpar o buffer
+    scanf("  %c", &estado); // Note o espaço antes de %c para limpar o buffer
     
 
     printf("Código: %s\n", codigo);
