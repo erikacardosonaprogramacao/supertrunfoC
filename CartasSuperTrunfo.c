@@ -20,8 +20,9 @@ int main(){
     printf("Código da cidade: \n");
     scanf("%s", codigo);
     printf("Nome da cidade: \n");
+    getchar();
     fgets(cidade, 30, stdin);
-    //cidade[strcspn(cidade, "\n")] = 0;
+    cidade[strcspn(cidade, "\n")] = 0;
     printf("População: \n");
     scanf("%d", &populacao);
     printf("Área: \n");
@@ -34,5 +35,6 @@ int main(){
     printf("Carta 1: \n" "%s Estado: \n", estado, "%s Codigo: \n", codigo, "%s Nome da cidade: \n", cidade, "%d População: \n", populacao, "%f Área: \n", area, "%f PIB: \n", pib, "%d Número de pontos Turisticos: \n", ponto);
 
 
+    
     
     
