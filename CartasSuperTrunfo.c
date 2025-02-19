@@ -12,6 +12,9 @@ typedef struct {
     float areaInKm2;
     float pib;
     int numberOfTouristSpots;
+    float populationDensity;
+    float pibPerCapta;
+    float superPower;
 } Registro;  
 
 int main() {
@@ -27,15 +30,15 @@ int main() {
     printf("Digite abaixo uma letra de A ate H para cadastrar uma carta:\n");
     scanf(" %c", &letra);
 
-    letra = tolower(letra);
+    letra = toupper(letra);
 
-    //Aqui uso um laço de repetição para receber os cadastros de A01 até H04, ao chegar ao limite ou o usuário resolver parar o laço para.
+    //Aqui uso um laço de repetição para receber os cadastros de A01 até H04, ao chegar ao limite ou o usuário resolver interromper o cadastro
 
-    if (letra >= 'a' && letra <= 'h') {
+    if (letra >= 'A' && letra <= 'H') {
         do {
            snprintf(registros[count].codigoCarta, sizeof(registros[count].codigoCarta), "%c%02d", letra, numero);
-           letra = toupper(letra);
-
+           
+            printf("\n--------//////------------\n");
             printf("Estado: %c\n", letra);
             printf("Codigo da carta: %s\n", registros[count].codigoCarta);
             printf("Digite o nome da cidade: \n");
@@ -49,6 +52,18 @@ int main() {
             printf("Digite a quantidade de pontos turisticos: \n");
             scanf("%d", &registros[count].numberOfTouristSpots);
 
+            //Soma dos atributos de densidade populacional e pib per capita
+            registros[count].populationDensity = registros[count].population / registros[count].areaInKm2;
+            registros[count].pibPerCapta = registros[count].pib / registros[count].population;
+            //Soma do super poder convertendo para double para não perder precisão
+            registros[count].superPower = 
+                                    (long double) registros[count].population +  
+                                    registros[count].areaInKm2 +  
+                                    registros[count].pib +  
+                                    (long double) registros[count].numberOfTouristSpots +  
+                                    registros[count].populationDensity +  
+                                    registros[count].pibPerCapta;
+
             numero++;
             if (numero > 4) {
                 numero = 1;
@@ -56,8 +71,8 @@ int main() {
             }
 
 
-            if (letra > 'h') {
-                printf("Limite maximo de codigos (h04) atingido.\n");
+            if (letra > 'H') {
+                printf("Limite maximo de codigos (H04) atingido.\n");
                 break;
             }
 
@@ -76,7 +91,7 @@ int main() {
         //Imprime as cartas cadastradas ao usuário
         printf("\n-------CARTAS CADASTRADAS:--------\n");
         for (int i = 0; i < count; i++) {
-            printf("Codigo da carta: %s\n Nome da cidade: %s\n Populacao: %d\n Area: %.2f quilometros quadrados \n",
+            printf("Codigo da carta: %s\nNome da cidade: %s\nPopulacao: %d\nArea: %Lf quilometros quadrados \n",
                 registros[i].codigoCarta, registros[i].cityName, registros[i].population, 
                 registros[i].areaInKm2
             );
@@ -91,13 +106,73 @@ int main() {
                 printf("PIB: R$%.2f\n", registros[i].pib);
             }
 
-            printf("Numero de Pontos Turisticos: %d\n\n", registros[i].numberOfTouristSpots);
+            printf("Numero de Pontos Turisticos: %d\n", registros[i].numberOfTouristSpots);
+            printf("Densidade populacional: %f\n", registros[i].populationDensity);
+            printf("PIB per capita: %f\n", registros[i].pibPerCapta);
+            printf("Super poder: %f\n", registros[i].superPower);
+            printf("\n--------//////------------\n");
+        }
+
+        //Comparação de cartas
+        char codigo1[5], codigo2[5];
+        int index1 = -1, index2 = -1;
+
+        printf("\nDigite o codigo de duas cartas para comparar:\n");
+        printf("Codigo da primeira carta: \n");
+        scanf(" %4s", codigo1);
+        printf("\nCodigo da segunda carta: \n");
+        scanf(" %4s", codigo2);
+
+        for (int i = 0; i < count; i++) {
+            if (strcmp(registros[i].codigoCarta, codigo1) == 0) {
+                index1 = i;
+            }
+            if (strcmp(registros[i].codigoCarta, codigo2) == 0) {
+                index2 = i;
+            }
+        }
+
+        if (index1 == -1 || index2 == -1) {
+            printf("Uma ou ambas as cartas não foram encontradas.\n");
+        }
+        else {
+            printf("\nComparacao de Cartas:\n");
+
+            printf("Populacao: Carta %s venceu (%d)\n", 
+                (registros[index1].population > registros[index2].population) ? registros[index1].codigoCarta : registros[index2].codigoCarta, 
+                (registros[index1].population > registros[index2].population) ? 1 : 0);
+
+            printf("Area: Carta %s venceu (%d)\n", 
+                (registros[index1].areaInKm2 > registros[index2].areaInKm2) ? registros[index1].codigoCarta : registros[index2].codigoCarta, 
+                (registros[index1].areaInKm2 > registros[index2].areaInKm2) ? 1 : 0);
+
+            printf("PIB: Carta %s venceu (%d)\n", 
+                (registros[index1].pib > registros[index2].pib) ? registros[index1].codigoCarta : registros[index2].codigoCarta, 
+                (registros[index1].pib > registros[index2].pib) ? 1 : 0);
+
+            printf("Pontos Turisticos: Carta %s venceu (%d)\n", 
+                (registros[index1].numberOfTouristSpots > registros[index2].numberOfTouristSpots) ? registros[index1].codigoCarta : registros[index2].codigoCarta, 
+                (registros[index1].numberOfTouristSpots > registros[index2].numberOfTouristSpots) ? 1 : 0);
+
+            printf("Densidade Populacional: Carta %s venceu (%d)\n", 
+                (registros[index1].populationDensity < registros[index2].populationDensity) ? registros[index1].codigoCarta : registros[index2].codigoCarta, 
+                (registros[index1].populationDensity < registros[index2].populationDensity) ? 1 : 0);
+
+            printf("PIB per Capita: Carta %s venceu (%d)\n", 
+                (registros[index1].pibPerCapta > registros[index2].pibPerCapta) ? registros[index1].codigoCarta : registros[index2].codigoCarta, 
+                (registros[index1].pibPerCapta > registros[index2].pibPerCapta) ? 1 : 0);
+
+            printf("Super Poder: Carta %s venceu (%d)\n", 
+                (registros[index1].superPower > registros[index2].superPower) ? registros[index1].codigoCarta : registros[index2].codigoCarta, 
+                (registros[index1].superPower > registros[index2].superPower) ? 1 : 0);
+
+
         }
 
     }else {
         printf("Digite uma letra entre A e H somente!\n");
     }
 
-    printf("Cadastro encerrado\n");
+    printf("Fim da operacao\n");
     return 0;
 }
