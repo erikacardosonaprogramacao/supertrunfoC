@@ -3,6 +3,7 @@
 int main(){
 
     printf("Cartas Super Trunfo\n");
+    printf("Novo Commit Diego\n");
     
     
     
