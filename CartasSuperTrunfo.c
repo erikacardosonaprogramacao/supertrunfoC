@@ -10,6 +10,8 @@ struct Carta {
     float pib;                  // PIB da cidade
     float area;                 // Área da cidade
     int pontos_turisticos;      // Número de pontos turísticos
+    float densidade_populacional; // Densidade populacional
+    float pib_per_capita;       // PIB per capita
 };
 
 // Função para limpar o buffer de entrada
@@ -60,6 +62,12 @@ void input_carta(struct Carta *c) {
     limpar_buffer(); // Limpa o buffer de entrada
 }
 
+// Função para calcular a densidade populacional e PIB per capita
+void calcular_propriedades(struct Carta *c) {
+    c->densidade_populacional = c->populacao / c->area;
+    c->pib_per_capita = c->pib / c->populacao;
+}
+
 // Função para exibir os dados de uma carta
 void display_carta(struct Carta c) {
     printf("Estado: %c\n", c.estado);
@@ -67,8 +75,10 @@ void display_carta(struct Carta c) {
     printf("Nome da Cidade: %s\n", c.nome_cidade);
     printf("População: %d\n", c.populacao);
     printf("Área: %.2f km²\n", c.area);
-    printf("PIB: %.2f  reais\n", c.pib);
+    printf("PIB: %.2f reais\n", c.pib);
     printf("Número de Pontos Turísticos: %d\n", c.pontos_turisticos);
+    printf("Densidade Populacional: %.2f hab/km²\n", c.densidade_populacional);
+    printf("PIB per Capita: %.2f reais\n", c.pib_per_capita);
 }
 
 // Função principal
@@ -78,10 +88,12 @@ int main() {
     // Entrada dos dados da primeira carta
     printf("Cadastro da Carta 1:\n");
     input_carta(&carta1);
+    calcular_propriedades(&carta1);
 
     // Entrada dos dados da segunda carta
     printf("\nCadastro da Carta 2:\n");
     input_carta(&carta2);
+    calcular_propriedades(&carta2);
 
     // Exibição dos dados da primeira carta
     printf("\nCarta 1:\n");
