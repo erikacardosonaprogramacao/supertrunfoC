@@ -11,6 +11,7 @@
 // Cada carta contem informações como: população, aréa, pib e numero de pontos turisticos;
 // Os valores devem ser preenchidos sem virgula separando os numeros;
 
+
 // tipos de variaveis;
 char carta01[50];
 char estado01[50];
