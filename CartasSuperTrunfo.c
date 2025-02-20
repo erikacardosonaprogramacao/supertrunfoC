@@ -84,7 +84,7 @@ printf("\n----------------------Cadastro da Carta 2----------------------- \n");
     printf("Nome da cidade: %s \n", cidade2);
     printf("População: %d de habitantes \n", populacao2); 
     printf("Área: %.2f km² \n", area2);
-    printf("PIB: %f bilhoes \n", pib2); 
+    printf("PIB: %.2f bilhoes \n", pib2); 
     printf("Número de pontos Turisticos: %d \n", ponto2);
 
     return 0;
