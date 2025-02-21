@@ -30,38 +30,7 @@ int main(){
     printf("Densidade Populacional: %.2f habitantes/km²\n", densidadePopulacional);
     printf("PIB per Capita: %.2f reais\n", pibPerCapita);
 
-    // Leitura de dados do usuário
-
-    printf ("Carta: %d\n", idade);
-    scanf("%d", &idade);
     
-
-    printf("Estado: %c\n", estado);
-    scanf("  %c", &estado); // Note o espaço antes de %c para limpar o buffer
-    
-
-    printf("Código: %s\n", codigo);
-    scanf("%3s", codigo);
-    
-
-    printf ("Nome da Cidade: %s\n", nomedacidade);
-    scanf ("%11s", nomedacidade);
-    
-
-    printf("População: %d\n", populacao);
-    scanf("%d", &populacao);
-    
-
-    printf("Área: %.3f km²\n", area);  // Corrigido para %lf
-    scanf("%lf", &area); 
-    
-
-    printf("PIB: %.9f bilhões de reais\n", pibbilhoesdereais);
-    scanf("%lf", &pibbilhoesdereais);  // Corrigido para %lf
-    
-
-    printf("Números de Pontos Turísticos: %d\n", quantidade);
-    scanf("%d", &quantidade);
 
     /*
     printf("%formato1 %formato2 %formato3", variavel1 variavel2, variavel3, ...);
