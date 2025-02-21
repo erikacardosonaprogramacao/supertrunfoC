@@ -123,6 +123,26 @@ void comparar_atributo(struct Carta c1, struct Carta c2, char *atributo) {
         } else {
             printf("Resultado: Empate!\n");
         }
+    } else if (strcmp(atributo, "Pontos Turísticos") == 0) {
+        printf("Carta 1 - %s: %d\n", c1.nome_pais, c1.pontos_turisticos);
+        printf("Carta 2 - %s: %d\n", c2.nome_pais, c2.pontos_turisticos);
+        if (c1.pontos_turisticos > c2.pontos_turisticos) {
+            printf("Resultado: Carta 1 venceu!\n");
+        } else if (c1.pontos_turisticos < c2.pontos_turisticos) {
+            printf("Resultado: Carta 2 venceu!\n");
+        } else {
+            printf("Resultado: Empate!\n");
+        }
+    } else if (strcmp(atributo, "Super Poder") == 0) {
+        printf("Carta 1 - %s: %.2f\n", c1.nome_pais, c1.super_poder);
+        printf("Carta 2 - %s: %.2f\n", c2.nome_pais, c2.super_poder);
+        if (c1.super_poder > c2.super_poder) {
+            printf("Resultado: Carta 1 venceu!\n");
+        } else if (c1.super_poder < c2.super_poder) {
+            printf("Resultado: Carta 2 venceu!\n");
+        } else {
+            printf("Resultado: Empate!\n");
+        }
     } else {
         printf("Atributo inválido!\n");
     }
@@ -132,13 +152,14 @@ void comparar_atributo(struct Carta c1, struct Carta c2, char *atributo) {
 int exibir_menu() {
     int escolha;
     printf("\nEscolha o atributo para comparar:\n");
-    printf("1. Nome\n");
-    printf("2. População\n");
-    printf("3. Área\n");
-    printf("4. PIB\n");
-    printf("5. Número de Pontos Turísticos\n");
-    printf("6. Densidade Populacional\n");
-    printf("Escolha uma opção (1-6) ou 0 para sair: ");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Densidade Populacional\n");
+    printf("5. PIB per Capita\n");
+    printf("6. Pontos Turísticos\n");
+    printf("7. Super Poder\n");
+    printf("Escolha uma opção (1-7) ou 0 para sair: ");
     scanf("%d", &escolha);
     return escolha;
 }
@@ -151,7 +172,7 @@ void comparar_cartas_usuario(struct Carta c1, struct Carta c2, int escolha, char
 
 // Função principal
 int main() {
-    char *atributos[] = {"Nome", "População", "Área", "PIB", "Número de Pontos Turísticos", "Densidade Populacional", "PIB per Capita"};
+    char *atributos[] = {"População", "Área", "PIB", "Densidade Populacional", "PIB per Capita", "Pontos Turísticos", "Super Poder"};
 
     srand(time(NULL));
 
@@ -174,7 +195,7 @@ int main() {
     int escolha;
     do {
         escolha = exibir_menu();
-        if (escolha >= 1 && escolha <= 6) {
+        if (escolha >= 1 && escolha <= 7) {
             comparar_cartas_usuario(carta1, carta2, escolha, atributos);
         } else if (escolha != 0) {
             printf("Escolha inválida! Tente novamente.\n");
