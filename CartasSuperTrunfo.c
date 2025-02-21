@@ -14,8 +14,12 @@ typedef struct {
 void imprimirCarta(Cidade cidade) {
     // Cálculo da densidade populacional
     float densidadePopulacional = (float)cidade.populacao / cidade.area;
+    
     // Cálculo do PIB per capita
     float pibPerCapita = (float)cidade.pibbilhoesdereais * 1e9 / cidade.populacao; // Convertendo PIB de bilhões para reais
+
+     // Somando todos os valores
+    float superPoder = cidade.populacao + cidade.area + cidade.pibbilhoesdereais * 1e9 + pibPerCapita + densidadePopulacional + cidade.quantidade;
 
     printf("Carta: %d\n", cidade.idade);
     printf("Estado: %c\n", cidade.estado);
@@ -27,13 +31,16 @@ void imprimirCarta(Cidade cidade) {
     printf("Densidade Populacional: %.2f habitantes/km²\n", densidadePopulacional);
     printf("PIB per Capita: %.2f reais\n", pibPerCapita);
     printf("Número de Pontos Turísticos: %d\n", cidade.quantidade);
-
+    printf("Super Poder (float): %.1f\n", cidade.populacao + cidade.area + cidade.pibbilhoesdereais + pibPerCapita + densidadePopulacional + cidade.quantidade);
     
 }
 
-int main() {
+ int main() {
     printf("Cartas Super Trunfo\n");
     printf("Novo Commit Diego\n");
+
+   
+
 
     Cidade cidade1 = {1, 11450000, 36, 1.521, 2.719751231, 'A', "A01", "São Paulo"};
     Cidade cidade2 = {2, 5000000, 20, 1.234, 1.123456789, 'B', "B01", "Rio de Janeiro"};
