@@ -22,7 +22,7 @@ int main() {
     scanf("%c", &opcao1);
     printf("Digite o Código da 1ª Carta (01 a 04): ");
     scanf("%s", &codigo1);
-    printf("Digite o nome da cidade da 1ª Carta (Não pode ser nome composto): ");
+    printf("Digite o nome da cidade da 1ª Carta (Nomes simples. ex.: SALVADOR): ");
     scanf("%s", &nome1);
     printf("Digite a quatidade de habitantes da cidade da 1ª Carta (Número inteiro): ");
     scanf("%d", &populacao1);
@@ -67,7 +67,7 @@ int main() {
     scanf("%s", &opcao2);
     printf("Digite o Código da 2ª Carta (01 a 04): ");
     scanf("%s", &codigo2);
-    printf("Digite o nome da cidade da 2ª Carta (Não pode ser nome composto): ");
+    printf("Digite o nome da cidade da 2ª Carta (Nomes simples. ex.: SALVADOR): ");
     scanf("%s", &nome2);
     printf("Digite a quatidade de habitantes da cidade da 2ª Carta (Número inteiro): ");
     scanf("%d", &populacao2);
