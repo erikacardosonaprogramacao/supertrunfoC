@@ -19,7 +19,7 @@ int main(){
     
                 //Estado
     printf("Digite o nome do estado: ");
-    scanf("%s", &estado1);               
+    scanf("%sps", &estado1);               
                 //Código da carta
     printf("Digite o nome da carta: ");
     scanf("%s", &codigodacidade1);
