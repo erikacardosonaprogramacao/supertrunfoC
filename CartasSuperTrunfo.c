@@ -18,9 +18,12 @@ int main() {
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
     char uf, cidade[3];
-    int populacao, pontos;
+    char uf2, cidade2[3];
+    int populacao, populacao2, pontos, pontos2;
     float area, pib;
+    float area2, pib2;
 
+    printf("*** CARTA 1 ***\n");
     printf("Informe o estado (de A a H):\n");
     scanf("%c",&uf);
 
@@ -44,7 +47,34 @@ int main() {
     printf("Populacao: %d\n", populacao);
     printf("Area (Km2): %f\n", area);
     printf("PIB: %f\n", pib);
-    printf("Quantidade de pontos turisticos: %d", pontos);
+    printf("Quantidade de pontos turisticos: %d\n", pontos);
+
+    printf("*** CARTA 2 ***\n");
+    printf("Informe o estado (de A a H):\n");
+    scanf("%c",&uf2);
+
+    printf("Informe a cidade (Letra do estado + de 01 a 04):\n");
+    scanf("%s", &cidade2);
+    
+    printf("Informe a populacao:\n");
+    scanf("%d",&populacao2);
+
+    printf("informe a area total da cidade (Km²):\n");
+    scanf("%f", &area2);
+
+    printf("Informe o PIB:\n");
+    scanf("%f", &pib2);
+
+    printf("Informe quantos pontos turistico a cidade possui:\n");
+    scanf("%d", &pontos2);
+
+    printf("Estado: %c\n", uf2);
+    printf("Cidade: %s\n", cidade2);
+    printf("Populacao: %d\n", populacao2);
+    printf("Area (Km2): %f\n", area2);
+    printf("PIB: %f\n", pib2);
+    printf("Quantidade de pontos turisticos: %d\n", pontos2);
 
     return 0;
+    
 }
