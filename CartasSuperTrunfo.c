@@ -33,6 +33,8 @@ int main(){
     printf("Números de Pontos Turísticos: %d\n", quantidade);
     printf("Densidade Populacional: %.2f habitantes/km²\n", densidadePopulacional);
     printf("PIB per Capita: %.2f reais\n", pibPerCapita);
+
+    
     
 
 
