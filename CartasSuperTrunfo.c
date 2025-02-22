@@ -2,177 +2,88 @@
 #include <string.h>
 #include <ctype.h>
 
-#define MAX_ENTRIES 100
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-typedef struct {
-    char codigoCarta[5];
-    char cityName[20];
-    int population;
-    float areaInKm2;
-    float pib;
-    int numberOfTouristSpots;
-    float populationDensity;
-    float pibPerCapta;
-    float superPower;
-} Registro;  
+int main()  {
+    char estado, estado2;
+    char codigoCarta[10], codigoCarta2[10];
+    char nomeCidade[15], nomeCidade2[15];
+    int populacao, populacao2;
+    float areaKm2, areaKm2_2;
+    float PIB, PIB2;
+    int qtdPontosTuristicos, qtdPontosTuristicos2;
+    char codigoCartaformatado1[30], codigoCartaformatado2[30];
 
-int main() {
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    Registro registros[MAX_ENTRIES]; 
-    int count = 0;                   
-    char letra = 'a';
-    int numero = 1;
-    char continuar;
-    
-    // Cadastro das Cartas:
-    printf("--------BEM VINDO AO SUPER TRUNFO PAISES---------\n");
-    printf("Digite abaixo uma letra de A ate H para cadastrar uma carta:\n");
-    scanf(" %c", &letra);
+    printf("\nBem vindo ao super trunfo paises\n");
+    printf("\nCadastre duas cartas com os valores pedidos\n");
 
-    letra = toupper(letra);
+    printf("\n==============================\n");
+    printf("Comece digitando uma letra de A - H que representara um Estado: \n");
+    scanf(" %c", &estado);
 
-    //Aqui uso um laço de repetição para receber os cadastros de A01 até H04, ao chegar ao limite ou o usuário resolver interromper o cadastro
+    printf("Agora um numero de 01 - 04 para identificarmos a carta (Nesse formato especifico 01 - 02): \n");
+    scanf("%9s", codigoCarta);
 
-    if (letra >= 'A' && letra <= 'H') {
-        do {
-           snprintf(registros[count].codigoCarta, sizeof(registros[count].codigoCarta), "%c%02d", letra, numero);
-           
-            printf("\n--------//////------------\n");
-            printf("Estado: %c\n", letra);
-            printf("Codigo da carta: %s\n", registros[count].codigoCarta);
-            printf("Digite o nome da cidade: \n");
-            scanf(" %19[^\n]", registros[count].cityName);
-            printf("Digite o numero populacional: \n");
-            scanf("%d", &registros[count].population);
-            printf("Digite a area em quilometros quadrados: \n");
-            scanf("%f", &registros[count].areaInKm2);
-            printf("Digite o PIB: \n");
-            scanf("%f", &registros[count].pib);
-            printf("Digite a quantidade de pontos turisticos: \n");
-            scanf("%d", &registros[count].numberOfTouristSpots);
+    printf("Digite um nome de uma cidade desse estado: \n");
+    scanf("%14s", nomeCidade);
 
-            //Soma dos atributos de densidade populacional e pib per capita
-            registros[count].populationDensity = registros[count].population / registros[count].areaInKm2;
-            registros[count].pibPerCapta = registros[count].pib / registros[count].population;
-            //Soma do super poder convertendo para double para não perder precisão
-            registros[count].superPower = 
-                                    (long double) registros[count].population +  
-                                    registros[count].areaInKm2 +  
-                                    registros[count].pib +  
-                                    (long double) registros[count].numberOfTouristSpots +  
-                                    registros[count].populationDensity +  
-                                    registros[count].pibPerCapta;
+    printf("Digite a populacao total dessa cidade: \n");
+    scanf("%d", &populacao);
 
-            numero++;
-            if (numero > 4) {
-                numero = 1;
-                letra++;
-            }
+    printf("Digite a area em kilometros quadrados dessa cidade: \n");
+    scanf("%f", &areaKm2);
 
+    printf("Digite o pib per capita da cidade: \n");
+    scanf("%f", &PIB);
 
-            if (letra > 'H') {
-                printf("Limite maximo de codigos (H04) atingido.\n");
-                break;
-            }
+    printf("Digite a quantidade de pontos turisticos nessa cidade: \n");
+    scanf("%d", &qtdPontosTuristicos);
 
-            count++;
+    printf("\n==============================\n");
+    printf("\nAgora vamos cadastrar a segunda cidade:\n");
 
-            if (count >= MAX_ENTRIES) {
-                printf("Limite maximo de registros (%d) atingido.\n", MAX_ENTRIES);
-                break;
-            }
+    printf("Comece digitando uma letra de A - H que representara um Estado: \n");
+    scanf(" %c", &estado2);
 
-            printf("Deseja continuar o cadastro? (s/n): ");
-            scanf(" %c", &continuar);
+    printf("Agora um numero de 01 - 04 para identificarmos a carta (Nao repita o numero da carta anterior!): \n");
+    scanf("%9s", codigoCarta2);
 
-        } while (continuar == 's' || continuar == 'S');
+    printf("Digite um nome de uma cidade desse estado: \n");
+    scanf("%14s", nomeCidade2);
 
-        //Imprime as cartas cadastradas ao usuário
-        printf("\n-------CARTAS CADASTRADAS:--------\n");
-        for (int i = 0; i < count; i++) {
-            printf("Codigo da carta: %s\nNome da cidade: %s\nPopulacao: %d\nArea: %Lf quilometros quadrados \n",
-                registros[i].codigoCarta, registros[i].cityName, registros[i].population, 
-                registros[i].areaInKm2
-            );
-            //Formata o valor do pib
-            if (registros[i].pib >= 1e9) {
-                printf("PIB: R$%.2f bilhoes\n", registros[i].pib /  1e9);
-            }
-            else if (registros[i].pib >= 1e6) {
-                printf("PIB: R$%.2f milhoes\n", registros[i].pib /  1e6);
-            }
-            else {
-                printf("PIB: R$%.2f\n", registros[i].pib);
-            }
+    printf("Digite a populacao total dessa cidade: \n");
+    scanf("%d", &populacao2);
 
-            printf("Numero de Pontos Turisticos: %d\n", registros[i].numberOfTouristSpots);
-            printf("Densidade populacional: %f\n", registros[i].populationDensity);
-            printf("PIB per capita: %f\n", registros[i].pibPerCapta);
-            printf("Super poder: %f\n", registros[i].superPower);
-            printf("\n--------//////------------\n");
-        }
+    printf("Digite a area em kilometros quadrados dessa cidade: \n");
+    scanf("%f", &areaKm2_2);
 
-        //Comparação de cartas
-        char codigo1[5], codigo2[5];
-        int index1 = -1, index2 = -1;
+    printf("Digite o pib per capita da cidade: \n");
+    scanf("%f", &PIB2);
 
-        printf("\nDigite o codigo de duas cartas para comparar:\n");
-        printf("Codigo da primeira carta: \n");
-        scanf(" %4s", codigo1);
-        printf("\nCodigo da segunda carta: \n");
-        scanf(" %4s", codigo2);
+    printf("Digite a quantidade de pontos turisticos nessa cidade: \n");
+    scanf("%d", &qtdPontosTuristicos2);
 
-        for (int i = 0; i < count; i++) {
-            if (strcmp(registros[i].codigoCarta, codigo1) == 0) {
-                index1 = i;
-            }
-            if (strcmp(registros[i].codigoCarta, codigo2) == 0) {
-                index2 = i;
-            }
-        }
+    printf("\n==============================\n");
+    printf("\nCartas cadastradas\n");
+    printf("Carta 1\n");
+    estado = toupper(estado);
+    printf("Estado: %c\n", estado);
+    sprintf(codigoCartaformatado1, "%c%s", estado, codigoCarta);
+    printf("Codigo: %s\n", codigoCartaformatado1);
+    printf("Nome da cidade: %s\n", nomeCidade);
+    printf("Populacao: %d\n", populacao);
+    printf("Area: %2f\n", areaKm2);
+    printf("PIB: %2f\n", PIB);
+    printf("Numero de pontos turisticos: %d\n", qtdPontosTuristicos);
 
-        if (index1 == -1 || index2 == -1) {
-            printf("Uma ou ambas as cartas não foram encontradas.\n");
-        }
-        else {
-            printf("\nComparacao de Cartas:\n");
-
-            printf("Populacao: Carta %s venceu (%d)\n", 
-                (registros[index1].population > registros[index2].population) ? registros[index1].codigoCarta : registros[index2].codigoCarta, 
-                (registros[index1].population > registros[index2].population) ? 1 : 0);
-
-            printf("Area: Carta %s venceu (%d)\n", 
-                (registros[index1].areaInKm2 > registros[index2].areaInKm2) ? registros[index1].codigoCarta : registros[index2].codigoCarta, 
-                (registros[index1].areaInKm2 > registros[index2].areaInKm2) ? 1 : 0);
-
-            printf("PIB: Carta %s venceu (%d)\n", 
-                (registros[index1].pib > registros[index2].pib) ? registros[index1].codigoCarta : registros[index2].codigoCarta, 
-                (registros[index1].pib > registros[index2].pib) ? 1 : 0);
-
-            printf("Pontos Turisticos: Carta %s venceu (%d)\n", 
-                (registros[index1].numberOfTouristSpots > registros[index2].numberOfTouristSpots) ? registros[index1].codigoCarta : registros[index2].codigoCarta, 
-                (registros[index1].numberOfTouristSpots > registros[index2].numberOfTouristSpots) ? 1 : 0);
-
-            printf("Densidade Populacional: Carta %s venceu (%d)\n", 
-                (registros[index1].populationDensity < registros[index2].populationDensity) ? registros[index1].codigoCarta : registros[index2].codigoCarta, 
-                (registros[index1].populationDensity < registros[index2].populationDensity) ? 1 : 0);
-
-            printf("PIB per Capita: Carta %s venceu (%d)\n", 
-                (registros[index1].pibPerCapta > registros[index2].pibPerCapta) ? registros[index1].codigoCarta : registros[index2].codigoCarta, 
-                (registros[index1].pibPerCapta > registros[index2].pibPerCapta) ? 1 : 0);
-
-            printf("Super Poder: Carta %s venceu (%d)\n", 
-                (registros[index1].superPower > registros[index2].superPower) ? registros[index1].codigoCarta : registros[index2].codigoCarta, 
-                (registros[index1].superPower > registros[index2].superPower) ? 1 : 0);
-
-
-        }
-
-    }else {
-        printf("Digite uma letra entre A e H somente!\n");
-    }
-
-    printf("Fim da operacao\n");
+    printf("\n==============================\n");
+    printf("Carta 2\n");
+    estado2 = toupper(estado2);
+    printf("Estado: %c\n", estado2);
+    sprintf(codigoCartaformatado2, "%c%s", estado2, codigoCarta2);
+    printf("Codigo: %s\n", codigoCartaformatado2);
+    printf("Nome da cidade: %s\n", nomeCidade2);
+    printf("Populacao: %d\n", populacao2);
+    printf("Area: %2f\n", areaKm2_2);
+    printf("PIB: %2f\n", PIB2);
+    printf("Numero de pontos turisticos: %d\n", qtdPontosTuristicos2);
     return 0;
 }
