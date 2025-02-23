@@ -11,6 +11,8 @@ int main() {
     float area em kmm2
     float pib 
     int numero de pontos turisticos 
+
+    printf("adicione estado\n");
     
     
     // Cadastro das Cartas:
