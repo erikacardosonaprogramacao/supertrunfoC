@@ -14,7 +14,7 @@ int main()
     float c1_PIB;
     float c1_densidade_populacional;
     float c1_pib_per_capita;
-    float c1_super_poder;
+    double c1_super_poder;
 
     // Recebendo do usuário os dados da primeira carta:
     printf("Carta 1:\n");
@@ -29,7 +29,7 @@ int main()
     scanf(" %[^\n]", c1_nome_cidade);
 
     printf("População: ");
-    scanf(" %d", &c1_populacao);
+    scanf(" %ld", &c1_populacao);
 
     printf("Área: ");
     scanf(" %f", &c1_area);
@@ -44,11 +44,11 @@ int main()
     c1_densidade_populacional = c1_populacao / c1_area;
     c1_pib_per_capita = (c1_PIB * 10e8) / c1_populacao;
     c1_super_poder = c1_populacao + 
-                           c1_area + 
-                           c1_PIB + 
-                           c1_pontos_turisticos + 
-                           c1_pib_per_capita + 
-                           (1 / c1_densidade_populacional);
+                     c1_area + 
+                     c1_PIB + 
+                     c1_pontos_turisticos + 
+                     c1_pib_per_capita + 
+                     (c1_area / c1_populacao);
 
 
     // Declaração das variáveis da segunda carta:
@@ -61,7 +61,7 @@ int main()
     float c2_PIB;
     float c2_densidade_populacional;
     float c2_pib_per_capita;
-    float c2_super_poder;
+    double c2_super_poder;
 
     // Recebendo do usuário os dados da segunda carta:
     printf("\nCarta 2:\n");
@@ -76,7 +76,7 @@ int main()
     scanf(" %[^\n]", c2_nome_cidade);
 
     printf("População: ");
-    scanf(" %d", &c2_populacao);
+    scanf(" %ld", &c2_populacao);
 
     printf("Área: ");
     scanf(" %f", &c2_area);
@@ -95,8 +95,9 @@ int main()
                      c2_PIB + 
                      c2_pontos_turisticos + 
                      c2_pib_per_capita + 
-                     (1 / c2_densidade_populacional);
+                     (c2_area / c2_populacao);
 
+                     
     // Mostrando no terminal os dados das cartas cadastradas:
     printf("\nCarta 1:\n");
     printf("Estado: %c\n", c1_estado);
@@ -121,6 +122,7 @@ int main()
     printf("PIB per capita: %.2f reais\n", c2_pib_per_capita);
 
 
+    // Verificação qual carta é mais forte em cada característica
     printf("\nComparação de cartas:\n");
 
     if (c1_populacao > c2_populacao) {
