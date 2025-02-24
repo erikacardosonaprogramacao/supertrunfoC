@@ -219,37 +219,47 @@ int main() {
 
     struct Carta carta1, carta2;
 
-    printf("Cadastro da Carta 1:\n");
-    input_carta(&carta1);
-    calcular_propriedades(&carta1);
+    while (1) {
+        printf("Cadastro da Carta 1:\n");
+        input_carta(&carta1);
+        calcular_propriedades(&carta1);
 
-    printf("\nCadastro da Carta 2:\n");
-    input_carta(&carta2);
-    calcular_propriedades(&carta2);
+        printf("\nCadastro da Carta 2:\n");
+        input_carta(&carta2);
+        calcular_propriedades(&carta2);
 
-    printf("\nCarta 1:\n");
-    display_carta(carta1);
+        printf("\nCarta 1:\n");
+        display_carta(carta1);
 
-    printf("\nCarta 2:\n");
-    display_carta(carta2);
+        printf("\nCarta 2:\n");
+        display_carta(carta2);
 
-    int escolha1, escolha2;
-    int opcoes_disponiveis[7] = {1, 1, 1, 1, 1, 1, 1};
+        int escolha1, escolha2;
+        int opcoes_disponiveis[7] = {1, 1, 1, 1, 1, 1, 1};
 
-    escolha1 = exibir_menu("Escolha o primeiro atributo para comparar:", opcoes_disponiveis, atributos);
-    if (escolha1 < 1 || escolha1 > 7) {
-        printf("Escolha inválida! Tente novamente.\n");
-        return 1;
+        escolha1 = exibir_menu("Escolha o primeiro atributo para comparar:", opcoes_disponiveis, atributos);
+        if (escolha1 < 1 || escolha1 > 7) {
+            printf("Escolha inválida! Tente novamente.\n");
+            continue;
+        }
+        opcoes_disponiveis[escolha1 - 1] = 0;
+
+        escolha2 = exibir_menu("Escolha o segundo atributo para comparar:", opcoes_disponiveis, atributos);
+        if (escolha2 < 1 || escolha2 > 7 || escolha2 == escolha1) {
+            printf("Escolha inválida! Tente novamente.\n");
+            continue;
+        }
+
+        comparar_cartas_usuario(carta1, carta2, escolha1, escolha2, atributos);
+
+        char continuar;
+        printf("Deseja continuar? (s/n): ");
+        limpar_buffer();
+        scanf("%c", &continuar);
+        if (continuar == 'n' || continuar == 'N') {
+            break;
+        }
     }
-    opcoes_disponiveis[escolha1 - 1] = 0;
-
-    escolha2 = exibir_menu("Escolha o segundo atributo para comparar:", opcoes_disponiveis, atributos);
-    if (escolha2 < 1 || escolha2 > 7 || escolha2 == escolha1) {
-        printf("Escolha inválida! Tente novamente.\n");
-        return 1;
-    }
-
-    comparar_cartas_usuario(carta1, carta2, escolha1, escolha2, atributos);
 
     return 0;
 }
