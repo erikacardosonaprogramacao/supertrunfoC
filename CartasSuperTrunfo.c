@@ -145,7 +145,7 @@ float comparar_atributo(struct Carta c1, struct Carta c2, char *atributo) {
             printf("Resultado: %s venceu!\n", c1.nome_pais);
             return c1.pontos_turisticos;
         } else if (c1.pontos_turisticos < c2.pontos_turisticos) {
-            printf("Resultado: %s venceu!\n", c2.pontos_turisticos);
+            printf("Resultado: %s venceu!\n", c2.nome_pais);
             return c2.pontos_turisticos;
         } else {
             printf("Resultado: Empate!\n");
