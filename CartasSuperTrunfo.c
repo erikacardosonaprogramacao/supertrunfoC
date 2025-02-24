@@ -12,6 +12,8 @@ int main()
     int c1_pontos_turisticos;
     float c1_area;
     float c1_PIB;
+    float c1_densidade_populacional;
+    float c1_pib_per_capita;
 
     // Recebendo do usuário os dados da primeira carta:
     printf("Carta 1:\n");
@@ -37,6 +39,10 @@ int main()
     printf("Número de Pontos Turísticos: ");
     scanf(" %d", &c1_pontos_turisticos);
 
+    // Cálculo da densidade populacional e PIB per capita da primeira carta
+    c1_densidade_populacional = c1_populacao / c1_area;
+    c1_pib_per_capita = (c1_PIB * 10e8) / c1_populacao;
+
 
     // Declaração das variáveis da segunda carta:
     char c2_estado;
@@ -46,6 +52,8 @@ int main()
     int c2_pontos_turisticos;
     float c2_area;
     float c2_PIB;
+    float c2_densidade_populacional;
+    float c2_pib_per_capita;
 
     // Recebendo do usuário os dados da segunda carta:
     printf("\nCarta 2:\n");
@@ -71,6 +79,10 @@ int main()
     printf("Número de Pontos Turísticos: ");
     scanf(" %d", &c2_pontos_turisticos);
 
+    // Cálculo da densidade populacional e PIB per capita da segunda carta
+    c2_densidade_populacional = c2_populacao / c2_area;
+    c2_pib_per_capita = (c2_PIB * 10e8) / c2_populacao;
+
 
     // Mostrando no terminal os dados das cartas cadastradas:
     printf("\nCarta 1:\n");
@@ -81,6 +93,8 @@ int main()
     printf("Área: %.2f km²\n", c1_area);
     printf("PIB: %.2f bilhões de reais\n", c1_PIB);
     printf("Número de Pontos Turísticos: %d\n", c1_pontos_turisticos);
+    printf("Densidade populacional: %.2f hab/km²\n", c1_densidade_populacional);
+    printf("PIB per capita: %.2f reais\n", c1_pib_per_capita);
 
     printf("\nCarta 2:\n");
     printf("Estado: %c\n", c2_estado);
@@ -90,6 +104,8 @@ int main()
     printf("Área: %.2f km²\n", c2_area);
     printf("PIB: %.2f bilhões de reais\n", c2_PIB);
     printf("Número de Pontos Turísticos: %d\n", c2_pontos_turisticos);
+    printf("Densidade populacional: %.2f hab/km²\n", c2_densidade_populacional);
+    printf("PIB per capita: %.2f reais\n", c2_pib_per_capita);
 
     return 0;
 }
