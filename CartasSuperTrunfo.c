@@ -74,72 +74,72 @@ void comparar_atributo(struct Carta c1, struct Carta c2, char *atributo) {
     printf("\nComparação de Cartas (Atributo: %s):\n", atributo);
 
     if (strcmp(atributo, "População") == 0) {
-        printf("Carta 1 - %s: %lu\n", c1.nome_pais, c1.populacao);
-        printf("Carta 2 - %s: %lu\n", c2.nome_pais, c2.populacao);
+        printf("%s: %lu\n", c1.nome_pais, c1.populacao);
+        printf("%s: %lu\n", c2.nome_pais, c2.populacao);
         if (c1.populacao > c2.populacao) {
-            printf("Resultado: Carta 1 venceu!\n");
+            printf("Resultado: %s venceu!\n", c1.nome_pais);
         } else if (c1.populacao < c2.populacao) {
-            printf("Resultado: Carta 2 venceu!\n");
+            printf("Resultado: %s venceu!\n", c2.nome_pais);
         } else {
             printf("Resultado: Empate!\n");
         }
     } else if (strcmp(atributo, "Área") == 0) {
-        printf("Carta 1 - %s: %.2f km²\n", c1.nome_pais, c1.area);
-        printf("Carta 2 - %s: %.2f km²\n", c2.nome_pais, c2.area);
+        printf("%s: %.2f km²\n", c1.nome_pais, c1.area);
+        printf("%s: %.2f km²\n", c2.nome_pais, c2.area);
         if (c1.area > c2.area) {
-            printf("Resultado: Carta 1 venceu!\n");
+            printf("Resultado: %s venceu!\n", c1.nome_pais);
         } else if (c1.area < c2.area) {
-            printf("Resultado: Carta 2 venceu!\n");
+            printf("Resultado: %s venceu!\n", c2.nome_pais);
         } else {
             printf("Resultado: Empate!\n");
         }
     } else if (strcmp(atributo, "PIB") == 0) {
-        printf("Carta 1 - %s: %.2f reais\n", c1.nome_pais, c1.pib);
-        printf("Carta 2 - %s: %.2f reais\n", c2.nome_pais, c2.pib);
+        printf("%s: %.2f reais\n", c1.nome_pais, c1.pib);
+        printf("%s: %.2f reais\n", c2.nome_pais, c2.pib);
         if (c1.pib > c2.pib) {
-            printf("Resultado: Carta 1 venceu!\n");
+            printf("Resultado: %s venceu!\n", c1.nome_pais);
         } else if (c1.pib < c2.pib) {
-            printf("Resultado: Carta 2 venceu!\n");
+            printf("Resultado: %s venceu!\n", c2.nome_pais);
         } else {
             printf("Resultado: Empate!\n");
         }
     } else if (strcmp(atributo, "Densidade Populacional") == 0) {
-        printf("Carta 1 - %s: %.2f hab/km²\n", c1.nome_pais, c1.densidade_populacional);
-        printf("Carta 2 - %s: %.2f hab/km²\n", c2.nome_pais, c2.densidade_populacional);
+        printf("%s: %.2f hab/km²\n", c1.nome_pais, c1.densidade_populacional);
+        printf("%s: %.2f hab/km²\n", c2.nome_pais, c2.densidade_populacional);
         if (c1.densidade_populacional < c2.densidade_populacional) {
-            printf("Resultado: Carta 1 venceu!\n");
+            printf("Resultado: %s venceu!\n", c1.nome_pais);
         } else if (c1.densidade_populacional > c2.densidade_populacional) {
-            printf("Resultado: Carta 2 venceu!\n");
+            printf("Resultado: %s venceu!\n", c2.nome_pais);
         } else {
             printf("Resultado: Empate!\n");
         }
     } else if (strcmp(atributo, "PIB per Capita") == 0) {
-        printf("Carta 1 - %s: %.2f reais\n", c1.nome_pais, c1.pib_per_capita);
-        printf("Carta 2 - %s: %.2f reais\n", c2.nome_pais, c2.pib_per_capita);
+        printf("%s: %.2f reais\n", c1.nome_pais, c1.pib_per_capita);
+        printf("%s: %.2f reais\n", c2.nome_pais, c2.pib_per_capita);
         if (c1.pib_per_capita > c2.pib_per_capita) {
-            printf("Resultado: Carta 1 venceu!\n");
+            printf("Resultado: %s venceu!\n", c1.nome_pais);
         } else if (c1.pib_per_capita < c2.pib_per_capita) {
-            printf("Resultado: Carta 2 venceu!\n");
+            printf("Resultado: %s venceu!\n", c2.nome_pais);
         } else {
             printf("Resultado: Empate!\n");
         }
     } else if (strcmp(atributo, "Pontos Turísticos") == 0) {
-        printf("Carta 1 - %s: %d\n", c1.nome_pais, c1.pontos_turisticos);
-        printf("Carta 2 - %s: %d\n", c2.nome_pais, c2.pontos_turisticos);
+        printf("%s: %d\n", c1.nome_pais, c1.pontos_turisticos);
+        printf("%s: %d\n", c2.nome_pais, c2.pontos_turisticos);
         if (c1.pontos_turisticos > c2.pontos_turisticos) {
-            printf("Resultado: Carta 1 venceu!\n");
+            printf("Resultado: %s venceu!\n", c1.nome_pais);
         } else if (c1.pontos_turisticos < c2.pontos_turisticos) {
-            printf("Resultado: Carta 2 venceu!\n");
+            printf("Resultado: %s venceu!\n", c2.nome_pais);
         } else {
             printf("Resultado: Empate!\n");
         }
     } else if (strcmp(atributo, "Super Poder") == 0) {
-        printf("Carta 1 - %s: %.2f\n", c1.nome_pais, c1.super_poder);
-        printf("Carta 2 - %s: %.2f\n", c2.nome_pais, c2.super_poder);
+        printf("%s: %.2f\n", c1.nome_pais, c1.super_poder);
+        printf("%s: %.2f\n", c2.nome_pais, c2.super_poder);
         if (c1.super_poder > c2.super_poder) {
-            printf("Resultado: Carta 1 venceu!\n");
+            printf("Resultado: %s venceu!\n", c1.nome_pais);
         } else if (c1.super_poder < c2.super_poder) {
-            printf("Resultado: Carta 2 venceu!\n");
+            printf("Resultado: %s venceu!\n", c2.nome_pais);
         } else {
             printf("Resultado: Empate!\n");
         }
