@@ -1,6 +1,8 @@
 #include <stdio.h>
+// finalização do código commit 25/02/2025 10:03
+// Nível Novato: Cadastro Básico
+// Feito por André Massaud
 
-// Desafio Super Trunfo - Países
 // Tema 1 - Cadastro das Cartas
 // Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
 // Siga os comentários para implementar cada parte do desafio.
@@ -29,7 +31,7 @@ int main() {
     
         // Introdução de dados das cartas
         
-        // carta 1
+        //carta 1
 
         printf("Introduza os dados da carta 1 a seguir:\n");
     
@@ -54,7 +56,7 @@ int main() {
             printf("Introduza o número de pontos turísticos: \n");
             scanf("%d", &Numero_de_pontos_turisticos);
             
-        // carta 2
+        //carta 2
 
         printf("Introduza os dados da carta 2 a seguir:\n");
     
@@ -91,6 +93,7 @@ int main() {
         printf("PIB: %.2f bilhões\n", PIB);
         printf("Pontos turísticos: %d\n", Numero_de_pontos_turisticos);
 
+        //carta 2
         printf("\nDados da Carta 2:\n");
         printf("Código: %s\n", Estado2);
         printf("Código: %s\n", codigo_carta2);
