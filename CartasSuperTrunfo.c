@@ -131,7 +131,7 @@ int main() {
 
 Carta 1:
 Estado: A
-Código: A01
+Código: A01a
 Nome da Cidade: São Paulo
 População: 12325000
 Área: 1521.11 km²
