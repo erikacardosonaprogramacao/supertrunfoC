@@ -44,7 +44,7 @@ int main() {
         printf("Número de pontos turísticos: ");
         scanf("%d", &cartas[i].pontosTuristicos);
 
-        printf("✅ Carta %s cadastrada com sucesso!\n", cartas[i].codigo);
+        printf("Carta %s cadastrada com sucesso!\n", cartas[i].codigo);
     }
 
     // Exibição das cartas cadastradas
