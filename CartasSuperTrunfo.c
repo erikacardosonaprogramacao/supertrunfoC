@@ -1,9 +1,8 @@
 #include <stdio.h>
 
-#include <stdio.h>
 
 int main() {
-    
+
     int populacao1 = 2003000; 
     int pontosTuristico1 = 30; 
     char estado1[50] = "Amazonas"; 
@@ -12,7 +11,7 @@ int main() {
     float PIB1 = 103000000; 
     float area1 = 11401.092;
 
-    // Dados da segunda cidade
+
     int populacao2 = 11451999; 
     int pontosTuristico2 = 30; 
     char estado2[50] = "São Paulo"; 
@@ -21,7 +20,7 @@ int main() {
     float PIB2 = 103000000; 
     float area2 = 152120;
 
-    // Exibir informações da primeira cidade
+
     printf("Desafio Carta 2\n");
     printf("Nome da Cidade: %s\n", nomeDacidade1);
     printf("Estado: %s\n", estado1);
@@ -31,7 +30,6 @@ int main() {
     printf("PIB: %.2f\n", PIB1); 
     printf("Area: %.2f km^2\n", area1); 
 
-    // Exibir informações da segunda cidade
     printf("\nDesafio Carta 1\n");
     printf("Nome da Cidade: %s\n", nomeDacidade2);
     printf("Estado: %s\n", estado2);
