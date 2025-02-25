@@ -30,8 +30,8 @@ int main() {
         int Numero_de_pontos_turisticos; int Numero_de_pontos_turisticos2;
     
         //Calculo de propriedades
-        float PIBperCapita1, densidade1;
-        float PIBperCapita2, densidade2;
+        float PIBperCapita1 = 0.0, densidade1 = 0.0;
+        float PIBperCapita2 = 0.0, densidade2 = 0.0;
 
 
 
