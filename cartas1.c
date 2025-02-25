@@ -6,11 +6,12 @@ int main() {
     int populacao = 2003000; 
     int pontosTuristico = 30; 
     char estado[50] = "Amazonas"; 
-    char codigoDacarta[50] = "A01"; 
+    char codigoDacarta[50] = "A02"; 
     char nomeDacidade[50] = "Manaus"; 
     float PIB = 103000000; 
     float area = 11401.092;
 
+    printf ("Desafio Carta 2 \n" );
     printf("Nome da Cidade: %s\n", nomeDacidade);
     printf("Estado: %s\n", estado);
     printf("Populacao: %d\n", populacao);
