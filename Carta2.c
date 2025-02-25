@@ -10,6 +10,7 @@ char nomeDacidade[50] = "São paulo";
 float PIB = 103000000; 
 float area = 152120;
 
+printf ("Desafio Carta 1 \n" );
 printf("Nome da Cidade: %s\n", nomeDacidade);
 printf("Estado: %s\n", estado);
 printf("Populacao: %d\n", populacao);
