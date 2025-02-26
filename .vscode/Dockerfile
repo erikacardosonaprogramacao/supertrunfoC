@@ -16,7 +16,7 @@ COPY . /usr/src/supertrunfo
 WORKDIR /usr/src/supertrunfo
 
 # Compila o aplicativo
-RUN cmake . && make
+RUN gcc -o supertrunfo CartasSuperTrunfo.c
 
 # Define o comando para rodar o aplicativo
 CMD ["./supertrunfo"]
