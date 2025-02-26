@@ -33,15 +33,7 @@ int main() {
         float PIBperCapita1, densidade1;
         float PIBperCapita2, densidade2;
 
-
-
-
-
-
-
-        // Introdução de dados das cartas
-        
-        //carta 1
+        //Dialogo de apresentação do jogo ao usuario
 
         printf("Olá, jogador! Neste jogo você precisará inserir dados de duas cartas \n");
         printf("Depois de inserir os dados, vamos apresentar ambas inserções\n");
@@ -54,6 +46,10 @@ int main() {
         printf("A segunda regra é: Esteja atualizado com os dados da cidade de acordo com o IBGE\n");
         printf("Não minta nos dados!\n");
 
+
+        // Introdução de dados das cartas
+        
+        //carta 1
 
         printf("Introduza os dados da carta 1 a seguir:\n");
     
@@ -79,9 +75,7 @@ int main() {
             scanf("%d", &Numero_de_pontos_turisticos);
             
             
-
-
-        //carta 2
+         //carta 2
 
         printf("Introduza os dados da carta 2 a seguir:\n");
     
@@ -109,7 +103,6 @@ int main() {
 
 
          //calculo pib*10^6 (bilhão para decimal)
-
          //calculo pibpercapta2 e densidade populacional
          //deveria ser 10 elevado a 6
          //porém tem duas casas decimais no float, então será elevado à 8
@@ -120,6 +113,7 @@ int main() {
          //calculo da densidade populacional
          densidade1 = (float)Populacao / Area;
          densidade2 = (float)Populacao2 / Area2;
+
 
         // Exibição dos dados coletados
 
@@ -148,5 +142,6 @@ int main() {
         printf("Pontos turísticos: %d\n", Numero_de_pontos_turisticos2);
         printf("PIB per capita da cidade: %.2f\n", PIBperCapita2);
         printf("A densidade populacional da Carta 2 é: %2f\n", densidade2);
+        
     return 0;
 }
