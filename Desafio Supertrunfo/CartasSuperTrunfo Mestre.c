@@ -155,6 +155,8 @@ int main() {
         float SpCarta1, SpCarta2, Inverso_densidade, Inverso_densidade2;
 
             //calculo do super poder (Sp)
+            Inverso_densidade = (Area / ((float)Populacao+1));
+            Inverso_densidade2 = (Area2 / ((float)Populacao2+1));
             SpCarta1 = (Populacao+ Area+PIB+Numero_de_pontos_turisticos+PIBperCapita1+Inverso_densidade);
             SpCarta2 = (Populacao2+ Area2+PIB2+Numero_de_pontos_turisticos2+PIBperCapita2+Inverso_densidade2);        
 
