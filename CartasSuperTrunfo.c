@@ -134,7 +134,29 @@ void comparar_cartas_usuario(struct Carta c1, struct Carta c2, int escolha1, int
         printf("\nResultado: Empate geral!\n");
 }
 
-// Função principal
+// Função para comparar cartas automaticamente com base em todos os atributos
+void comparar_cartas_automaticamente(struct Carta c1, struct Carta c2, char *atributos[]) {
+    double soma_c1 = 0, soma_c2 = 0;
+
+    for (int i = 0; i < 6; i++) {
+        double valor1 = obter_valor_atributo(c1, atributos[i]);
+        double valor2 = obter_valor_atributo(c2, atributos[i]);
+        soma_c1 += valor1;
+        soma_c2 += valor2;
+    }
+
+    printf("\nComparação Automática entre %s e %s\n", c1.nome_pais, c2.nome_pais);
+    printf("%s: Soma dos Atributos = %.2lf\n", c1.nome_pais, soma_c1);
+    printf("%s: Soma dos Atributos = %.2lf\n", c2.nome_pais, soma_c2);
+
+    if (soma_c1 > soma_c2)
+        printf("\nVencedor: %s!\n", c1.nome_pais);
+    else if (soma_c1 < soma_c2)
+        printf("\nVencedor: %s!\n", c2.nome_pais);
+    else
+        printf("\nResultado: Empate geral!\n");
+}
+
 int main() {
     // Removemos "PIB" da lista de atributos para comparação
     char *atributos[] = {"População", "Área", "Densidade Populacional", "PIB per Capita", "Pontos Turísticos", "Super Poder"};
@@ -174,7 +196,16 @@ int main() {
             continue;
         }
 
-        comparar_cartas_usuario(carta1, carta2, escolha1, escolha2, atributos);
+        char modo_comparacao;
+        printf("Deseja comparar automaticamente? (s/n): ");
+        limpar_buffer();
+        scanf("%c", &modo_comparacao);
+
+        if (modo_comparacao == 's' || modo_comparacao == 'S') {
+            comparar_cartas_automaticamente(carta1, carta2, atributos);
+        } else {
+            comparar_cartas_usuario(carta1, carta2, escolha1, escolha2, atributos);
+        }
 
         char continuar;
         printf("Deseja continuar? (s/n): ");
