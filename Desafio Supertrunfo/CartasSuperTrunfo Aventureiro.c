@@ -1,5 +1,5 @@
 #include <stdio.h>
-// finalização do código commit 25/02/2025 10:03
+// finalização do código commit 26/02/2025 10:10
 // Nível Aventureiro: Calculando Densidade Populacional e PIB per Capita
 // Feito por André Massaud
 
