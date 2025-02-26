@@ -29,7 +29,7 @@ int main() {
         float PIB; float PIB2;
         int Numero_de_pontos_turisticos; int Numero_de_pontos_turisticos2;
     
-        //Calculo de propriedades
+        //Variaveis de Calculo de propriedades
         float PIBperCapita1, densidade1;
         float PIBperCapita2, densidade2;
 
@@ -42,6 +42,18 @@ int main() {
         // Introdução de dados das cartas
         
         //carta 1
+
+        printf("Olá, jogador! Neste jogo você precisará inserir dados de duas cartas \n");
+        printf("Depois de inserir os dados, vamos apresentar ambas inserções\n");
+        printf("E mostraremos o pib per capita e densidade populacional\n");
+        printf("Temos algumas regras básicas:\n");
+        printf("O código da carta deve ser a inicial da cidade e mais dois numeros crescentes\n");
+        printf("Como por exemplo, São Paulo deve ser S01\n");
+        printf("E a segunda carta, será Rio de Janeiro, R02\n");
+        printf("A próxima deve ser a inicial e 03, e assim por diante!\n");
+        printf("A segunda regra é: Esteja atualizado com os dados da cidade de acordo com o IBGE\n");
+        printf("Não minta nos dados!\n");
+
 
         printf("Introduza os dados da carta 1 a seguir:\n");
     
@@ -99,10 +111,15 @@ int main() {
          //calculo pib*10^6 (bilhão para decimal)
 
          //calculo pibpercapta2 e densidade populacional
-         PIBperCapita2 = (PIB2*10000000) / (float)Populacao2; 
+         //deveria ser 10 elevado a 6
+         //porém tem duas casas decimais no float, então será elevado à 8
+         PIBperCapita2 = (PIB2*100000000) / (float)Populacao2; 
          //calculo pibpercapta1 e densidade populacional            
-         PIBperCapita1 = (PIB*10000000) / (float)Populacao;
+         PIBperCapita1 = (PIB*100000000) / (float)Populacao;
 
+         //calculo da densidade populacional
+         densidade1 = (float)Populacao / Area;
+         densidade2 = (float)Populacao2 / Area2;
 
         // Exibição dos dados coletados
 
@@ -117,18 +134,19 @@ int main() {
         printf("Área: %.2f km²\n", Area);
         printf("PIB: %.2f bilhões\n", PIB);
         printf("Pontos turísticos: %d\n", Numero_de_pontos_turisticos);
-        printf("PIB per capita da cidade: %.2f", PIBperCapita1);
+        printf("PIB per capita da cidade: %.2f \n", PIBperCapita1);
+        printf("A densidade populacional da Carta 1 é: %2f\n", densidade1);
 
         //carta 2
         printf("\n      ***Dados da Carta 2:***\n");
         printf("Código: %s\n", Estado2);
         printf("Código: %s\n", codigo_carta2);
         printf("Cidade: %s\n", Nome_da_Cidade2);
-        printf("População: %d Milhões\n", Populacao2);
+        printf("População: %d Bilhões\n", Populacao2);
         printf("Área: %.2f km²\n", Area2);
         printf("PIB: %.2f bilhões\n", PIB2);
         printf("Pontos turísticos: %d\n", Numero_de_pontos_turisticos2);
-        printf("PIB per capita da cidade: %.2f", PIBperCapita2);
-
+        printf("PIB per capita da cidade: %.2f\n", PIBperCapita2);
+        printf("A densidade populacional da Carta 2 é: %2f\n", densidade2);
     return 0;
 }
