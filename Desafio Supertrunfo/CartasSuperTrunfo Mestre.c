@@ -160,9 +160,16 @@ int main() {
             SpCarta1 = (Populacao+ Area+PIB+Numero_de_pontos_turisticos+PIBperCapita1+Inverso_densidade);
             SpCarta2 = (Populacao2+ Area2+PIB2+Numero_de_pontos_turisticos2+PIBperCapita2+Inverso_densidade2);        
 
-            //comparação
-            printf("O Super Poder total da Carta 1 é:\n %.2f", SpCarta1);
-        
+            //Exibição do SP
+            printf("O Super Poder total da Carta 1 é: %.2f\n", SpCarta1);
+            printf("O Super Poder total da Carta 2 é: %.2f\n", SpCarta2);
 
-    return 0;
+            printf("           ***E O VENCEDOR É***\n");
+
+            // comparação dos valores e retorno do vencedor
+
+            char *SP_vencedor[2] = {codigo_carta2, codigo_carta};
+            char *vencedor = SP_vencedor[SpCarta1 > SpCarta2];
+            printf("O código da carta vencedora é: %s\n", vencedor);    
+    return 0;   
 }
