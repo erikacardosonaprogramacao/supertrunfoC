@@ -141,11 +141,14 @@ int main() {
 
     srand(time(NULL));
 
-    // Cartas pré-definidas
-    struct Carta carta1 = {"A01", "Brasil", 211000000, 1.84e12, 8515767, 50, 0, 0, 0};
-    struct Carta carta2 = {"A02", "Bélgica", 11400000, 0.52e12, 30528, 20, 0, 0, 0};
+    struct Carta carta1, carta2;
 
+    printf("Cadastro da Carta 1:\n");
+    input_carta(&carta1);
     calcular_propriedades(&carta1);
+
+    printf("\nCadastro da Carta 2:\n");
+    input_carta(&carta2);
     calcular_propriedades(&carta2);
 
     while (1) {
