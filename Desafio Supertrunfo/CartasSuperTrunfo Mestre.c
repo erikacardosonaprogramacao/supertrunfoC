@@ -130,7 +130,7 @@ int main() {
         printf("Código: %s\n", Estado);
         printf("Código: %s\n", codigo_carta);
         printf("Cidade: %s\n", Nome_da_Cidade);
-        printf("População: %d Milhões\n", Populacao);
+        printf("População: %d\n", Populacao);
         printf("Área: %.2f km²\n", Area);
         printf("PIB: %.2f bilhões\n", PIB);
         printf("Pontos turísticos: %d\n", Numero_de_pontos_turisticos);
@@ -142,7 +142,7 @@ int main() {
         printf("Código: %s\n", Estado2);
         printf("Código: %s\n", codigo_carta2);
         printf("Cidade: %s\n", Nome_da_Cidade2);
-        printf("População: %d Bilhões\n", Populacao2);
+        printf("População: %d\n", Populacao2);
         printf("Área: %.2f km²\n", Area2);
         printf("PIB: %.2f bilhões\n", PIB2);
         printf("Pontos turísticos: %d\n", Numero_de_pontos_turisticos2);
@@ -160,12 +160,9 @@ int main() {
             SpCarta1 = (Populacao+ Area+PIB+Numero_de_pontos_turisticos+PIBperCapita1+Inverso_densidade);
             SpCarta2 = (Populacao2+ Area2+PIB2+Numero_de_pontos_turisticos2+PIBperCapita2+Inverso_densidade2);        
 
-        printf("\n--- Comparação entre cidades ---\n");
-        if (Populacao > Populacao2);
-            printf ("A popualação da Carta %s", codigo_carta);
-            printf ("é maior que a carta %s", codigo_carta2);
-
-
+            //comparação
+            printf("O Super Poder total da Carta 1 é:\n %.2f", SpCarta1);
+        
 
     return 0;
 }
