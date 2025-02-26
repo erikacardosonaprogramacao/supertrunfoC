@@ -1,6 +1,6 @@
 #include <stdio.h>
-// finalização do código commit 26/02/2025 10:30
-// Nível Aventureiro: Calculando Densidade Populacional e PIB per Capita
+// finalização do código commit 26/02/2025 17:28
+// Nível Mestre: Calculando Super poder e comparação dos dados
 // Feito por André Massaud
 
 // Tema 1 - Cadastro das Cartas
