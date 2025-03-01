@@ -13,16 +13,22 @@ int main() {
     printf("Digite os dados da Carta 1:\n");
     printf("Estado (de A a H): ");
     scanf("%c", &estado1);
+
     printf("Codigo da Carta (ex: A01): ");
-    scanf("%s", codigo1);
+    scanf("%s", &codigo1);
+
     printf("Nome da Cidade: ");
-    scanf("%s[^\n]%*c", cidade1);
+    scanf("%s", &cidade1);
+
     printf("Populacao: ");
     scanf("%d", &populacao1);
+
     printf("Area (em km²): ");
     scanf("%f", &area1);
+
     printf("PIB (em bilhoes de reais): ");
     scanf("%f", &pib1);
+
     printf("Numero de Pontos Turisticos: ");
     scanf("%d", &pontos1);
 
@@ -30,16 +36,22 @@ int main() {
     printf("\nDigite os dados da Carta 2:\n");
     printf("Estado (de A a H): ");
     scanf("%c", &estado2);
+
     printf("Codigo da Carta (ex: A01): ");
-    scanf("%s", codigo2);
+    scanf("%s", &codigo2);
+
     printf("Nome da Cidade: ");
-    scanf("%s[^\n]%*c", cidade2);
+    scanf("%s", &cidade2);
+
     printf("Populacao: ");
     scanf("%d", &populacao2);
+
     printf("Area (em km²): ");
     scanf("%f", &area2);
+
     printf("PIB (em bilhoes de reais): ");
     scanf("%f", &pib2);
+
     printf("Numero de Pontos Turisticos: ");
     scanf("%d", &pontos2);
 
