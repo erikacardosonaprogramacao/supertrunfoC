@@ -67,6 +67,16 @@ int main() {
 
     pib_percapita01 = pib01 / populacao01;
     pib_percapita02 = pib02 / populacao02;
+    
+    /*Cálculo do inverso da densidade populacional:
+      Divisão de 1 pelo valor da densidade,
+      identificando o maior valor como o com menor densidade populacional*/
+    inverso_densidade01 = 1 / (densidade01 + 0.0001);
+    inverso_densidade02 = 1 / (densidade02 + 0.0001);
+
+    //Soma dos atributos para obter o super poder (população, área, PIB,pontos turísticos, PIB per capita e o inverso da densidade populacional)
+    superpoder01 = populacao01 + area01 + pib01 + pturisticos01 + pib_percapita01 + inverso_densidade01;
+    superpoder02 = populacao02 + area02 + pib02 + pturisticos02 + pib_percapita02 + inverso_densidade02;
 
     printf("\n");
     // Exibição dos Dados das Cartas:
@@ -82,6 +92,7 @@ int main() {
     printf("Número de pontos turísticos: %d\n", pturisticos01); //Exibe o número de pontos turísticos
     printf("Densidade populacional: %.2f hab/km²\n", densidade01);
     printf("PIB per Capita: R$%.2f\n", pib_percapita01);
+    printf("Super Poder: %.2f\n", superpoder01);
     printf("\n");
 
     printf("===CARTA 02===\n");
@@ -94,27 +105,29 @@ int main() {
     printf("Número de pontos turísticos: %d\n", pturisticos02);
     printf("Densidade populacional: %.2f hab/km²\n", densidade02);
     printf("PIB per Capita: R$%.2f\n", pib_percapita02);
+    printf("Super Poder: %.2f\n", superpoder02);
     printf("\n");
 
-    /*Cálculo do inverso da densidade populacional:
-      Divisão de 1 pelo valor da densidade, obtendo densidade
-      e identificando o maior valor como o com menor densidade populacional*/
-    inverso_densidade01 = 1 / (densidade01 + 0.0001);
-    inverso_densidade02 = 1 / (densidade02 + 0.0001);
+    char atributoescolhido[] = "PIB per Capita";
 
-    //Soma dos atributos para obter o super poder (população, área, PIB,pontos turísticos, PIB per capita e o inverso da densidade populacional)
-    superpoder01 = populacao01 + area01 + pib01 + pturisticos01 + pib_percapita01 + inverso_densidade01;
-    superpoder02 = populacao02 + area02 + pib02 + pturisticos02 + pib_percapita02 + inverso_densidade02;
-
-    //Comparação entre os atributos (um a um)
     printf("=-=-=-= COMPARANDO CARTAS =-=-=-=\n");
-    printf("População: %s\n", (populacao01 > populacao02) ? "CARTA 1 VENCEU" : "CARTA 2 VENCEU");
-    printf("Área: %s\n", (area01 > area02) ? "CARTA 1 VENCEU" : "CARTA 2 VENCEU");
-    printf("PIB: %s\n", (pib01 > pib02) ? "CARTA 1 VENCEU" : "CARTA 2 VENCEU");
-    printf("Número de Pontos Turísticos: %s\n", (pturisticos01 > pturisticos02) ? "CARTA 1 VENCEU" : "CARTA 2 VENCEU");
-    printf("Densidade Populacional: %s\n", (densidade01 < densidade02) ? "CARTA 1 VENCEU" : "CARTA 2 VENCEU");
-    printf("PIB per Capita: %s\n", (pib_percapita01 > pib_percapita02) ? "CARTA 1 VENCEU" : "CARTA 2 VENCEU");
-    printf("Super Poder: %s\n", (superpoder01 > superpoder02) ? "CARTA 1 VENCEU" : "CARTA 2 VENCEU");
+    printf("Atributo escolhido: %s\n", atributoescolhido);
+    printf("CARTA 01 (%s): R$%.2f\n", nomecidade01, pib_percapita01);
+    printf("CARTA 02 (%s): R$%.2f\n", nomecidade02, pib_percapita02);
+    printf("Resultado: ");
+
+    if (pib_percapita01 > pib_percapita02)
+    {
+      printf("CARTA 01 (%s) VENCEU!!!", nomecidade01);
+    }
+    else if (pib_percapita01 < pib_percapita02)
+    {
+      printf("CARTA 02 (%s) VENCEU!!!", nomecidade02);
+    }
+    else
+    {
+      printf("EMPATE!!!");
+    }
 
     return 0;
 }
