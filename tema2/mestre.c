@@ -4,7 +4,7 @@
 
 int main() {
     // Variáveis carta 1
-    char estado[50] = "São Paulo";
+    char estado[50] = "Sao Paulo";
     char codigodacarta[50] = "B01";
     char nomedacidade[50] = "Bauru";
     int populacao = 379174;
@@ -15,7 +15,7 @@ int main() {
     float pibpercapita = pib / populacao;
 
     // Variáveis carta 2
-    char estado2[50] = "São Paulo";
+    char estado2[50] = "Sao Paulo";
     char codigodacarta2[50] = "B02";
     char nomedacidade2[50] = "Arealva";
     int populacao2 = 479174;
@@ -78,8 +78,8 @@ int main() {
             printf("\n*** Carta %s ***\n", codigodacarta);
             printf("Estado: %s\n", estado);
             printf("Nome da Cidade: %s\n", nomedacidade);
-            printf("1- População: %d\n", populacao);
-            printf("2- Área: %.3f\n", area);
+            printf("1- Populacao: %d\n", populacao);
+            printf("2- Area: %.3f\n", area);
             printf("3- PIB: %.3f\n", pib);
             printf("4- Pontos Turísticos: %d\n", pontosturisticos);
             printf("5- Densidade Populacional: %.2f\n", densidadepopulacional);
@@ -93,8 +93,8 @@ int main() {
             printf("Estado: %s\n", estado2);
             printf("Código da carta: %s\n", codigodacarta2);
             printf("Nome da Cidade: %s\n", nomedacidade2);
-            printf("1- População: %d\n", populacao2);
-            printf("2- Área: %.3f\n", area2);
+            printf("1- Populacao: %d\n", populacao2);
+            printf("2- Area: %.3f\n", area2);
             printf("3- PIB: %.3f\n", pib2);
             printf("4- Pontos Turísticos: %d\n", pontosturisticos2);
             printf("5- Densidade Populacional: %.2f\n", densidadepopulacional2);
@@ -102,7 +102,7 @@ int main() {
             printf("7- SUPER PODER: %.3f\n", superpoder2);
             break;
         default:
-            printf("Desculpe, não temos essa carta!\n");
+            printf("Desculpe, nao temos essa carta!\n");
             break;
         }
         switch (esccpu1) {
@@ -112,8 +112,8 @@ int main() {
                 printf("\n*** Carta %s ***\n", codigodacarta);
                 printf("Estado: %s\n", estado);
                 printf("Nome da Cidade: %s\n", nomedacidade);
-                printf("1- População: %d\n", populacao);
-                printf("2- Área: %.3f\n", area);
+                printf("1- Populacao: %d\n", populacao);
+                printf("2- Area: %.3f\n", area);
                 printf("3- PIB: %.3f\n", pib);
                 printf("4- Pontos Turísticos: %d\n", pontosturisticos);
                 printf("5- Densidade Populacional: %.2f\n", densidadepopulacional);
@@ -127,8 +127,8 @@ int main() {
                 printf("Estado: %s\n", estado2);
                 printf("Código da carta: %s\n", codigodacarta2);
                 printf("Nome da Cidade: %s\n", nomedacidade2);
-                printf("1- População: %d\n", populacao2);
-                printf("2- Área: %.3f\n", area2);
+                printf("1- Populacao: %d\n", populacao2);
+                printf("2- Area: %.3f\n", area2);
                 printf("3- PIB: %.3f\n", pib2);
                 printf("4- Pontos Turísticos: %d\n", pontosturisticos2);
                 printf("5- Densidade Populacional: %.2f\n", densidadepopulacional2);
@@ -136,7 +136,7 @@ int main() {
                 printf("7- SUPER PODER: %.3f\n", superpoder2);
                 break;
             default:
-                printf("Desculpe, não temos essa carta!\n");
+                printf("Desculpe, nao temos essa carta!\n");
                 break;
             }
 
@@ -189,7 +189,7 @@ int main() {
         valorCPU = (esccpu1 == 1) ? superpoder : superpoder2;
         break;
     default:
-        printf("Desculpe, não temos esse Atributo!\n");
+        printf("Desculpe, nao temos esse Atributo!\n");
         return 0;
     }
     
@@ -206,7 +206,7 @@ int main() {
 
     if (atributo == atributo2)
     {
-        printf("Você escolheu o mesmo atributo!!");
+        printf("Voce escolheu o mesmo atributo!!");
         return 0;
     }
     
@@ -241,7 +241,7 @@ int main() {
         valorCPU1 = (esccpu1 == 1) ? superpoder : superpoder2;
         break;
     default:
-        printf("Desculpe, não temos esse Atributo!\n");
+        printf("Desculpe, nao temos esse Atributo!\n");
         return 0;
     }
     float soma = valorJogador + valorJogador1;     
@@ -253,22 +253,22 @@ int main() {
         printf("\n### - CARTA JOGADOR (%s) - ###\n", cod);
         printf("Cidade: %s\n", cidade);
             if (valorJogador > valorCPU) {
-                printf("1- População: %d Venceu! \n", (int)valorJogador);
+                printf("1- Populacao: %d Venceu! \n", (int)valorJogador);
             } else if (valorJogador < valorCPU) {
-                printf("1- População: %d Perdeu!! \n", (int)valorJogador);
+                printf("1- Populacao: %d Perdeu!! \n", (int)valorJogador);
             } else {
-                printf("1- População: %d Empatou!\n", (int)valorJogador);
+                printf("1- Populacao: %d Empatou!\n", (int)valorJogador);
             }
             break;
         case 2:
         printf("\n### - CARTA JOGADOR (%s) - ###\n", cod);
         printf("Cidade: %s\n", cidade);
         if (valorJogador > valorCPU) {
-            printf("2- Área: %.3f Venceu! \n", (float)valorJogador); 
+            printf("2- Area: %.3f Venceu! \n", (float)valorJogador); 
         } else if (valorJogador < valorCPU) {
-            printf("2- Área: %.3f Perdeu! \n", (float)valorJogador);
+            printf("2- Area: %.3f Perdeu! \n", (float)valorJogador);
         } else {
-            printf("2- Área: %.3f Empatou! \n", (float)valorJogador);
+            printf("2- Area: %.3f Empatou! \n", (float)valorJogador);
         }
            break;
         case 3:
@@ -286,34 +286,24 @@ int main() {
         printf("\n### - CARTA JOGADOR (%s) - ###\n", cod);
         printf("Cidade: %s\n", cidade);
         if (valorJogador > valorCPU) {
-            printf("4- Pontos Turísticos: %d Venceu! \n", (int)valorJogador);
+            printf("4- Pontos Turisticos: %d Venceu! \n", (int)valorJogador);
         } else if (valorJogador < valorCPU) {
-            printf("4- Pontos Turísticos: %d Perdeu!! \n", (int)valorJogador);
+            printf("4- Pontos Turisticos: %d Perdeu!! \n", (int)valorJogador);
         } else {
-            printf("4- Pontos Turísticos: %d Empatou! \n", (int)valorJogador);  
+            printf("4- Pontos Turisticos: %d Empatou! \n", (int)valorJogador);  
         }
             break;
         case 5:
         printf("\n### - CARTA JOGADOR (%s) - ###\n", cod);
         printf("Cidade: %s\n", cidade);
-        if (atributo == 5) {
             // Regra invertida para a densidade populacional
-            if (valorJogador < valorCPU) {
-                printf("5- Densidade Populacional: %.2f Venceu! \n", (float)valorJogador);                
-            } else if (valorJogador > valorCPU) {
-                printf("5- Densidade Populacional: %.2f Perdeu! \n", (float)valorJogador); 
-            } else {
-                printf("5- Densidade Populacional: %.2f Empatou! \n", (float)valorJogador); 
-            }
+        if (valorJogador < valorCPU) {
+            printf("5- Densidade Populacional: %.2f Venceu! \n", (float)valorJogador);                
+        } else if (valorJogador > valorCPU) {
+            printf("5- Densidade Populacional: %.2f Perdeu! \n", (float)valorJogador); 
         } else {
-            if (valorJogador > valorCPU) {
-                printf("5- Densidade Populacional: %.2f Venceu! \n", (float)valorJogador); 
-            } else if (valorJogador < valorCPU) {
-                printf("5- Densidade Populacional: %.2f Perdeu!! \n", (float)valorJogador);
-            } else {
-                printf("5- Densidade Populacional: %.2f Empatou! \n", (float)valorJogador);
-            }
-        } 
+            printf("5- Densidade Populacional: %.2f Empatou! \n", (float)valorJogador); 
+        }
             break;
         case 6:
         printf("\n### - CARTA JOGADOR (%s) - ###\n", cod);
@@ -338,27 +328,27 @@ int main() {
         }
             break;
         default:
-        printf("Desculpe, não temos esse Atributo!\n");
+        printf("Desculpe, nao temos esse Atributo!\n");
             return 0;
     }
         //ATRIBUTO 2
         switch (escplayer3) {
             case 1:
                 if (valorJogador1 > valorCPU1) {
-                    printf("1- População: %d Venceu! \n", (int)valorJogador1);
+                    printf("1- Populaçao: %d Venceu! \n", (int)valorJogador1);
                 } else if (valorJogador1 < valorCPU1) {
-                    printf("1- População: %d Perdeu!! \n", (int)valorJogador1);
+                    printf("1- Populaçao: %d Perdeu!! \n", (int)valorJogador1);
                 } else {
-                    printf("1- População: %d Empatou!\n", (int)valorJogador1);
+                    printf("1- Populaçao: %d Empatou!\n", (int)valorJogador1);
                 }
                 break;
             case 2:
             if (valorJogador1 > valorCPU1) {
-                printf("2- Área: %.3f Venceu! \n", (float)valorJogador1); 
+                printf("2- Area: %.3f Venceu! \n", (float)valorJogador1); 
             } else if (valorJogador1 < valorCPU1) {
-                printf("2- Área: %.3f Perdeu! \n", (float)valorJogador1);
+                printf("2- Area: %.3f Perdeu! \n", (float)valorJogador1);
             } else {
-                printf("2- Área: %.3f Empatou! \n", (float)valorJogador1);
+                printf("2- Area: %.3f Empatou! \n", (float)valorJogador1);
             }
                 break;
             case 3:
@@ -372,15 +362,14 @@ int main() {
                 break;
             case 4:
             if (valorJogador1 > valorCPU1) {
-                printf("4- Pontos Turísticos: %d Venceu! \n", (int)valorJogador1);
+                printf("4- Pontos Turisticos: %d Venceu! \n", (int)valorJogador1);
             } else if (valorJogador1 < valorCPU1) {
-                printf("4- Pontos Turísticos: %d Perdeu!! \n", (int)valorJogador1);
+                printf("4- Pontos Turisticos: %d Perdeu!! \n", (int)valorJogador1);
             } else {
-                printf("4- Pontos Turísticos: %d Empatou! \n", (int)valorJogador1);  
+                printf("4- Pontos Turisticos: %d Empatou! \n", (int)valorJogador1);  
             }
                 break;
             case 5:
-            if (atributo == 5) {
                 // Regra invertida para a densidade populacional
                 if (valorJogador1 < valorCPU1) {
                     printf("5- Densidade Populacional: %.2f Venceu! \n", (float)valorJogador1);                
@@ -389,15 +378,6 @@ int main() {
                 } else {
                     printf("5- Densidade Populacional: %.2f Empatou! \n", (float)valorJogador1); 
                 }
-            } else {
-                if (valorJogador1 > valorCPU1) {
-                    printf("5- Densidade Populacional: %.2f Venceu! \n", (float)valorJogador1); 
-                } else if (valorJogador1 < valorCPU1) {
-                    printf("5- Densidade Populacional: %.2f Perdeu!! \n", (float)valorJogador1);
-                } else {
-                    printf("5- Densidade Populacional: %.2f Empatou! \n", (float)valorJogador1);
-                }
-            } 
                 break;
             case 6:
             if (valorJogador1 > valorCPU1) {
@@ -418,7 +398,7 @@ int main() {
             }
                 break;
             default:
-            printf("Desculpe, não temos esse Atributo!\n");
+            printf("Desculpe, nao temos esse Atributo!\n");
                 return 0;
             }
             //Soma dos atributos
@@ -434,22 +414,22 @@ int main() {
         printf("\n### - CARTA CPU (%s) - ###\n", cod1);
         printf("Cidade: %s\n", cidade1);
             if (valorJogador > valorCPU) {
-                printf("1- População: %d Perdeu! \n", (int)valorCPU);
+                printf("1- Populacao: %d Perdeu! \n", (int)valorCPU);
             } else if (valorJogador < valorCPU) {
-                printf("1- População: %d Venceu! \n", (int)valorCPU);
+                printf("1- Populacao: %d Venceu! \n", (int)valorCPU);
             } else {
-                printf("1- População: %d Empatou!\n", (int)valorCPU);
+                printf("1- Populacao: %d Empatou!\n", (int)valorCPU);
             }
             break;
         case 2:
         printf("\n### - CARTA CPU (%s) - ###\n", cod1);
         printf("Cidade: %s\n", cidade1);
         if (valorJogador > valorCPU) {
-            printf("2- Área: %.3f Perdeu! \n", (float)valorCPU); 
+            printf("2- Area: %.3f Perdeu! \n", (float)valorCPU); 
         } else if (valorJogador < valorCPU) {
-            printf("2- Área: %.3f Venceu! \n", (float)valorCPU);
+            printf("2- Area: %.3f Venceu! \n", (float)valorCPU);
         } else {
-            printf("2- Área: %.3f Empatou! \n", (float)valorCPU);
+            printf("2- Area: %.3f Empatou! \n", (float)valorCPU);
         }
             break;
         case 3:
@@ -467,35 +447,24 @@ int main() {
         printf("\n### - CARTA CPU (%s) - ###\n", cod1);
         printf("Cidade: %s\n", cidade1);
         if (valorJogador > valorCPU) {
-            printf("4- Pontos Turísticos: %d Perdeu! \n", (int)valorCPU);
+            printf("4- Pontos Turisticos: %d Perdeu! \n", (int)valorCPU);
         } else if (valorJogador < valorCPU) {
-            printf("4- Pontos Turísticos: %d Venceu! \n", (int)valorCPU);
+            printf("4- Pontos Turisticos: %d Venceu! \n", (int)valorCPU);
         } else {
-            printf("4- Pontos Turísticos: %d Empatou! \n", (int)valorCPU);  
+            printf("4- Pontos Turisticos: %d Empatou! \n", (int)valorCPU);  
         }         
             break;
         case 5:
         printf("\n### - CARTA CPU (%s) - ###\n", cod1);
         printf("Cidade: %s\n", cidade1);
-        if (atributo == 5) {
-            // Regra invertida para a densidade populacional
-            if (valorJogador < valorCPU) {
-                printf("5- Densidade Populacional: %.2f Perdeu! \n", (float)valorCPU);                
-            } else if (valorJogador > valorCPU) {
-                printf("5- Densidade Populacional: %.2f Venceu! \n", (float)valorCPU); 
-            } else {
-                printf("5- Densidade Populacional: %.2f Empatou! \n", (float)valorCPU); 
-            }
+        // Regra invertida para a densidade populacional
+        if (valorJogador < valorCPU) {
+            printf("5- Densidade Populacional: %.2f Perdeu! \n", (float)valorCPU);                
+        } else if (valorJogador > valorCPU) {
+            printf("5- Densidade Populacional: %.2f Venceu! \n", (float)valorCPU); 
         } else {
-            if (valorJogador > valorCPU) {
-                printf("5- Densidade Populacional: %.2f Perdeu! \n", (float)valorCPU); 
-            } else if (valorJogador < valorCPU) {
-                printf("5- Densidade Populacional: %.2f Venceu! \n", (float)valorCPU);
-            } else {
-                printf("5- Densidade Populacional: %.2f Empatou! \n", (float)valorCPU);
-            }
-        } 
-            break;
+            printf("5- Densidade Populacional: %.2f Empatou! \n", (float)valorCPU); 
+        }            break;
         case 6:
         printf("\n### - CARTA CPU (%s) - ###\n", cod1);
         printf("Cidade: %s\n", cidade1);
@@ -519,7 +488,7 @@ int main() {
         }
             break;
         default:
-        printf("Desculpe, não temos esse Atributo!\n");
+        printf("Desculpe, nao temos esse Atributo!\n");
             return 0;
         }
 
@@ -527,20 +496,20 @@ int main() {
     switch (esccpu3) {
         case 1:
         if (valorJogador1 > valorCPU1) {
-            printf("1- População: %d Perdeu! \n", (int)valorCPU1);
+            printf("1- Populacao: %d Perdeu! \n", (int)valorCPU1);
         } else if (valorJogador1 < valorCPU1) {
-            printf("1- População: %d Venceu! \n", (int)valorCPU1);
+            printf("1- Populacao: %d Venceu! \n", (int)valorCPU1);
         } else {
-            printf("1- População: %d Empatou!\n", (int)valorCPU1);
+            printf("1- Populacao: %d Empatou!\n", (int)valorCPU1);
         }
             break;
         case 2:
         if (valorJogador1 > valorCPU1) {
-            printf("2- Área: %.3f Perdeu! \n", (float)valorCPU1); 
+            printf("2- Area: %.3f Perdeu! \n", (float)valorCPU1); 
         } else if (valorJogador1 < valorCPU1) {
-            printf("2- Área: %.3f Venceu! \n", (float)valorCPU1);
+            printf("2- Area: %.3f Venceu! \n", (float)valorCPU1);
         } else {
-            printf("2- Área: %.3f Empatou! \n", (float)valorCPU1);
+            printf("2- Area: %.3f Empatou! \n", (float)valorCPU1);
         }
             break;
         case 3:
@@ -554,32 +523,22 @@ int main() {
             break;
         case 4:
            if (valorJogador1 > valorCPU1) {
-                printf("4- Pontos Turísticos: %d Perdeu! \n", (int)valorCPU1);
+                printf("4- Pontos Turisticos: %d Perdeu! \n", (int)valorCPU1);
             } else if (valorJogador1 < valorCPU1) {
-                printf("4- Pontos Turísticos: %d Venceu! \n", (int)valorCPU1);
+                printf("4- Pontos Turisticos: %d Venceu! \n", (int)valorCPU1);
             } else {
-                printf("4- Pontos Turísticos: %d Empatou! \n", (int)valorCPU1);  
+                printf("4- Pontos Turisticos: %d Empatou! \n", (int)valorCPU1);  
             }
             break;
         case 5:
-        if (atributo == 5) {
-            // Regra invertida para a densidade populacional
-            if (valorJogador1 < valorCPU1) {
-                printf("5- Densidade Populacional: %.2f Perdeu! \n", (float)valorCPU1);                
-            } else if (valorJogador1 > valorCPU1) {
-                printf("5- Densidade Populacional: %.2f Venceu! \n", (float)valorCPU1); 
-            } else {
-                printf("5- Densidade Populacional: %.2f Empatou! \n", (float)valorCPU1); 
-            }
+        // Regra invertida para a densidade populacional
+        if (valorJogador1 < valorCPU1) {
+            printf("5- Densidade Populacional: %.2f Perdeu! \n", (float)valorCPU1);                
+        } else if (valorJogador1 > valorCPU1) {
+            printf("5- Densidade Populacional: %.2f Venceu! \n", (float)valorCPU1); 
         } else {
-            if (valorJogador1 > valorCPU1) {
-                printf("5- Densidade Populacional: %.2f Perdeu! \n", (float)valorCPU1); 
-            } else if (valorJogador1 < valorCPU1) {
-                printf("5- Densidade Populacional: %.2f Venceu! \n", (float)valorCPU1);
-            } else {
-                printf("5- Densidade Populacional: %.2f Empatou! \n", (float)valorCPU1);
-            }
-        } 
+            printf("5- Densidade Populacional: %.2f Empatou! \n", (float)valorCPU1); 
+        }
             break;
         case 6:
         if (valorJogador1 > valorCPU1) {
@@ -600,7 +559,7 @@ int main() {
         }
             break;
         default:
-        printf("Desculpe, não temos esse Atributo!\n");
+        printf("Desculpe, nao temos esse Atributo!\n");
             return 0;
         }
 
