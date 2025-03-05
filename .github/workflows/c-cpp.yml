@@ -8,11 +8,15 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
+    - name: Configure Git
+      run: |
+        git config --global --add safe.directory /home/runner/work/${{ github.repository }}
+        git config --global --unset-all core.sshCommand || true
+        git config --global --unset-all http.https://github.com/.extraheader || true
     - name: configure
       run: ./configure
     - name: make
