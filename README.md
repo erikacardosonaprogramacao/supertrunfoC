@@ -1,94 +1,64 @@
-# Desafio Super Trunfo - Países - Cadastro das Cartas - Atualizado: 21/02
+Como Jogar o Jogo de Cartas das Cidades
+Bem-vindo ao Jogo de Cartas das Cidades! Neste jogo, você vai competir contra o computador usando cartas que representam cidades, comparando seus atributos para determinar o vencedor. Aqui está um guia passo a passo para jogar, começando pelo menu principal:
 
-Bem-vindo ao desafio "Super Trunfo - Países"! No jogo Super Trunfo, os jogadores comparam os atributos das cartas para determinar a mais forte. O tema deste Super Trunfo é "Países", onde você comparará os atributos das cidades.
+1. Menu Principal
+Ao iniciar o jogo, você verá o Menu Principal com três opções:
 
-A empresa MateCheck contratou você para desenvolver a parte inicial do jogo, que consiste no cadastro das cartas.
+1 - Jogar: Escolha esta opção para começar uma partida contra o computador.
+2 - Regras do Jogo: Selecione esta opção para ler as regras e entender como o jogo funciona (recomendado para novos jogadores).
+3 - Desistir: Escolha esta opção para sair do jogo.
+Digite o número correspondente à sua escolha (1, 2 ou 3) e pressione Enter.
 
-O desafio está dividido em três níveis: Novato, Aventureiro e Mestre, com cada nível adicionando mais complexidade ao anterior.  **Você deve escolher qual desafio quer realizar.**
+Se escolher 1: O jogo começará, e você seguirá para a próxima etapa.
+Se escolher 2: Você verá o texto: "A regra geral é: vence a carta com o maior valor no atributo escolhido. Porém, para a Densidade Populacional, a regra inverte: vence a carta com o menor valor." Após ler, o jogo retorna ao menu.
+Se escolher 3: O jogo termina com a mensagem "Obrigado por jogar!".
+2. Escolhendo Sua Carta
+Ao selecionar "Jogar", você será levado à tela de escolha de cartas. Duas cartas estarão disponíveis:
 
-🚨 **Atenção:** O nível Novato do desafio é focado apenas no cadastro das cartas, utilizando as funções `scanf` para ler os dados e `printf` para exibi-los.
+1 - B01 (Bauru): Uma cidade com seus próprios atributos.
+2 - B02 (Arealva): Outra cidade com atributos diferentes.
+Digite 1 ou 2 para escolher sua carta:
 
-## 🎮 Nível Novato: Cadastro Básico
+A carta que você escolher será a sua para a rodada.
+O computador automaticamente ficará com a outra carta.
+Após a escolha, o jogo exibirá os detalhes completos de ambas as cartas:
 
-No nível Novato, você iniciará criando o sistema básico do jogo Super Trunfo com o tema "Países". As cartas serão divididas por estados, cada um com quatro cidades.  Imagine um país dividido em oito estados (A a H), e cada estado com quatro cidades (1 a 4).  A combinação forma o código da carta (ex: A01, B02).
+Carta do Jogador: Mostra os atributos da sua carta.
+Carta do Computador: Mostra os atributos da carta do CPU.
+3. Selecionando os Atributos
+Cada carta tem 7 atributos que podem ser comparados:
 
-🚩 **Objetivo:** Criar um programa em C que cadastra **duas** cartas com os seguintes atributos:
+População: Número de habitantes da cidade.
+Área: Tamanho em quilômetros quadrados.
+PIB: Produto Interno Bruto da cidade (em reais).
+Pontos Turísticos: Quantidade de atrações turísticas.
+Densidade Populacional: População dividida pela área (habitantes por km²).
+PIB per Capita: PIB dividido pela população (renda média por habitante).
+Super Poder: Uma soma especial de vários atributos.
+Você deverá escolher dois atributos para competir:
 
-*   População (`int`)
-*   Área (`float`)
-*   PIB (`float`)
-*   Número de pontos turísticos (`int`)
+Primeiro, digite o número (1 a 7) do primeiro atributo que deseja usar.
+Em seguida, digite o número (1 a 7) do segundo atributo. (Nota: Não pode ser o mesmo do primeiro!)
+O computador usará os mesmos atributos que você escolheu para comparar com sua carta.
 
-⚙️ **Funcionalidades do Sistema:**
+4. Regras de Vitória
+Regra Geral: Para a maioria dos atributos (1, 2, 3, 4, 6, 7), o maior valor vence. Ou seja, se o valor da sua carta for maior que o do computador, você ganha naquele atributo.
+Exceção - Densidade Populacional (5): Aqui a regra é invertida — o menor valor vence. Se sua densidade populacional for menor que a do computador, você ganha nesse atributo.
+Soma Final: Após comparar os dois atributos, o jogo soma os valores dos atributos escolhidos para cada carta. A carta com a maior soma total é declarada a vencedora da rodada.
+5. Resultados
+O jogo exibirá os resultados detalhados:
 
-*   O sistema permitirá ao usuário cadastrar os dados de **duas** cartas manualmente via terminal.
-*   Após o cadastro, o sistema exibirá os dados de cada cidade de forma organizada.
+Para cada atributo escolhido, você verá:
+O valor da sua carta e se ela "Venceu!", "Perdeu!" ou "Empatou!".
+O valor da carta do computador com o resultado oposto.
+A soma dos dois atributos será mostrada para sua carta e para a carta do computador.
+Por fim, o jogo anuncia o Vencedor da Rodada com o código da carta vencedora (ex.: "Carta: B01").
+6. Fim da Partida
+Após exibir o vencedor, o jogo termina. Você pode reiniciá-lo para jogar novamente e testar diferentes combinações de cartas e atributos!
 
-📥 **Entrada** e 📤 **Saída de Dados:**
-
-*   O usuário insere os dados de cada carta interativamente via `scanf`.
-*   O programa exibe os dados cadastrados usando `printf`, com cada atributo em uma nova linha.
-
-**Simplificações para o Nível Novato:**
-
-*   Cadastre apenas **duas** cartas.
-*   Concentre-se na leitura, armazenamento e exibição. Não implemente comparações ou outros recursos.
-*   **Não use** laços (`for`, `while`) ou condicionais (`if`, `else`).
-
-
-## 🛡️ Nível Aventureiro: Cálculo de Atributos
-
-No nível Aventureiro, você expandirá o sistema para incluir o cálculo de dois novos atributos: Densidade Populacional e PIB per Capita.
-
-🆕 **Diferença em relação ao Nível Novato:**
-
-*   **Novos Atributos:**
-    *   Densidade Populacional: População / Área (`float`)
-    *   PIB per Capita: PIB / População (`float`)
-
-⚙️ **Funcionalidades do Sistema:**
-
-*   O sistema calculará automaticamente a Densidade Populacional e o PIB per Capita.
-*   Os novos atributos serão exibidos junto com os demais.
-
-📥 **Entrada** e 📤 **Saída de Dados:**
-
-*   Mesma entrada do nível Novato.
-*   A saída exibirá também os atributos calculados.
-
-**Simplificações para o Nível Intermediário:**
-
-*   Continue cadastrando apenas **duas** cartas.
-*   Continue **sem usar** laços (`for`, `while`) ou condicionais (`if`, `else`).
-
-
-
-## 🏆 Nível Mestre: Comparação e Super Poder
-
-No nível Mestre, você implementará a comparação entre duas cartas e o cálculo do "Super Poder".
-
-🆕 **Diferença em relação ao Nível Aventureiro:**
-
-*   **Comparação de Cartas:** O usuário poderá comparar as duas cartas.
-*   **Super Poder:** Soma de todos os atributos (inclusive os calculados), com a densidade populacional *invertida* antes da soma (1/densidade).  Tipo: `float`.
-
-⚙️ **Funcionalidades do Sistema:**
-
-*   Comparação atributo a atributo, mostrando qual carta venceu (1 se a Carta 1 vence, 0 se a Carta 2 vence).
-*   Para Densidade Populacional, vence a carta com o *menor* valor.
-*   Para os demais atributos (e o Super Poder), vence a carta com o *maior* valor.
-
-📥 **Entrada** e 📤 **Saída de Dados:**
-
-*   Mesma entrada dos níveis anteriores, mas a População agora é `unsigned long int`.
-*   A saída mostrará o resultado da comparação para cada atributo e o Super Poder.
-
-**Observação:**  Preste atenção à conversão de tipos ao calcular o Super Poder!
-
-
-## 🏁 Conclusão
-
-Ao concluir qualquer um dos níveis, você terá dado um passo importante no desenvolvimento do Super Trunfo - Países. Boa sorte e divirta-se programando!
-
-Equipe de Ensino - MateCheck
-content_copy
+Dicas para Jogar
+Conheça as Cartas: Antes de escolher, observe os atributos exibidos. Por exemplo, Bauru tem uma população maior, enquanto Arealva pode se destacar em outros aspectos.
+Estratégia: Se você acha que sua carta é forte em um atributo como PIB ou Super Poder, escolha-o. Mas se a Densidade Populacional for baixa, pode ser uma boa aposta!
+Experimente: Tente diferentes combinações de atributos para descobrir qual funciona melhor contra o computador.
+Divirta-se jogando e boa sorte na competição entre as cidades!
+Espero que esse texto esteja claro e útil! Se quiser ajustar algo ou adicionar mais detalhes, é só me avisar.
