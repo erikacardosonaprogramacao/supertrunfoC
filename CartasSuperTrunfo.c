@@ -1,17 +1,13 @@
 #include <stdio.h>
 #include <string.h>
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-
 int main(){
 
     // declarando variaveis para a primeira cidade
     char state1, cardCode1[5], cityName1[30];
     int populationCity1, turistsPointCity1;
-    float kilometersAreaCity1, pibCity1;
+    float kilometersAreaCity1, populationDensityCity1, PIBperCapitaCity1;
+    double PIBCity1;
 
     printf("Informe os dados da primeira carta:\n");
     printf("Digite a letra do estado (A-H): \n");
@@ -33,7 +29,7 @@ int main(){
     scanf("%f", &kilometersAreaCity1);
 
     printf("Digite o PIB da cidade: \n");
-    scanf("%f", &pibCity1);
+    scanf("%lf", &PIBCity1);
 
     printf("Digite número de pontos turisticos da cidade: \n");
     scanf("%d", &turistsPointCity1);
@@ -43,7 +39,8 @@ int main(){
     // declarando variáveis para a segunda cidade
     char state2, cardCode2[5], cityName2[30];
     int populationCity2, turistsPointCity2;
-    float kilometersAreaCity2, pibCity2;
+    float kilometersAreaCity2, populationDensityCity2, PIBperCapitaCity2;
+    double PIBCity2;
 
     printf("Informe os dados da segunda carta:\n");
     printf("Digite a letra do estado (A-H): \n");
@@ -65,7 +62,7 @@ int main(){
     scanf("%f", &kilometersAreaCity2);
 
     printf("Digite o PIB da cidade: \n");
-    scanf("%f", &pibCity2);
+    scanf("%lf", &PIBCity2);
 
     printf("Digite número de pontos turisticos da cidade: \n");
     scanf("%d", &turistsPointCity2);
@@ -78,8 +75,14 @@ int main(){
     printf("Nome da Cidade: %s\n", cityName1);
     printf("População: %d\n", populationCity1);
     printf("Área: %.2f km²\n", kilometersAreaCity1);
-    printf("PIB: %.2f bilhões de reais\n", pibCity1);
+    printf("PIB: %.2lf bilhões de reais\n", PIBCity1 / 1e9);
     printf("Número de Pontos Turísticos: %d\n", turistsPointCity1);
+
+    populationDensityCity1 = (float)populationCity1 / kilometersAreaCity1;
+    printf("Densidade Populacional: %.2f hab/km²\n", populationDensityCity1);
+
+    PIBperCapitaCity1 = PIBCity1 / (float)populationCity1;
+    printf("PIB per Capita: %.2f reais\n", PIBperCapitaCity1);
 
     // retornando as informações inseridas pelo usuário sobre a segunda cidade
     printf("Carta 2: \n");
@@ -88,8 +91,14 @@ int main(){
     printf("Nome da Cidade: %s\n", cityName2);
     printf("População: %d\n", populationCity2);
     printf("Área: %.2f km²\n", kilometersAreaCity2);
-    printf("PIB: %.2f bilhões de reais\n", pibCity2);
+    printf("PIB: %.2lf bilhões de reais\n", PIBCity2 / 1e9);
     printf("Número de Pontos Turísticos: %d\n", turistsPointCity2);
+
+    populationDensityCity2 = (float)populationCity2 / kilometersAreaCity2;
+    printf("Densidade Populacional: %.2f hab/km²\n", populationDensityCity2);
+
+    PIBperCapitaCity2 = PIBCity2 / (float)populationCity2;
+    printf("PIB per Capita: %.2f reais\n", PIBperCapitaCity2);
 
     return 0;
 }
