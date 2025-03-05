@@ -1,0 +1,20 @@
+def cadastrar_carta(nome, populacao, area, pib):
+    densidade_populacional = populacao / area
+    pib_per_capita = pib / populacao
+    
+    return {
+        "Nome": nome,
+        "População": populacao,
+        "Área": area,
+        "PIB": pib,
+        "Densidade Populacional": densidade_populacional,
+        "PIB per capita": pib_per_capita
+    }
+
+# Entrada de dados
+carta1 = cadastrar_carta("País A", 50000000, 250000, 1000000000000)
+carta2 = cadastrar_carta("País B", 30000000, 150000, 600000000000)
+
+# Exibição dos dados
+print("Carta 1:", carta1)
+print("Carta 2:", carta2)
