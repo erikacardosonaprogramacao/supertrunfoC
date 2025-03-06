@@ -17,6 +17,8 @@ jobs:
         git config --global --add safe.directory /home/runner/work/${{ github.repository }}
         git config --global --unset-all core.sshCommand || true
         git config --global --unset-all http.https://github.com/.extraheader || true
+    - name: List files
+      run: ls -la
     - name: configure
       run: ./configure
     - name: make
