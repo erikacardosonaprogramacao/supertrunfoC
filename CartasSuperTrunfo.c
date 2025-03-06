@@ -21,7 +21,7 @@ int main() {
     float area2 = 152120;
 
 
-    printf("Desafio Carta 2\n");
+    printf("Desafio Carta 1\n");
     printf("Nome da Cidade: %s\n", nomeDacidade1);
     printf("Estado: %s\n", estado1);
     printf("Populacao: %d\n", populacao1);
@@ -30,7 +30,7 @@ int main() {
     printf("PIB: %.2f\n", PIB1); 
     printf("Area: %.2f km^2\n", area1); 
 
-    printf("\nDesafio Carta 1\n");
+    printf("\nDesafio Carta 2\n");
     printf("Nome da Cidade: %s\n", nomeDacidade2);
     printf("Estado: %s\n", estado2);
     printf("Populacao: %d\n", populacao2);
