@@ -46,21 +46,21 @@ void compararCartas(Carta c1, Carta c2) {
         valorC1 = calcularPIBperCapita(c1.pib, c1.populacao);
         valorC2 = calcularPIBperCapita(c2.pib, c2.populacao);
     } else {
-        printf("❌ Erro: Atributo desconhecido para comparação!\n");
+        printf("Erro: Atributo desconhecido para comparação!\n");
         return;
     }
 
     // Determinar a carta vencedora
-    printf("\n🔍 Comparação de cartas (Atributo: %s):\n", atributoEscolhido);
-    printf("\nCarta 1 - %s (%s): %.2f", c1.nome, c1.estado, valorC1);
-    printf("\nCarta 2 - %s (%s): %.2f", c2.nome, c2.estado, valorC2);
+    printf("\n Comparação de cartas (Atributo: %s):\n", atributoEscolhido);
+    printf("\n Carta 1 - %s (%s): %.2f", c1.nome, c1.estado, valorC1);
+    printf("\n Carta 2 - %s (%s): %.2f", c2.nome, c2.estado, valorC2);
 
     if ((criterio == 1 && valorC1 > valorC2) || (criterio == -1 && valorC1 < valorC2)) {
-        printf("\n🏆 Resultado: Carta 1 (%s) venceu!\n", c1.nome);
+        printf("\n Resultado: Carta 1 (%s) venceu!\n", c1.nome);
     } else if (valorC1 == valorC2) {
-        printf("\n⚖️ Resultado: Empate!\n");
+        printf("\n Resultado: Empate!\n");
     } else {
-        printf("\n🏆 Resultado: Carta 2 (%s) venceu!\n", c2.nome);
+        printf("\n Resultado: Carta 2 (%s) venceu!\n", c2.nome);
     }
 }
 
@@ -71,8 +71,8 @@ int main() {
     Carta carta2 = {"RJ", "A02", "Rio de Janeiro", 6710000, 1200.0, 415.26, 120};
 
     // Exibir os detalhes das cartas
-    printf("🔹 Carta 1: %s (%s)\n", carta1.nome, carta1.estado);
-    printf("🔹 Carta 2: %s (%s)\n", carta2.nome, carta2.estado);
+    printf(" Carta 1: %s (%s)\n", carta1.nome, carta1.estado);
+    printf(" Carta 2: %s (%s)\n", carta2.nome, carta2.estado);
 
     // Chamar a função para comparar as cartas
     compararCartas(carta1, carta2);
