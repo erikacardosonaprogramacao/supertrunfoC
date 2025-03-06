@@ -2,42 +2,107 @@
 
 
 int main() {
-
-    int populacao1 = 2003000; 
-    int pontosTuristico1 = 30; 
-    char estado1[50] = "Amazonas"; 
-    char codigoDacarta1[50] = "A02"; 
-    char nomeDacidade1[50] = "Manaus"; 
-    float PIB1 = 103000000; 
-    float area1 = 11401.092;
-
-
-    int populacao2 = 11451999; 
-    int pontosTuristico2 = 30; 
-    char estado2[50] = "São Paulo"; 
-    char codigoDacarta2[50] = "A02"; 
-    char nomeDacidade2[50] = "São Paulo"; 
-    float PIB2 = 103000000; 
-    float area2 = 152120;
+    
+    
+ //Variáveis Carta 1
+ int pontos_turisticos;
+ int populacao;
+ float pib;
+ float area;
+ char nome[30];
+ char codigo[10];
+ char estado[10];
 
 
-    printf("Desafio Carta 1\n");
-    printf("Nome da Cidade: %s\n", nomeDacidade1);
-    printf("Estado: %s\n", estado1);
-    printf("Populacao: %d\n", populacao1);
-    printf("Pontos Turisticos: %d\n", pontosTuristico1);
-    printf("Codigo da Carta: %s\n", codigoDacarta1); 
-    printf("PIB: %.2f\n", PIB1); 
-    printf("Area: %.2f km^2\n", area1); 
+ //Variáveis Carta 2
 
-    printf("\nDesafio Carta 2\n");
-    printf("Nome da Cidade: %s\n", nomeDacidade2);
-    printf("Estado: %s\n", estado2);
-    printf("Populacao: %d\n", populacao2);
-    printf("Pontos Turisticos: %d\n", pontosTuristico2);
-    printf("Codigo da Carta: %s\n", codigoDacarta2); 
-    printf("PIB: %.2f\n", PIB2); 
-    printf("Area: %.2f km^2\n", area2); 
 
-    return 0;
+ int populacao2;
+ int pontos_turistico2; 
+ char estado2[10]; 
+ char codigo2[10]; 
+ char nome2[10]; 
+ float pib2; 
+ float area2;
+
+ // Dados da primeira carta, Cadastro 
+
+
+ printf("Vamos cadastrar a primeira carta, digite o codigo da carta 1: ");
+ scanf ("%s", &codigo);
+
+ printf("Qual o nome da cidade da carta 1: ");
+ scanf ("%s", &nome);
+
+ printf("Qual o nome do estado da carta 1: ");
+ scanf ("%s", &estado);
+
+ printf ("Qual a população da primeira carta: ");
+ scanf ("%f", &area);
+
+ printf("Qual o pib : ");
+ scanf("%f", &pib);
+
+ printf("Qual a quantidade de pontos turisticos carta 1: ");
+ scanf("%d", &pontos_turisticos);
+
+ // Cadastro da segunda carta 
+
+ printf("Vamos cadastrar a segunda carta, digite o codigo da carta 2: ");
+ scanf("%s", &codigo2);
+
+ printf("Qual o nome da cidade da carta 2: ");
+ scanf("%s", &nome2);
+
+ printf("Qual a população da segunda carta: ");
+ scanf("%d", &populacao2);
+
+ printf("Qual a area da segunda carta: ");
+ scanf("%f", &area2);
+
+ printf("Qual o pib da segunda carta: ");
+ scanf("%f", &pib2);
+
+ printf("Qual a quantidade de pontos turisticos da segunda carta: ");
+ scanf("%d", &pontos_turistico2);
+
+
+
+ // Impressão da carta 1
+
+ printf("Carta 1\n");
+
+ printf("Codigo da carta 1: %s\n", codigo);
+
+ printf("Cidade da carta 1 %s\n", nome);
+
+ printf("Populacao da carta 1: %.d\n", populacao);
+
+ printf("Area da carta 1: %f\n", area); 
+
+ printf("PIB da carta 1: %.2f\n", pib);
+
+ printf("Pontos turisticos da carta 1: %d\n", pontos_turisticos);
+
+// Impressão da carta 2
+
+ printf("Carta 2\n");
+
+ printf("Codigo da carta 2 %s\n", codigo2);
+
+ printf("Cidade da carta 2 %s\n", nome2);
+
+ printf("Populacao da carta 2: %d\n", populacao2);
+
+ printf("Area da carta 2: %f\n", area2);
+
+ printf("PIB da carta 2: %.2f\n", pib2);
+
+ printf("Pontos turisticos da carta 2: %d\n",pontos_turistico2;);
+
+
+
+
+
+ return 0;
 }
