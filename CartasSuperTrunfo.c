@@ -34,6 +34,9 @@ int main() {
  printf("Qual o nome da cidade da carta 1: ");
  scanf ("%s", &nome);
 
+ printf("Qual a população da primeira carta: ");
+ scanf("%d", &populacao);
+
  printf("Qual o nome do estado da carta 1: ");
  scanf ("%s", &estado);
 
@@ -53,6 +56,9 @@ int main() {
 
  printf("Qual o nome da cidade da carta 2: ");
  scanf("%s", &nome2);
+
+ printf("Qual o nome do estado da carta 2: ");
+ scanf ("%s", &estado2);
 
  printf("Qual a população da segunda carta: ");
  scanf("%d", &populacao2);
