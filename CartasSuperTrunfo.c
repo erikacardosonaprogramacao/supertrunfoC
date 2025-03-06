@@ -40,11 +40,11 @@ int main() {
  printf("Qual o nome do estado da carta 1: ");
  scanf ("%s", &estado);
 
- printf ("Qual a população da primeira carta: ");
+ printf ("Qual a area da primeira carta: ");
  scanf ("%f", &area);
 
- printf("Qual o pib : ");
- scanf("%f", &pib);
+ printf("Qual o pib: ");
+ scanf("%f", &pib); 
 
  printf("Qual a quantidade de pontos turisticos carta 1: ");
  scanf("%d", &pontos_turisticos);
@@ -82,11 +82,11 @@ int main() {
 
  printf("Cidade da carta 1 %s\n", nome);
 
- printf("Populacao da carta 1: %.d\n", populacao);
+ printf("Populacao da carta 1: %d\n", populacao);
 
  printf("Area da carta 1: %f\n", area); 
 
- printf("PIB da carta 1: %.2f\n", pib);
+ printf("pib da carta 1: %.2f\n", pib);
 
  printf("Pontos turisticos da carta 1: %d\n", pontos_turisticos);
 
