@@ -98,7 +98,7 @@ int main() {
 
  printf("PIB da carta 2: %.2f\n", pib2);
 
- printf("Pontos turisticos da carta 2: %d\n",pontos_turistico2;);
+ printf("Pontos turisticos da carta 2: %d\n",pontos_turistico2);
 
 
 
