@@ -1,5 +1,5 @@
 
-name: C/C++ CI
+name: Compilar C no Windows
 
 on:
   push:
@@ -16,16 +16,36 @@ jobs:
       - name: Checkout do repositório
         uses: actions/checkout@v4
 
-      - name: Executar configure no Git Bash
-        shell: bash
+      - name: Listar arquivos para verificar se configure existe
+        run: ls -la
+
+      - name: Instalar MSYS2 e Autotools
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: MINGW64
+          install: >-
+            mingw-w64-x86_64-gcc
+            mingw-w64-x86_64-make
+            autoconf
+            automake
+            libtool
+
+      - name: Gerar o script configure (se necessário)
+        shell: msys2 {0}
+        run: autoreconf -i
+
+      - name: Dar permissão ao configure
+        run: chmod +x configure
+
+      - name: Rodar ./configure
+        shell: msys2 {0}
         run: ./configure
 
-
-      - name: Compilar
+      - name: Compilar código
+        shell: msys2 {0}
         run: make
 
-      - name: Testar
+      - name: Testar código
+        shell: msys2 {0}
         run: make check
 
-      - name: Verificação final
-        run: make distcheck
