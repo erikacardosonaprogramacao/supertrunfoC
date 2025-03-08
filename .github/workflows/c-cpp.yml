@@ -16,8 +16,10 @@ jobs:
       - name: Checkout do repositório
         uses: actions/checkout@v4
 
-      - name: Configurar
+      - name: Executar configure no Git Bash
+        shell: bash
         run: ./configure
+
 
       - name: Compilar
         run: make
