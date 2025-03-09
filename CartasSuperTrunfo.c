@@ -106,6 +106,20 @@ int main() {
     super_poder_1 = (float)populacao1 + area1 + pib1 + (float)pontos_turisticos1 + pib_per_capita_1 + (1 / densidade_populacional_1);
     super_poder_2 = (float)populacao2 + area2 + pib2 + (float)pontos_turisticos2 + pib_per_capita_2 + (1 / densidade_populacional_2);
 
+    // Exibindo o resultado
+    printf("\n********************************************************************\n");
+    printf("-----------|     SUPER TRUNFO - CIDADES - RESULTADO     |-------------\n");
+    printf("********************************************************************\n\n");
+
+    if (super_poder_1 > super_poder_2) {
+        printf("Parabéns, a carta %s%s venceu com Super Poder: %.2f!\n\n", carta_1, codigo_1, super_poder_1);
+    } else if (super_poder_2 > super_poder_1) {
+        printf("Parabéns, a carta %s%s venceu com Super Poder: %.2f!\n\n", carta_2, codigo_2, super_poder_2);
+    } else {
+        printf("Empate! Ambas as cartas têm o mesmo Super Poder: %.2f.\n\n", super_poder_1);
+    }
+    
+
     // Exibindo os resultados da primeira carta
     printf("\n********************************************************************\n");
     printf("--------------| SUPER TRUNFO - CIDADES 1° CARTA EM JOGO|--------------\n");
