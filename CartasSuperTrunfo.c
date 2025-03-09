@@ -18,6 +18,7 @@ int main() {
     float densidade_populacional_1, densidade_populacional_2;
     float pib_per_capita_1, pib_per_capita_2;
     int pontos_turisticos1, pontos_turisticos2;
+    float super_poder_1, super_poder_2;
     char buffer[BUFFER_SIZE];
 
     // Coletando os dados da primeira carta
@@ -102,6 +103,9 @@ int main() {
     pib_per_capita_1 = (pib1 * 1e9) / populacao1;
     pib_per_capita_2 = (pib2 * 1e9) / populacao2;
 
+    super_poder_1 = (float)populacao1 + area1 + pib1 + (float)pontos_turisticos1 + pib_per_capita_1 + (1 / densidade_populacional_1);
+    super_poder_2 = (float)populacao2 + area2 + pib2 + (float)pontos_turisticos2 + pib_per_capita_2 + (1 / densidade_populacional_2);
+
     // Exibindo os resultados da primeira carta
     printf("\n********************************************************************\n");
     printf("--------------| SUPER TRUNFO - CIDADES 1° CARTA EM JOGO|--------------\n");
@@ -116,6 +120,8 @@ int main() {
     printf("PIB: %.2f Bilhões de reais\n", pib1);
     printf("PIB PER CAPTA: %.2f reais\n", pib_per_capita_1);
     printf("NÚMERO DE PONTOS TURISTICOS: %d\n\n", pontos_turisticos1);
+    printf("Super Poder: %.2f\n\n", super_poder_1);
+
 
     // Exibindo os resultados da segunda carta
     printf("\n********************************************************************\n");
@@ -131,6 +137,7 @@ int main() {
     printf("PIB: %.2f Bilhões de reais\n", pib2);
     printf("PIB PER CAPTA: %.2f reais\n", pib_per_capita_2);
     printf("NÚMERO DE PONTOS TURISTICOS: %d\n\n", pontos_turisticos2);
+    printf("Super Poder: %.2f\n\n", super_poder_2);
 
     printf("********************************************************************\n");
     printf("********************************************************************\n\n");
