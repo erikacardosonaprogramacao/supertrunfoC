@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Listar arquivos no diretório
-        run: dir
+        run: dir  # Verifica se o arquivo 'configure' está presente
 
       - name: Instalar MSYS2 e Autotools
         uses: msys2/setup-msys2@v2
@@ -29,6 +29,13 @@ jobs:
             automake
             libtool
 
+      - name: Dar permissão ao script configure
+        run: chmod +x configure
+
+      - name: Rodar ./configure
+        shell: msys2 {0}
+        run: ./configure
+
       - name: Compilar código
         shell: msys2 {0}
         run: make
@@ -36,5 +43,4 @@ jobs:
       - name: Testar código
         shell: msys2 {0}
         run: make check
-
 
