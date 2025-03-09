@@ -29,10 +29,7 @@ jobs:
             automake
             libtool
 
-      - name: Dar permissão ao script configure
-        run: chmod +x configure
-
-      - name: Rodar ./configure
+      - name: Rodar ./configure com MSYS2
         shell: msys2 {0}
         run: ./configure
 
@@ -43,4 +40,3 @@ jobs:
       - name: Testar código
         shell: msys2 {0}
         run: make check
-
