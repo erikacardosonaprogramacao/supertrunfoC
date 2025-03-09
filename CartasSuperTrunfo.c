@@ -1,27 +1,29 @@
-#include <stdio.h> //Entrada e saída de dados.
-#include <string.h> //Manipulação de Strings.
-#include <locale.h> //Suporte para caracteres especiais no padrão (UTF-8) como acentuação.
-#include <stdlib.h> //Definindo o tamanho do buffer para a leitura dos dados.
+#include <stdio.h>
+#include <string.h>
+#include <locale.h>
+#include <stdlib.h>
 
 #define BUFFER_SIZE 256
 
 int main() {
     setlocale(LC_ALL, "pt_BR.UTF-8");
-//Declarando as variaveis do programa.
-    char carta_1[BUFFER_SIZE],carta_2[BUFFER_SIZE];
-    char estado_1[BUFFER_SIZE],estado_2[BUFFER_SIZE];
-    char codigo_1[BUFFER_SIZE],codigo_2[BUFFER_SIZE];
-    char cidade_1[BUFFER_SIZE],cidade_2[BUFFER_SIZE];
-    unsigned long populacao1,populacao2;
-    float area1,area2;
-    float pib1,pib2;
-    int qdt_ponto_turistico1,qdt_ponto_turistico2;
-    char buffer[BUFFER_SIZE]; // Buffer para leitura de entradas numéricas
 
+    // Declarando variáveis
+    char carta_1[BUFFER_SIZE], carta_2[BUFFER_SIZE];
+    char estado_1[BUFFER_SIZE], estado_2[BUFFER_SIZE];
+    char codigo_1[BUFFER_SIZE], codigo_2[BUFFER_SIZE];
+    char cidade_1[BUFFER_SIZE], cidade_2[BUFFER_SIZE];
+    unsigned long populacao1, populacao2;
+    float area1, area2, pib1, pib2;
+    float densidade_populacional_1, densidade_populacional_2;
+    float pib_per_capita_1, pib_per_capita_2;
+    int pontos_turisticos1, pontos_turisticos2;
+    char buffer[BUFFER_SIZE];
+
+    // Coletando os dados da primeira carta
     printf("********************************************************************\n");
     printf("------------------| JOGO SUPER TRUNFO | CIDADES |--------------------\n");
     printf("********************************************************************\n\n");
-    //Coletando as informações da primeira carta.
     printf("JOGADOR 1 | CADASTRO DE CARTA |\n\n");
 
     printf("ESCOLHA UMA LETRA DE [A - H] PARA SUA CARTA: ");
@@ -54,11 +56,11 @@ int main() {
 
     printf("INFORME A QUANTIDADE DE PONTOS TURISTICOS: ");
     fgets(buffer, BUFFER_SIZE, stdin);
-    qdt_ponto_turistico1 = strtol(buffer, NULL, 10);
+    pontos_turisticos1 = strtol(buffer, NULL, 10);
 
+    // Coletando os dados da segunda carta
     printf("********************************************************************\n");
     printf("********************************************************************\n\n");
-    //Coletando as informações da segunda carta.
     printf("JOGADOR 2 | CADASTRO DE CARTA |\n\n");
 
     printf("ESCOLHA UMA LETRA DE [A - H] PARA SUA CARTA: ");
@@ -91,32 +93,44 @@ int main() {
 
     printf("INFORME A QUANTIDADE DE PONTOS TURISTICOS: ");
     fgets(buffer, BUFFER_SIZE, stdin);
-    qdt_ponto_turistico2 = strtol(buffer, NULL, 10);
+    pontos_turisticos2 = strtol(buffer, NULL, 10);
 
-    //Apresentando a primeira carta em jogo.
+    // Calculando densidade populacional e PIB per capita
+    densidade_populacional_1 = populacao1 / area1;
+    densidade_populacional_2 = populacao2 / area2;
+
+    pib_per_capita_1 = (pib1 * 1e9) / populacao1;
+    pib_per_capita_2 = (pib2 * 1e9) / populacao2;
+
+    // Exibindo os resultados da primeira carta
     printf("\n********************************************************************\n");
     printf("--------------| SUPER TRUNFO - CIDADES 1° CARTA EM JOGO|--------------\n");
     printf("********************************************************************\n\n");
 
-    printf("Carta: %s%s\n", carta_1,codigo_1);
+    printf("Carta: %s%s\n", carta_1, codigo_1);
     printf("Estado: %s\n", estado_1);
     printf("Cidade: %s\n", cidade_1);
     printf("População: %lu\n", populacao1);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade_populacional_1);
     printf("Área: %.2f Km²\n", area1);
     printf("PIB: %.2f Bilhões de reais\n", pib1);
-    printf("NÚMERO DE PONTOS TURISTICOS: %d\n\n", qdt_ponto_turistico1);
-    //Apresentando a segunda carta em jogo.
+    printf("PIB PER CAPTA: %.2f reais\n", pib_per_capita_1);
+    printf("NÚMERO DE PONTOS TURISTICOS: %d\n\n", pontos_turisticos1);
+
+    // Exibindo os resultados da segunda carta
     printf("\n********************************************************************\n");
     printf("--------------| SUPER TRUNFO - CIDADES 2° CARTA EM JOGO|--------------\n");
     printf("********************************************************************\n\n");
 
-    printf("Carta: %s%s\n", carta_2,codigo_2);
+    printf("Carta: %s%s\n", carta_2, codigo_2);
     printf("Estado: %s\n", estado_2);
     printf("Cidade: %s\n", cidade_2);
     printf("População: %lu\n", populacao2);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade_populacional_2);
     printf("Área: %.2f Km²\n", area2);
     printf("PIB: %.2f Bilhões de reais\n", pib2);
-    printf("NÚMERO DE PONTOS TURISTICOS: %d\n\n", qdt_ponto_turistico2);
+    printf("PIB PER CAPTA: %.2f reais\n", pib_per_capita_2);
+    printf("NÚMERO DE PONTOS TURISTICOS: %d\n\n", pontos_turisticos2);
 
     printf("********************************************************************\n");
     printf("********************************************************************\n\n");
