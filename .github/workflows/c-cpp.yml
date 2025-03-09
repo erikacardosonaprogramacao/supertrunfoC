@@ -18,7 +18,7 @@ jobs:
       - name: Listar arquivos no diretório
         run: dir
 
-      - name: Instalar MSYS2 e Autotools (se necessário)
+      - name: Instalar MSYS2 e Autotools
         uses: msys2/setup-msys2@v2
         with:
           msystem: MINGW64
@@ -29,10 +29,11 @@ jobs:
             automake
             libtool
 
-      - name: Rodar ./configure (remova se não necessário)
+      - name: Rodar ./configure
         shell: msys2 {0}
         run: ./configure
 
+  
       - name: Compilar código
         shell: msys2 {0}
         run: make
