@@ -29,11 +29,6 @@ jobs:
             automake
             libtool
 
-      - name: Rodar ./configure
-        shell: msys2 {0}
-        run: ./configure
-
-  
       - name: Compilar código
         shell: msys2 {0}
         run: make
