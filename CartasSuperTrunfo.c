@@ -17,7 +17,7 @@ int main() {
     float area1, area2, pib1, pib2;
     float densidade_populacional_1, densidade_populacional_2;
     float pib_per_capita_1, pib_per_capita_2;
-    int pontos_turisticos1, pontos_turisticos2;
+    int pontos_turisticos1, pontos_turisticos2,menu;
     float super_poder_1, super_poder_2;
     char buffer[BUFFER_SIZE];
 
@@ -106,20 +106,131 @@ int main() {
     super_poder_1 = (float)populacao1 + area1 + pib1 + (float)pontos_turisticos1 + pib_per_capita_1 + (1 / densidade_populacional_1);
     super_poder_2 = (float)populacao2 + area2 + pib2 + (float)pontos_turisticos2 + pib_per_capita_2 + (1 / densidade_populacional_2);
 
-    // Exibindo o resultado
-    printf("\n********************************************************************\n");
-    printf("-----------|     SUPER TRUNFO - CIDADES - RESULTADO     |-------------\n");
+    //Exibindo o menu
+    printf("**********************************************************************\n");
+    printf("----------|     SUPER TRUNFO - CIDADES - MODO DE JOGO     |-----------\n");
     printf("********************************************************************\n\n");
+    printf("|MENU ATRIBUTOS|ESCOLHA QUAL ATRIBUTO SERA AVALIADO PARA DETERMINAR O VENCEDOR|\n\n");
+    printf("|ATRIBUTO|1|POPULAÇÃO|\n");
+    printf("|ATRIBUTO|2|ÁREA|\n");
+    printf("|ATRIBUTO|3|DENSIDADE POPULACIONAL|\n");
+    printf("|ATRIBUTO|4|PIB|\n");
+    printf("|ATRIBUTO|5|PIB PER CAPTA|\n");
+    printf("|ATRIBUTO|6|PONTOS TURISTICOS|\n");
+    printf("|ATRIBUTO|7|SUPER PODER|\n\n");
+    printf("DIGITE UMA OPÇÃO:");
+    scanf("%d", &menu);
 
-    if (super_poder_1 > super_poder_2) {
-        printf("Parabéns, a carta %s%s venceu com Super Poder: %.2f!\n\n", carta_1, codigo_1, super_poder_1);
-    } else if (super_poder_2 > super_poder_1) {
-        printf("Parabéns, a carta %s%s venceu com Super Poder: %.2f!\n\n", carta_2, codigo_2, super_poder_2);
-    } else {
-        printf("Empate! Ambas as cartas têm o mesmo Super Poder: %.2f.\n\n", super_poder_1);
+    //Estrutura Switch
+
+    switch (menu){
+
+    case 1:
+        // Exibindo o resultado
+        printf("**********************************************************************\n");
+        printf("-----------|     SUPER TRUNFO - CIDADES - RESULTADO     |-------------\n");
+        printf("********************************************************************\n\n");
+
+        if (populacao1 > populacao2) {
+            printf("Parabéns, a carta %s%s venceu com o atributo População: %lu!\n\n", carta_1, codigo_1, populacao1);
+        } else if (populacao2 > populacao1) {
+            printf("Parabéns, a carta %s%s venceu com o atributo População: %lu!\n\n", carta_2, codigo_2, populacao2);
+        } else {
+            printf("Empate! Ambas as cartas têm o mesmo número de população: %lu.\n\n", populacao1);
+        }
+        break;
+    case 2:
+        // Exibindo o resultado
+        printf("**********************************************************************\n");
+        printf("-----------|     SUPER TRUNFO - CIDADES - RESULTADO     |-------------\n");
+        printf("********************************************************************\n\n");
+
+        if (area1 > area2) {
+            printf("Parabéns, a carta %s%s venceu com o atributo Área: %.2f!\n\n", carta_1, codigo_1, area1);
+        } else if (area2 > area1) {
+            printf("Parabéns, a carta %s%s venceu com o atributo Área: %.2f!\n\n", carta_2, codigo_2, area2);
+        } else {
+            printf("Empate! Ambas as cartas têm o mesmo número de Área: %.2f.\n\n", area1);
+        }
+        break;
+    case 3:
+        // Exibindo o resultado
+        printf("**********************************************************************\n");
+        printf("-----------|     SUPER TRUNFO - CIDADES - RESULTADO     |-------------\n");
+        printf("********************************************************************\n\n");
+
+        if (densidade_populacional_1 > densidade_populacional_2) {
+            printf("Parabéns, a carta %s%s venceu com o atributo Densidade Populacional: %.2f!\n\n", carta_1, codigo_1, densidade_populacional_1);
+        } else if (densidade_populacional_2 > densidade_populacional_1) {
+            printf("Parabéns, a carta %s%s venceu com o atributo Densidade Populacional: %.2f!\n\n", carta_2, codigo_2, densidade_populacional_2);
+        } else {
+            printf("Empate! Ambas as cartas têm o mesmo número de Densidade Populacional: %.2f.\n\n", densidade_populacional_1);
+        }
+        break;
+    case 4:
+        // Exibindo o resultado
+        printf("**********************************************************************\n");
+        printf("-----------|     SUPER TRUNFO - CIDADES - RESULTADO     |-------------\n");
+        printf("********************************************************************\n\n");
+
+        if (pib1 > pib2) {
+            printf("Parabéns, a carta %s%s venceu com o atributo PIB: %.2f!\n\n", carta_1, codigo_1, pib1);
+        } else if (pib2 > pib1) {
+            printf("Parabéns, a carta %s%s venceu com o atributo PIB: %.2f!\n\n", carta_2, codigo_2, pib2);
+        } else {
+            printf("Empate! Ambas as cartas têm o mesmo número de PIB: %.2f.\n\n", pib1);
+        }
+        break;
+    case 5:
+        // Exibindo o resultado
+        printf("**********************************************************************\n");
+        printf("-----------|     SUPER TRUNFO - CIDADES - RESULTADO     |-------------\n");
+        printf("********************************************************************\n\n");
+
+        if (pib_per_capita_1 > pib_per_capita_2) {
+            printf("Parabéns, a carta %s%s venceu com o atributo PIB PER CAPTA: %.2f!\n\n", carta_1, codigo_1, pib_per_capita_1);
+        } else if (pib_per_capita_2 > pib_per_capita_1) {
+            printf("Parabéns, a carta %s%s venceu com o atributo PIB PER CAPTA: %.2f!\n\n", carta_2, codigo_2, pib_per_capita_2);
+        } else {
+            printf("Empate! Ambas as cartas têm o mesmo número de PIB PER CAPTA: %.2f.\n\n", pib_per_capita_1);
+        }
+        break;
+    case 6:
+        // Exibindo o resultado
+        printf("**********************************************************************\n");
+        printf("-----------|     SUPER TRUNFO - CIDADES - RESULTADO     |-------------\n");
+        printf("********************************************************************\n\n");
+
+        if (pontos_turisticos1 > pontos_turisticos2) {
+            printf("Parabéns, a carta %s%s venceu com o atributo PONTOS TURISTICOS: %d!\n\n", carta_1, codigo_1, pontos_turisticos1);
+        } else if (pontos_turisticos2 > pontos_turisticos1) {
+            printf("Parabéns, a carta %s%s venceu com o atributo PONTOS TURISTICOS: %d!\n\n", carta_2, codigo_2, pontos_turisticos2);
+        } else {
+            printf("Empate! Ambas as cartas têm o mesmo número de PONTOS TURISTICOS: %d.\n\n", pontos_turisticos1);
+        }
+        break;
+    case 7:
+        // Exibindo o resultado
+        printf("**********************************************************************\n");
+        printf("-----------|     SUPER TRUNFO - CIDADES - RESULTADO     |-------------\n");
+        printf("********************************************************************\n\n");
+
+        if (super_poder_1 > super_poder_2) {
+            printf("Parabéns, a carta %s%s venceu com Super Poder: %.2f!\n\n", carta_1, codigo_1, super_poder_1);
+        } else if (super_poder_2 > super_poder_1) {
+            printf("Parabéns, a carta %s%s venceu com Super Poder: %.2f!\n\n", carta_2, codigo_2, super_poder_2);
+        } else {
+            printf("Empate! Ambas as cartas têm o mesmo Super Poder: %.2f.\n\n", super_poder_1);
+        }
+        break;
+    default:
+        // Exibindo o resultado
+        printf("**********************************************************************\n");
+        printf("-----------|     SUPER TRUNFO - CIDADES - MODO DE JOGO     |----------\n");
+        printf("********************************************************************\n\n");
+        printf("|ERROR|Opção invalida|\n");
+        break;
     }
-    
-
     // Exibindo os resultados da primeira carta
     printf("\n********************************************************************\n");
     printf("--------------| SUPER TRUNFO - CIDADES 1° CARTA EM JOGO|--------------\n");
